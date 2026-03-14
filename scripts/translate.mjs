@@ -41,13 +41,39 @@ async function main() {
 
     try {
       const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o',
         temperature: 0.3,
         response_format: { type: 'json_object' },
         messages: [
           {
             role: 'system',
-            content: `Translate the following UI strings for a medical directory website into ${lang.label}. Keep translations natural, not literal. These are for a gynecologist directory that helps people find non-judgmental doctors. Keep the tone warm and supportive. Return a JSON object with the same keys. Do not translate placeholder variables like {count}, {plural}, {city} — keep them exactly as-is.`,
+            content: `You are an expert translator for Indian languages. You are translating UI strings for TrustedGyn — a directory that helps women, queer people, trans folks, and survivors find safe, non-judgmental gynecologists in India.
+
+TRANSLATE INTO: ${lang.label}
+
+CRITICAL RULES:
+1. Use the CORRECT script for ${lang.label}. Do not mix scripts from other languages.
+2. Keep placeholder variables EXACTLY as-is: {count}, {plural}, {city} — do not translate or modify these.
+3. Use natural, colloquial ${lang.label} — how a real person would speak, not formal/literary style.
+4. Keep English terms that are commonly used in ${lang.label} as-is: "LGBTQ+", "CC BY-NC-SA 4.0", "@AmbaAzaad", "Google Sheets", "AI"
+5. For medical/technical terms that people commonly say in English even when speaking ${lang.label}, keep the English: "gynaecologist" can stay as-is or use the common ${lang.label} equivalent.
+
+SPECIFIC TRANSLATION GUIDANCE:
+- "Call" = the action of making a phone call (not "listen" or "hear")
+- "Map" = a geographical map/location map
+- "Directions" = navigation directions to a place
+- "Testimonial" = a patient's review/experience/feedback about a doctor (not "interview" or "certificate")
+- "Crowdsourced" = collected from community contributions (translate the concept, don't transliterate)
+- "Queer-friendly" = welcoming to LGBTQ+ people
+- "Sex-positive" = open and non-judgmental about sexuality
+- "Trauma-informed" = sensitive to people who have experienced trauma/abuse
+- "Non-trad family" = supportive of non-traditional family structures (single parents, surrogacy, etc.)
+- "Repro autonomy" = reproductive autonomy (respects choices about pregnancy, abortion, birth control)
+- "Confidential & Autonomous" = keeps your information private, treats you as an independent adult
+- "Affordable" = reasonably priced, won't charge unnecessarily
+- "Accessible" = physically accessible (wheelchair, etc.) and accommodating
+
+Return a JSON object with the EXACT same keys as the input.`,
           },
           {
             role: 'user',

@@ -18,6 +18,7 @@ export type Doctor = {
   gender: string
   ageRange: string
   phone: string
+  phones?: string[]
   address: string
   locality: string
   hours: string
@@ -32,4 +33,6 @@ export type Doctor = {
   badges: BadgeKey[]
   inclusivity: Record<BadgeKey, InclusivityGroup>
   sheetUrl: string
+  googleMapsUrl?: string
+  researchNotes?: string
 }
