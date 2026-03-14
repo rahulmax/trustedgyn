@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
   Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
+  CheckCircle2, Briefcase, Stethoscope,
 } from 'lucide-react'
 import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
@@ -66,16 +68,48 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
 
       <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
         <div className="px-5 py-5">
-          <h2 className="font-serif text-[22px] font-bold text-text-primary">
-            {doctor.name}
-          </h2>
-          {(doctor.gender || doctor.ageRange) && (
-            <p className="mt-1 text-[14px] text-text-muted">
-              {[doctor.gender, doctor.ageRange ? `Age ${doctor.ageRange}` : ''].filter(Boolean).join(' \u00B7 ')}
-            </p>
-          )}
+          <div className="flex items-start gap-3">
+            {doctor.photoUrl ? (
+              <Image
+                src={doctor.photoUrl}
+                alt=""
+                width={56}
+                height={56}
+                unoptimized
+                className="h-14 w-14 shrink-0 rounded-full object-cover"
+              />
+            ) : null}
+            <div className="min-w-0">
+              <h2 className="flex items-center gap-1.5 font-serif text-[22px] font-bold text-text-primary">
+                <span>{doctor.name}</span>
+                {doctor.verified && (
+                  <CheckCircle2 size={18} className="shrink-0 text-green-600 dark:text-green-400" />
+                )}
+              </h2>
+              {doctor.qualifications && (
+                <p className="mt-0.5 text-[13px] text-text-muted">{doctor.qualifications}</p>
+              )}
+              {(doctor.gender || doctor.ageRange) && (
+                <p className="mt-0.5 text-[14px] text-text-muted">
+                  {[doctor.gender, doctor.ageRange ? `Age ${doctor.ageRange}` : ''].filter(Boolean).join(' \u00B7 ')}
+                </p>
+              )}
+            </div>
+          </div>
 
           <div className="mt-4 flex flex-col gap-2.5">
+            {doctor.experience && (
+              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                <Briefcase size={15} className="shrink-0 text-text-muted" />
+                <span>{doctor.experience} experience</span>
+              </div>
+            )}
+            {doctor.clinic && (
+              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                <Stethoscope size={15} className="shrink-0 text-text-muted" />
+                <span>{doctor.clinic}</span>
+              </div>
+            )}
             {doctor.locality && (
               <div className="flex items-center gap-2 text-[15px] text-text-secondary">
                 <MapPin size={15} className="shrink-0 text-text-muted" />
@@ -112,6 +146,18 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                 <span>{doctor.payment.join(', ')}</span>
               </div>
             )}
+            {doctor.phones && doctor.phones.length > 1 && (
+              <div className="flex items-start gap-2 text-[15px] text-text-secondary">
+                <Phone size={15} className="mt-0.5 shrink-0 text-text-muted" />
+                <div className="flex flex-col gap-0.5">
+                  {doctor.phones.map((p) => (
+                    <a key={p} href={`tel:${p}`} className="transition-colors hover:text-text-primary">
+                      {p}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {doctor.badges.length > 0 && (
@@ -122,7 +168,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
             </div>
           )}
 
-          <div className="mt-5 grid grid-cols-2 gap-3">
+          <div className={`mt-5 grid gap-3 ${doctor.practoUrl ? 'grid-cols-3' : 'grid-cols-2'}`}>
             {doctor.phone ? (
               <a
                 href={`tel:${doctor.phone}`}
@@ -140,7 +186,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
               </div>
             )}
             <a
-              href={mapsUrl}
+              href={doctor.googleMapsUrl || mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-[12px] bg-map-bg py-3 text-[15px] font-semibold text-map transition-colors hover:opacity-80"
@@ -148,6 +194,17 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
               <Map size={16} />
               <span>{t('directions')}</span>
             </a>
+            {doctor.practoUrl && (
+              <a
+                href={doctor.practoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-[12px] bg-card-inset py-3 text-[15px] font-semibold text-text-secondary transition-colors hover:opacity-80"
+              >
+                <ExternalLink size={16} />
+                <span>Practo</span>
+              </a>
+            )}
           </div>
         </div>
 

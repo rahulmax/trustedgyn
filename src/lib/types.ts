@@ -35,4 +35,13 @@ export type Doctor = {
   sheetUrl: string
   googleMapsUrl?: string
   researchNotes?: string
+  qualifications?: string
+  experience?: string
+  photoUrl?: string
+  verified?: boolean
+  practoUrl?: string
+  clinic?: string
+  geo?: { lat: number; lng: number }
+  dataFlag?: 'deceased' | 'retired' | 'wrong-specialty' | 'unverified-specialty' | 'placeholder'
+  dataFlagReason?: string
 }

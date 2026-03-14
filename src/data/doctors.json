@@ -112,7 +112,7 @@
     "address": "Unihealth, 1, Ground Floor, ISKON Elegance, Nr Shapath 5, Honest Cross roads, SG highway, Ahmedabad 380051",
     "locality": "Honest Cross roads",
     "hours": "5–8pm",
-    "fee": "₹500",
+    "fee": "₹600",
     "payment": [
       "Cash",
       "Credit Card",
@@ -208,7 +208,17 @@
     "phones": [
       "9879443230"
     ],
-    "researchNotes": "Also practices at KD Hospital, Sarkhej Road, Ahmedabad. Phone not found online to verify."
+    "researchNotes": "Also practices at KD Hospital, Sarkhej Road, Ahmedabad. Phone not found online to verify.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "13 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/644511/dr-ankita-jain-5e745b155f709.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/ahmedabad/doctor/dr-ankita-jain-gynecologist-obstetrician",
+    "clinic": "KD Hospital",
+    "geo": {
+      "lat": 23.135717,
+      "lng": 72.541723
+    }
   },
   {
     "id": 3,
@@ -803,7 +813,7 @@
     "address": "St. John's Medical College Hospital, Sarjapur Road, Bangalore / Rainbow Children Hospital, Sarjapur Road, Bangalore",
     "locality": "St johns hospital madiwala Bangalore",
     "hours": "",
-    "fee": "",
+    "fee": "₹800",
     "payment": [],
     "languages": [
       "English"
@@ -884,7 +894,17 @@
     "phones": [
       "8069923891"
     ],
-    "researchNotes": "Also has Fundus Clinic at C-16 Kudremukh Colony, Koramangala. 8069923891 is generic helpline. 36 years experience."
+    "researchNotes": "Also has Fundus Clinic at C-16 Kudremukh Colony, Koramangala. 8069923891 is generic helpline. 36 years experience.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "33 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-annamma-thomas-1486027733-5892fbd5bf315.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/annamma-thomas-gynecologist-obstetrician",
+    "clinic": "Fundus Clinic",
+    "geo": {
+      "lat": 12.92554,
+      "lng": 77.62539
+    }
   },
   {
     "id": 10,
@@ -896,7 +916,7 @@
     "address": "Aster Clinic, CRM Plaza, Sector A, 1st Phase HIG, Yelahanka Satellite New Town, Bangalore 560064",
     "locality": "Aster Hospital",
     "hours": "9am–4pm",
-    "fee": "",
+    "fee": "₹1000",
     "payment": [
       "Cash"
     ],
@@ -980,7 +1000,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=174371650",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Anupama+Rohidekar+Aster+Clinic+Yelahanka+Bangalore",
-    "researchNotes": "Also associated with Aastrika Midwifery Centre in Kumaraswamy Layout and Columbia Asia Hospital Hebbal."
+    "researchNotes": "Also associated with Aastrika Midwifery Centre in Kumaraswamy Layout and Columbia Asia Hospital Hebbal.",
+    "qualifications": "MBBS, DNB - Obstetrics & Gynecology, DGO",
+    "experience": "36 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/1175093/dr-anupama-rohidekar-675bc2b3306f1.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician",
+    "clinic": "Aastrika Midwifery Centre",
+    "geo": {
+      "lat": 12.904671,
+      "lng": 77.564241
+    }
   },
   {
     "id": 11,
@@ -992,7 +1022,7 @@
     "address": "Springleaf Healthcare, 60/3, Konappana Agrahara, Electronic City, Opposite Infosys Convention Centre, Hosur Main Road, Bengaluru 560100",
     "locality": "Spring leaft",
     "hours": "2:00–4pm",
-    "fee": "₹400",
+    "fee": "₹750",
     "payment": [
       "Cash",
       "Credit Card",
@@ -1082,7 +1112,17 @@
       "8050325050",
       "08067345000"
     ],
-    "researchNotes": "Also practices at Apollo Cradle Jayanagar. Own website: drapoorvapallam.com. Phone 8050325050 confirmed on website."
+    "researchNotes": "Also practices at Apollo Cradle Jayanagar. Own website: drapoorvapallam.com. Phone 8050325050 confirmed on website.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "16 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/545183/dr-apoorva-pallam-reddy-59159d79d0021.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-apoorva-pallam-reddy-gynecologist-obstetrician",
+    "clinic": "Apollo Cradle",
+    "geo": {
+      "lat": 12.91683,
+      "lng": 77.58524
+    }
   },
   {
     "id": 12,
@@ -1195,7 +1235,7 @@
     "address": "Dr. Asha Clinic, 190, 6th Main Road, Defence Colony, Indiranagar, Bangalore 560038",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹650",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -1277,7 +1317,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=174371650",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Asha+Khatri+gynaecologist+Indiranagar+Bangalore",
-    "researchNotes": "52+ years experience. MBBS, DGO. Also at Medray Diagnostic Centre, 12th Main, HAL 2nd Stage, Indiranagar."
+    "researchNotes": "52+ years experience. MBBS, DGO. Also at Medray Diagnostic Centre, 12th Main, HAL 2nd Stage, Indiranagar.",
+    "qualifications": "MBBS, DGO",
+    "experience": "53 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/388453/dr-asha-khatri-5eb92228487f2.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/asha-khatri-gynecologist-obstetrician",
+    "clinic": "Dr. Asha Clinic",
+    "geo": {
+      "lat": 12.970255,
+      "lng": 77.639327
+    }
   },
   {
     "id": 14,
@@ -1379,7 +1429,7 @@
     "address": "Cloudnine Hospital, 1533, 9th Main, 3rd Block, Jayanagar, Bangalore 560011",
     "locality": "Cloud nine jayanagar",
     "hours": "",
-    "fee": "",
+    "fee": "₹1000",
     "payment": [
       "Cash"
     ],
@@ -1458,7 +1508,17 @@
     "phones": [
       "9972899728"
     ],
-    "researchNotes": "Also has Women's Clinic BTM at 135/1 Elephant Rock Road, Jayanagar 1st Block. Cloudnine contact: 9972899728."
+    "researchNotes": "Also has Women's Clinic BTM at 135/1 Elephant Rock Road, Jayanagar 1st Block. Cloudnine contact: 9972899728.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DGO",
+    "experience": "36 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/342679/dr-brunda-channappa-68ef417c13de4.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-brunda-channappa-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital - Jayanagar",
+    "geo": {
+      "lat": 12.9338941,
+      "lng": 77.5841719
+    }
   },
   {
     "id": 16,
@@ -1849,7 +1909,7 @@
     "address": "Manipal Hospitals Varthur Road, Bengaluru / TruHealing, P7, 4th Floor, LIC Building, Jeevanbhimanagar, Bangalore",
     "locality": "Motherhood Clinic CMH road",
     "hours": "",
-    "fee": "₹400",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Card"
@@ -1930,7 +1990,17 @@
       "8861616691",
       "8039467417"
     ],
-    "researchNotes": "Moved from Motherhood Hospital CMH Road to Manipal Hospitals Varthur Road. Also runs TruHealing clinic and Disha Clinic (8861616691). Existing phone may be outdated."
+    "researchNotes": "Moved from Motherhood Hospital CMH Road to Manipal Hospitals Varthur Road. Also runs TruHealing clinic and Disha Clinic (8861616691). Existing phone may be outdated.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DNB",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-disha-sridhar-1484210681-587741f9a0168.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-disha-sridhar-gynecologist-obstetrician",
+    "clinic": "TruHealing",
+    "geo": {
+      "lat": 12.967899,
+      "lng": 77.654684
+    }
   },
   {
     "id": 21,
@@ -2027,7 +2097,16 @@
     "phones": [
       "8022065004"
     ],
-    "researchNotes": "44 years experience. Practices at both St Martha's Hospital and St John's Hospital. Phone not found online."
+    "researchNotes": "44 years experience. Practices at both St Martha's Hospital and St John's Hospital. Phone not found online.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "46 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-elizabeth-vallikad-gynecologist-obstetrician",
+    "clinic": "St John Medical College",
+    "geo": {
+      "lat": 12.92948,
+      "lng": 77.62018
+    }
   },
   {
     "id": 22,
@@ -2137,7 +2216,7 @@
     "address": "Divakars Speciality Hospital, 220, 9th Cross Rd, Jeewan Griha Colony, 2nd Phase, J.P. Nagar, Bengaluru 560078",
     "locality": "JP Nagar",
     "hours": "24/7",
-    "fee": "₹600",
+    "fee": "₹1000",
     "payment": [
       "Cash",
       "Credit Card",
@@ -2228,7 +2307,17 @@
       "9844046724",
       "8040853500"
     ],
-    "researchNotes": "Former FOGSI president (2013-14), FIGO ambassador. Divakars Speciality Hospital phone: 9844046724. Existing phone 8040853500 may be alternate/old number."
+    "researchNotes": "Former FOGSI president (2013-14), FIGO ambassador. Divakars Speciality Hospital phone: 9844046724. Existing phone 8040853500 may be alternate/old number.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DGO",
+    "experience": "40 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/280991/dr-hema-divakar-5db935d2e6a8b.PNG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/hema-divakar-gynecologist-obstetrician",
+    "clinic": "Divakars Speciality Hospital",
+    "geo": {
+      "lat": 12.9100561,
+      "lng": 77.5925374
+    }
   },
   {
     "id": 24,
@@ -2430,7 +2519,7 @@
     "address": "Fortis La Femme & Nova Specialty Surgery, Koramangala, Bengaluru",
     "locality": "Nova",
     "hours": "",
-    "fee": "",
+    "fee": "₹900",
     "payment": [
       "Cash",
       "Credit Card",
@@ -2519,7 +2608,17 @@
     "phones": [
       "8080802665"
     ],
-    "researchNotes": "46 years experience. Also associated with Fortis La Femme, Bengaluru."
+    "researchNotes": "46 years experience. Also associated with Fortis La Femme, Bengaluru.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DGO",
+    "experience": "53 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/184532/dr-jaya-m-bhat-5baa2d8d720b3.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/jaya-bhat-gynecologist-obstetrician",
+    "clinic": "Manipal Hospitals Old Airport Road",
+    "geo": {
+      "lat": 12.95959,
+      "lng": 77.64937
+    }
   },
   {
     "id": 27,
@@ -2834,7 +2933,7 @@
     "address": "Springleaf Healthcare, 60/3, Hosur Main Road, Electronic City, Bangalore 560100 (Opposite Infosys Convention Centre)",
     "locality": "Hosur Road",
     "hours": "",
-    "fee": "~₹400",
+    "fee": "₹850",
     "payment": [
       "Cash",
       "Credit Card",
@@ -2912,7 +3011,17 @@
     "badges": [],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=174371650",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Krishna+Shaw+gynaecologist+Springleaf+Healthcare+Electronic+City+Bengaluru",
-    "researchNotes": "33 years experience. Also practices at Apollo Clinic Electronic City and Kauvery Hospitals. No direct phone found."
+    "researchNotes": "33 years experience. Also practices at Apollo Clinic Electronic City and Kauvery Hospitals. No direct phone found.",
+    "qualifications": "MBBS, DGO",
+    "experience": "34 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/479671/dr-krishna-shaw-59159d9486334.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-krishna-shaw-gynecologist-obstetrician",
+    "clinic": "Apollo Cradle",
+    "geo": {
+      "lat": 12.936759,
+      "lng": 77.620605
+    }
   },
   {
     "id": 31,
@@ -2924,7 +3033,7 @@
     "address": "Kangaroo Maternity Hospital, 89, 17th Cross, MC Layout, Landmark : Near Balagangadharnath Swamy Metro Statio, Vijaynagar, Bangalore",
     "locality": "Landmark : Near Balagangadharnath Swamy Metro Statio",
     "hours": "",
-    "fee": "₹475",
+    "fee": "₹600",
     "payment": [
       "Cash",
       "Credit Card",
@@ -3013,7 +3122,17 @@
     "phones": [
       "8039195068"
     ],
-    "researchNotes": "Also has evening consultation at Evacare Women's Clinic, Vijaynagar Pipeline Road. 14 years experience."
+    "researchNotes": "Also has evening consultation at Evacare Women's Clinic, Vijaynagar Pipeline Road. 14 years experience.",
+    "qualifications": "MBBS, DGO, DNB - Obstetrics & Gynecology",
+    "experience": "23 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/366720/dr-kshama-v-kamath-5c20a42ab255a.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-kshama-v-kamath-gynecologist-obstetrician",
+    "clinic": "Kangaroo Care",
+    "geo": {
+      "lat": 12.9741,
+      "lng": 77.5423
+    }
   },
   {
     "id": 32,
@@ -3212,7 +3331,7 @@
     "address": "Cloudnine Hospital, Jayanagar, 1533, 9th Main, 3rd Block, Opposite Clumax Diagnostics, Jayanagar, Bangalore",
     "locality": "Cloud Nine",
     "hours": "",
-    "fee": "",
+    "fee": "₹1000",
     "payment": [
       "Credit Card",
       "Debit Card"
@@ -3294,7 +3413,17 @@
     "phones": [
       "09972899728"
     ],
-    "researchNotes": "52 years experience. MBBS, FRCOG. Phone 09972899728 is Cloudnine helpline number."
+    "researchNotes": "52 years experience. MBBS, FRCOG. Phone 09972899728 is Cloudnine helpline number.",
+    "qualifications": "MBBS, FRCOG (London)",
+    "experience": "52 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/209593/dr-leela-bhagavan-68ef41d697124.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-leela-bhagavan-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital - Jayanagar",
+    "geo": {
+      "lat": 12.9338941,
+      "lng": 77.5841719
+    }
   },
   {
     "id": 35,
@@ -3399,7 +3528,17 @@
     "phones": [
       "08066214444"
     ],
-    "researchNotes": "HOD Obstetrics & Gynaecology at Fortis BG Road. 40+ years experience. Hospital phone: 080-66214444."
+    "researchNotes": "HOD Obstetrics & Gynaecology at Fortis BG Road. 40+ years experience. Hospital phone: 080-66214444.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DGO",
+    "experience": "42 years",
+    "photoUrl": "https://images1-fabric.practo.com/548589ad04f9b06de7196127461e3a9913c591147005b.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-mangala-ramachandra-gynecologist-obstetrician",
+    "clinic": "Garden City Hospital",
+    "geo": {
+      "lat": 12.932801,
+      "lng": 77.584679
+    }
   },
   {
     "id": 36,
@@ -3597,7 +3736,7 @@
     "address": "Cloudnine Hospital, No. 47, 17th Cross, 11th Main, Malleshwaram, Bangalore 560055",
     "locality": "Malleshwaram Cloud9 and a Private Clinic",
     "hours": "",
-    "fee": "₹500",
+    "fee": "₹1050",
     "payment": [
       "Cash"
     ],
@@ -3679,7 +3818,17 @@
     "phones": [
       "09972899728"
     ],
-    "researchNotes": "MBBS, DNB, M.S in Reproductive Medicine UNSW Sydney. Phone is Cloudnine helpline."
+    "researchNotes": "MBBS, DNB, M.S in Reproductive Medicine UNSW Sydney. Phone is Cloudnine helpline.",
+    "qualifications": "MBBS, DNB - Obstetrics & Gynecology",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/366740/dr-manjula-raghuveer-5e54ce25763eb.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-manjula-raghuveer-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 13.0078,
+      "lng": 77.56253
+    }
   },
   {
     "id": 39,
@@ -3883,7 +4032,7 @@
     "address": "Cloudnine Hospital, Old Airport Road, Opposite Kemp Fort (Total Mall), Bangalore 560017",
     "locality": "Cloudnine Hospital - Old Airport Road Cloudnine Clinic - HRBR",
     "hours": "",
-    "fee": "₹500",
+    "fee": "₹1000",
     "payment": [
       "Cash",
       "Credit Card",
@@ -3972,7 +4121,16 @@
       "09972899728",
       "18605009999"
     ],
-    "researchNotes": "23 years experience. MBBS, MD from KEM Hospital Mumbai. Also at Cloudnine Clinic HRBR and Varthur Road. Existing phone 18605009999 is old Cloudnine number."
+    "researchNotes": "23 years experience. MBBS, MD from KEM Hospital Mumbai. Also at Cloudnine Clinic HRBR and Varthur Road. Existing phone 18605009999 is old Cloudnine number.",
+    "experience": "26 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/514897/dr-modhulika-bhattacharya-624c0bbc7e597.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/modhulika-bhattacharya-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 12.959055,
+      "lng": 77.741535
+    }
   },
   {
     "id": 42,
@@ -3984,7 +4142,7 @@
     "address": "Columbia Asia Hospital (now Manipal Hospital), Kirloskar Business Park, Bellary Road, Hebbal, Bengaluru 560024",
     "locality": "Columbia Asia Hospital Hebbal Bangalore",
     "hours": "4–8pm",
-    "fee": "₹500",
+    "fee": "₹1050",
     "payment": [
       "Credit Card",
       "Debit Card"
@@ -4067,7 +4225,17 @@
       "9742623000",
       "8041791777"
     ],
-    "researchNotes": "31+ years experience. Also practices in Malleshwaram. Existing phone matches hospital number 080-41791000."
+    "researchNotes": "31+ years experience. Also practices in Malleshwaram. Existing phone matches hospital number 080-41791000.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "45 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/312644/dr-mukta-nadig-628cd22a40b7f.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-mukta-nadig-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 13.0078,
+      "lng": 77.56253
+    }
   },
   {
     "id": 43,
@@ -4275,7 +4443,7 @@
     "address": "Apollo Cradle, No. 25, 46th Cross, Jayanagar 5th Block, Bangalore 560041",
     "locality": "Apollo cradle jayanagar",
     "hours": "1:30pm–3:30pm",
-    "fee": "₹250",
+    "fee": "₹900",
     "payment": [
       "Cash",
       "Cheque",
@@ -4368,7 +4536,17 @@
     "phones": [
       "18605004424"
     ],
-    "researchNotes": "13 years experience. MBBS, MS, FIRM. Also at Apollo Cradle Koramangala and Sarjapur Road. Phone is Apollo helpline 1860-500-4424."
+    "researchNotes": "13 years experience. MBBS, MS, FIRM. Also at Apollo Cradle Koramangala and Sarjapur Road. Phone is Apollo helpline 1860-500-4424.",
+    "qualifications": "MBBS",
+    "experience": "23 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-phani-madhuri-1479115585-582983413400b.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/phani-madhuri-gynecologist-obstetrician",
+    "clinic": "Apollo Cradle",
+    "geo": {
+      "lat": 12.91683,
+      "lng": 77.58524
+    }
   },
   {
     "id": 46,
@@ -4380,7 +4558,7 @@
     "address": "EPMC Women's Clinic & Surgery, No. 1280, 25th Main, Jayanagar 9th Block, Bangalore 560069 (Opposite Bangalore Central Mall, Adjacent to Big Bazar)",
     "locality": "Jayanagar",
     "hours": "9am–8pm",
-    "fee": "~₹800",
+    "fee": "₹500",
     "payment": [
       "Cash"
     ],
@@ -4461,7 +4639,16 @@
     "phones": [
       "8026646083"
     ],
-    "researchNotes": "34 years experience. Founded EPMC in 1990. Could not verify phone online but existing 8026646083 is likely clinic landline (080-26646083)."
+    "researchNotes": "34 years experience. Founded EPMC in 1990. Could not verify phone online but existing 8026646083 is likely clinic landline (080-26646083).",
+    "experience": "37 years",
+    "photoUrl": "https://images1-fabric.practo.com/54fd46fb5e66e3415593708d0b2a326d8834090d000e0.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-prabha-eliya-singan-gynecologist-obstetrician",
+    "clinic": "EPMC Womens Clinic",
+    "geo": {
+      "lat": 12.91737,
+      "lng": 77.59272
+    }
   },
   {
     "id": 47,
@@ -4667,7 +4854,7 @@
     "address": "SPARSH Hospital for Women and Children, 146, Infantry Road, Vasanth Nagar, Bengaluru 560001 & Mallya Hospital, Vittal Mallya Road, Bengaluru 560001",
     "locality": "Mallya hospital",
     "hours": "",
-    "fee": "",
+    "fee": "₹1500",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "Yes",
@@ -4744,7 +4931,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=174371650",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Prathima+Reddy+gynaecologist+SPARSH+Hospital+Infantry+Road+Bengaluru",
-    "researchNotes": "Correct spelling: Prathima Reddy. Director & Lead Consultant at SPARSH Hospital. Also consults at Mallya Hospital. No direct phone found."
+    "researchNotes": "Correct spelling: Prathima Reddy. Director & Lead Consultant at SPARSH Hospital. Also consults at Mallya Hospital. No direct phone found.",
+    "qualifications": "MBBS, MRCOG(UK)",
+    "experience": "30 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/472934/dr-prathima-reddy-625a549d021c2.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/prathima-reddy-gynecologist-obstetrician",
+    "clinic": "Sparsh Hospital for Women & Children",
+    "geo": {
+      "lat": 12.983281,
+      "lng": 77.594749
+    }
   },
   {
     "id": 50,
@@ -4853,7 +5050,7 @@
     "address": "No 28, 16th Cross, 33rd Main, 6th Phase J P Nagar, Bangalore : 560078 Karnataka, India",
     "locality": "6th Phase J P Nagar",
     "hours": "10am–12:30pm \n5:30–8:30pm (Monday–Saturday)",
-    "fee": "~₹300",
+    "fee": "₹800",
     "payment": [
       "Cash"
     ],
@@ -4933,7 +5130,17 @@
       "9900840102",
       "9632155102"
     ],
-    "researchNotes": "Runs Janani Clinic - Specialist Women's Clinic in JP Nagar. Also at Apollo Cradle Jayanagar. Phone from search was 9900840102, different from existing 9632155102."
+    "researchNotes": "Runs Janani Clinic - Specialist Women's Clinic in JP Nagar. Also at Apollo Cradle Jayanagar. Phone from search was 9900840102, different from existing 9632155102.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "27 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/195584/dr-radha-s-rao-692a91313f641.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-radha-rao-gynecologist-obstetrician",
+    "clinic": "Apollo Cradle",
+    "geo": {
+      "lat": 12.91683,
+      "lng": 77.58524
+    }
   },
   {
     "id": 52,
@@ -5028,7 +5235,17 @@
     "phones": [
       "8512830995"
     ],
-    "researchNotes": "Founder Medical Director at Khushi Fertility & IVF Centre. 8512830995 is a helpline number. Near Jayadeva Institute of Cardiology."
+    "researchNotes": "Founder Medical Director at Khushi Fertility & IVF Centre. 8512830995 is a helpline number. Near Jayadeva Institute of Cardiology.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology, Fellowship in Reproductive Medicine",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/67281/dr-rashmi-yogish-5f3f81719d746.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-rashmi-yogish-gynecologist-obstetrician",
+    "clinic": "Khushi Fertility & IVF Centre",
+    "geo": {
+      "lat": 12.916006,
+      "lng": 77.598802
+    }
   },
   {
     "id": 53,
@@ -5217,7 +5434,7 @@
     "address": "Cloudnine Clinic, No.16, 1st Floor, Mosque Road, Nulye Avenue, Frazer Town, Bangalore - 560005 (Above KFC)",
     "locality": "Cloud 9 Frazer Town",
     "hours": "",
-    "fee": "₹500",
+    "fee": "₹1000",
     "payment": [
       "Cash",
       "Credit Card",
@@ -5311,7 +5528,17 @@
       "9972899728",
       "18605009999"
     ],
-    "researchNotes": "Existing phone 18605009999 appears to be Cloudnine helpline. Found phone 9972899728. Also practices at Cloudnine HRBR Layout and Manipal Hospital Millers Road."
+    "researchNotes": "Existing phone 18605009999 appears to be Cloudnine helpline. Found phone 9972899728. Also practices at Cloudnine HRBR Layout and Manipal Hospital Millers Road.",
+    "qualifications": "MBBS, DGO",
+    "experience": "18 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/560135/dr-saba-fathima-5f86f74707953.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-saba-fathima-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital - HRBR",
+    "geo": {
+      "lat": 13.019983,
+      "lng": 77.655411
+    }
   },
   {
     "id": 56,
@@ -5323,7 +5550,7 @@
     "address": "26/4, Brigade Gateway, Beside Metro Cash and Carry West, Malleshwaram, Bengaluru, Karnataka 560055",
     "locality": "Malleshwaram",
     "hours": "10am–1pm",
-    "fee": "₹600",
+    "fee": "₹950",
     "payment": [
       "Cash",
       "Cheque",
@@ -5418,7 +5645,17 @@
       "8080802665",
       "8039898969"
     ],
-    "researchNotes": "Over 10,000 surgeries completed. Expert in gynecologic laparoscopy. Consultation fee Rs 950. Mon-Sat 10:30 AM - 1:30 PM."
+    "researchNotes": "Over 10,000 surgeries completed. Expert in gynecologic laparoscopy. Consultation fee Rs 950. Mon-Sat 10:30 AM - 1:30 PM.",
+    "qualifications": "MBBS, DGO, DNB - Obstetrics & Gynecology",
+    "experience": "23 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-shafalika-s-b-1485770639-588f0f8f2f2f8.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-shafalika-s-b-gynecologist-obstetrician",
+    "clinic": "Manipal Hospitals",
+    "geo": {
+      "lat": 13.01418,
+      "lng": 77.55595
+    }
   },
   {
     "id": 57,
@@ -5838,7 +6075,7 @@
     "address": "Motherhood Hospital, 514/1-2-3, Kaikondara Village, Opp. Total Mall, Sarjapur Road, Bengaluru",
     "locality": "Fortis",
     "hours": "",
-    "fee": "₹300",
+    "fee": "₹900",
     "payment": [
       "Credit Card",
       "Debit Card"
@@ -5920,7 +6157,17 @@
     "phones": [
       "8069923891"
     ],
-    "researchNotes": "Currently at Motherhood Sarjapur and also BirthRight by Rainbow Hospitals. 8069923891 is a helpline number. 15+ years experience. MRCOG London qualified."
+    "researchNotes": "Currently at Motherhood Sarjapur and also BirthRight by Rainbow Hospitals. 8069923891 is a helpline number. 15+ years experience. MRCOG London qualified.",
+    "qualifications": "MBBS, DGO",
+    "experience": "27 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-shefali-tyagi-1470381180-57a43c7c573df.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-shefali-tyagi-gynecologist-obstetrician",
+    "clinic": "Rainbow Childrens Hospital",
+    "geo": {
+      "lat": 12.919821,
+      "lng": 77.667197
+    }
   },
   {
     "id": 62,
@@ -6015,7 +6262,9 @@
     "phones": [
       "9844312501"
     ],
-    "researchNotes": "Dr. Shyama Narang passed away on September 2, 2019. She worked at Maiya Multispeciality Hospital for nearly 30 years. Record may need to be marked as deceased."
+    "researchNotes": "Dr. Shyama Narang passed away on September 2, 2019. She worked at Maiya Multispeciality Hospital for nearly 30 years. Record may need to be marked as deceased.",
+    "dataFlag": "deceased",
+    "dataFlagReason": "Passed away September 2019"
   },
   {
     "id": 63,
@@ -6027,7 +6276,7 @@
     "address": "Motherhood Hospital Hebbal, 2266/17 & 18, Service Road, G Block, Sahakara Nagar, International Airport Road, Hebbal, Bengaluru - 560092",
     "locality": "Motherhood",
     "hours": "",
-    "fee": "₹500",
+    "fee": "₹1300",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "Yes",
@@ -6105,7 +6354,17 @@
       "9620396203",
       "08067238900"
     ],
-    "researchNotes": "24+ years experience. Previously worked in UK. Expert in laparoscopic surgeries. 08067238900 for IVF/Fertility consultation."
+    "researchNotes": "24+ years experience. Previously worked in UK. Expert in laparoscopic surgeries. 08067238900 for IVF/Fertility consultation.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, MRCOG(UK)",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-sireesha-reddy-1483522834-586cc3129ac73.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/sireesha-reddy-gynecologist-obstetrician",
+    "clinic": "Motherhood Fertility and IVF",
+    "geo": {
+      "lat": 13.061971,
+      "lng": 77.593101
+    }
   },
   {
     "id": 64,
@@ -6307,7 +6566,12 @@
       "18001025555",
       "8061656666"
     ],
-    "researchNotes": "35 years experience. Columbia Asia rebranded to Manipal Hospitals. Consultation fee Rs 750. Mon-Sat. 1800 102 5555 is Manipal Hospitals toll-free."
+    "researchNotes": "35 years experience. Columbia Asia rebranded to Manipal Hospitals. Consultation fee Rs 750. Mon-Sat. 1800 102 5555 is Manipal Hospitals toll-free.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "42 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/544550/dr-sita-rajan-61f50d37a6566.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-sita-rajan-gynecologist-obstetrician"
   },
   {
     "id": 66,
@@ -6508,7 +6772,16 @@
     "phones": [
       "8025253311"
     ],
-    "researchNotes": "21 years experience. Currently at Revive Hospital Indiranagar (previously at Rashmi Hospital). Consultation fee Rs 300. Same address as id 66 Snehalata (190, Double Road)."
+    "researchNotes": "21 years experience. Currently at Revive Hospital Indiranagar (previously at Rashmi Hospital). Consultation fee Rs 300. Same address as id 66 Snehalata (190, Double Road).",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "24 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/snehalatha-alapati-gynecologist-obstetrician",
+    "clinic": "Hosmat Hospital",
+    "geo": {
+      "lat": 12.997043,
+      "lng": 77.619498
+    }
   },
   {
     "id": 68,
@@ -6716,7 +6989,7 @@
     "address": "971, 7th Cross, Near-Allahabad Bank, Btm Layout 2nd Stage, Bengaluru, Karnataka 560076",
     "locality": "Btm Layout 2nd Stage",
     "hours": "",
-    "fee": "",
+    "fee": "₹750",
     "payment": [
       "Cash"
     ],
@@ -6801,7 +7074,17 @@
       "9663069105",
       "8026683069"
     ],
-    "researchNotes": "Phone match confirmed. 25+ years experience. Runs Manasi Clinic in BTM Layout. Also associated with BirthRight by Rainbow Hospital Bannerghatta."
+    "researchNotes": "Phone match confirmed. 25+ years experience. Runs Manasi Clinic in BTM Layout. Also associated with BirthRight by Rainbow Hospital Bannerghatta.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "32 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/38484/dr-suman-singh-61fe1d91477cc.PNG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-suman-singh-gynecologist-obstetrician",
+    "clinic": "Manasi Clinic",
+    "geo": {
+      "lat": 12.916836,
+      "lng": 77.6086
+    }
   },
   {
     "id": 71,
@@ -6993,7 +7276,16 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=174371650",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Uzma+Zeenath+Taher+Nisa+Multispeciality+Clinic+BTM+Layout+Bangalore",
-    "researchNotes": "31 years experience. Also at Apollo Cradle Koramangala 6th Block. Existing address field contained a Practo URL, not an actual address. FICOG qualified."
+    "researchNotes": "31 years experience. Also at Apollo Cradle Koramangala 6th Block. Existing address field contained a Practo URL, not an actual address. FICOG qualified.",
+    "experience": "32 years",
+    "photoUrl": "https://images1-fabric.practo.com/552f8d85009ca6428613ad7a425c49048eebd7fcbf8ad.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-uzma-zeenath-taher-gynecologist-obstetrician",
+    "clinic": "Nisa Multispeciality Clinics",
+    "geo": {
+      "lat": 12.91388,
+      "lng": 77.6071
+    }
   },
   {
     "id": 73,
@@ -7105,7 +7397,7 @@
     "address": "Manipal Hospital (formerly Columbia Asia), Kirloskar Business Park, Bellary Road, Hebbal, Bengaluru, Karnataka - 560024",
     "locality": "Bellary Road",
     "hours": "",
-    "fee": "₹600",
+    "fee": "₹900",
     "payment": [
       "Cash"
     ],
@@ -7185,7 +7477,17 @@
       "18001025555",
       "8041791000"
     ],
-    "researchNotes": "34 years experience. Columbia Asia rebranded to Manipal Hospitals. Also at Purnam Clinics, Hegde Nagar. Existing phone 8041791000 may be old Columbia Asia number. 1800 102 5555 is Manipal toll-free."
+    "researchNotes": "34 years experience. Columbia Asia rebranded to Manipal Hospitals. Also at Purnam Clinics, Hegde Nagar. Existing phone 8041791000 may be old Columbia Asia number. 1800 102 5555 is Manipal toll-free.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "35 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/174643/dr-vijaya-58e3dd3d99003.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/bangalore/doctor/dr-vijaya-sherbet-gynecologist-obstetrician",
+    "clinic": "Manipal Hospital",
+    "geo": {
+      "lat": 13.0509374,
+      "lng": 77.5913499
+    }
   },
   {
     "id": 75,
@@ -7380,7 +7682,7 @@
     "address": "Guest Hospital- consultant Apollo cradle- consultant Cloud nine- consultant Apollo first med- visitng consultant Kumaran hospital- visiting consultant Mother hood hospitals Dr. Mehtha Nursing hospitals",
     "locality": "Guest Hospital- consultant Apollo cradle- consultant Cloud nine- consultant Apollo first med- visitng consultant Kumaran hospital- visiting consultant Mother hood hospitals Dr. Mehtha Nursing hospitals",
     "hours": "10am–10pm",
-    "fee": "~₹1,000",
+    "fee": "₹300",
     "payment": [
       "Cash"
     ],
@@ -7473,7 +7775,16 @@
     "phones": [
       "9444132346"
     ],
-    "researchNotes": "Practices at Cloudnine Hospital T Nagar. Also has AK Meds Clinic at Kilpauk. Could not verify phone online."
+    "researchNotes": "Practices at Cloudnine Hospital T Nagar. Also has AK Meds Clinic at Kilpauk. Could not verify phone online.",
+    "experience": "28 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/364807/dr-akhila-sangeetha-bhat-u-5a811b2cd90aa.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-akhila-sangeetha-bhat-u-gynecologist-obstetrician",
+    "clinic": "The Guest Hospital",
+    "geo": {
+      "lat": 13.077459,
+      "lng": 80.238707
+    }
   },
   {
     "id": 78,
@@ -7672,7 +7983,9 @@
     "phones": [
       "04428473996"
     ],
-    "researchNotes": "Dr. Gita Arjun retired in 2013 after 32 years as Director of EV Kalyani Medical Centre. Phone is for the clinic, not the doctor directly."
+    "researchNotes": "Dr. Gita Arjun retired in 2013 after 32 years as Director of EV Kalyani Medical Centre. Phone is for the clinic, not the doctor directly.",
+    "dataFlag": "retired",
+    "dataFlagReason": "Retired in 2013 from EV Kalyani Medical Centre"
   },
   {
     "id": 80,
@@ -7684,7 +7997,7 @@
     "address": "Apollo Main Hospital, Gream's Road. Apollo Heart Centre, Gream's Road. Dr. Kalai's Clinic for Women and Children, 2/12, Arunachalam Road, Kotturpuram",
     "locality": "2/12",
     "hours": "8am–11am",
-    "fee": "₹500",
+    "fee": "₹1000",
     "payment": [
       "All"
     ],
@@ -7772,7 +8085,17 @@
     "phones": [
       "4433136815"
     ],
-    "researchNotes": "Practices at Apollo Greams Road and own clinic in Kotturpuram. Could not verify phone online."
+    "researchNotes": "Practices at Apollo Greams Road and own clinic in Kotturpuram. Could not verify phone online.",
+    "qualifications": "MBBS, DGO",
+    "experience": "29 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/296678/dr-kalaivani-ramalingam-5a0eda8907004.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-kalaivani-ramalingam-gynecologist-obstetrician",
+    "clinic": "Apollo Hospital",
+    "geo": {
+      "lat": 13.06294,
+      "lng": 80.2515
+    }
   },
   {
     "id": 81,
@@ -7784,7 +8107,7 @@
     "address": "Motherhood Hospital, New No 542, TTK Road, Opposite Indian Terrain, Alwarpet, Chennai - 600018",
     "locality": "motherhood hospitals Ttk road",
     "hours": "",
-    "fee": "",
+    "fee": "₹600",
     "payment": [
       "Cash",
       "Cheque",
@@ -7871,7 +8194,17 @@
       "9620396203",
       "4449154444"
     ],
-    "researchNotes": "Found phone 9620396203 differs from existing 4449154444. Full name is Dr. Kavya Krishna Kumar."
+    "researchNotes": "Found phone 9620396203 differs from existing 4449154444. Full name is Dr. Kavya Krishna Kumar.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "20 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/532718/dr-kavya-krishna-kumar-5fa233e92cd60.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-kavya-krishnakumar-gynecologist-obstetrician",
+    "clinic": "Motherhood Hospital",
+    "geo": {
+      "lat": 13.03124,
+      "lng": 80.251123
+    }
   },
   {
     "id": 82,
@@ -7970,7 +8303,11 @@
       "04442967967",
       "4426413475"
     ],
-    "researchNotes": "Existing phone 4426413475 differs from found 04442967967. Hospital now known as Joseph Hospitals. Dr. Kurian Joseph has 43 years experience."
+    "researchNotes": "Existing phone 4426413475 differs from found 04442967967. Hospital now known as Joseph Hospitals. Dr. Kurian Joseph has 43 years experience.",
+    "qualifications": "MBBS, DGO, MD - Obstetrics & Gynaecology",
+    "experience": "44 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-kurian-joseph-gynecologist-obstetrician"
   },
   {
     "id": 83,
@@ -8269,7 +8606,7 @@
     "address": "Apollo First Med Hospital No. 154, Poonamallee High Road, Kilpauk, Chennai, Tamil Nadu 600010",
     "locality": "Kilpauk",
     "hours": "Mornings: ward duty, Rounds evening: out patients",
-    "fee": "₹400",
+    "fee": "₹700",
     "payment": [
       "Cash"
     ],
@@ -8353,7 +8690,17 @@
       "8035240555",
       "4428366017"
     ],
-    "researchNotes": "Found Apollo First Med Hospital number 8035240555. Existing phone 4428366017 may be an older direct line. Senior Consultant OBGYN."
+    "researchNotes": "Found Apollo First Med Hospital number 8035240555. Existing phone 4428366017 may be an older direct line. Senior Consultant OBGYN.",
+    "qualifications": "MBBS, DGO, MD - Obstetrics & Gynaecology",
+    "experience": "40 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-nirmala-jayashankar-1453877493-56a868f5de57f.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-nirmala-jayashankar-gynecologist-obstetrician",
+    "clinic": "Apollo First Med Hospitals",
+    "geo": {
+      "lat": 13.0777112,
+      "lng": 80.2458942
+    }
   },
   {
     "id": 87,
@@ -8754,7 +9101,7 @@
     "address": "Seethapathy Clinic and Hospital, New No. 128 / Old No. 241, Royapettah High Road Chennai 600014 E V Kalyani Medical Center Multi Specialty Clinic No.4, Radhakrishna Salai, Mylapore. Landmark: Near Yellowpages, Chennai She also consults with Mediscan and other Fetal Care Research facilities across the country",
     "locality": "Radhakrishna Salai",
     "hours": "10am–1pm; 4–6pm Tues, Thur, Fri\n\n3 days a week all day at each of the hospitals mentioned above",
-    "fee": "₹600",
+    "fee": "₹700",
     "payment": [
       "Cash and Card"
     ],
@@ -8836,7 +9183,17 @@
       "04449496666",
       "4466949433"
     ],
-    "researchNotes": "Director and Consultant OBGYN at Seethapathy Clinic. Also consults at EV Kalyani Medical Center, Mylapore. Found phone 04449496666 differs from existing 4466949433."
+    "researchNotes": "Director and Consultant OBGYN at Seethapathy Clinic. Also consults at EV Kalyani Medical Center, Mylapore. Found phone 04449496666 differs from existing 4466949433.",
+    "qualifications": "MBBS, DGO, DNB - Obstetrics & Gynecology",
+    "experience": "32 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/229027/dr-uma-ramesh-5d7891cf6181e.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-uma-ram-gynecologist-obstetrician",
+    "clinic": "Pearl Singapore Fertility Centre",
+    "geo": {
+      "lat": 12.927384,
+      "lng": 80.230833
+    }
   },
   {
     "id": 92,
@@ -9041,7 +9398,7 @@
     "address": "MGM Healthcare Malar Hospital, Old No. 52, New No. 111, 1st Main Road, Gandhi Nagar, Adyar, Chennai - 600020",
     "locality": "Adyar",
     "hours": "Mon–Sat(3pm–5pm) Sunday(11am–1pm)",
-    "fee": "₹500",
+    "fee": "₹800",
     "payment": [
       "Cash",
       "Credit Card",
@@ -9127,7 +9484,17 @@
     "phones": [
       "4442892222"
     ],
-    "researchNotes": "Practices at MGM Healthcare Malar Hospitals, Adyar. Phone matches - 044-4289-2222 is the Fortis/MGM Malar hospital number."
+    "researchNotes": "Practices at MGM Healthcare Malar Hospitals, Adyar. Phone matches - 044-4289-2222 is the Fortis/MGM Malar hospital number.",
+    "qualifications": "MBBS, DGO",
+    "experience": "47 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-r-v-thenmozhi-1469171156-5791c5d47c9e3.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-r-v-thenmozhi-gynecologist-obstetrician",
+    "clinic": "MGM Healthcare Malar Hospitals",
+    "geo": {
+      "lat": 13.01012,
+      "lng": 80.25867
+    }
   },
   {
     "id": 95,
@@ -9540,7 +9907,7 @@
     "address": "AK Meds, No 68, Taylor's Road, Kilpauk, Next to Chai Kings, Below revive spa. Building next to Saravana scans on Taylor's road",
     "locality": "Kilpauk",
     "hours": "",
-    "fee": "₹700",
+    "fee": "₹300",
     "payment": [
       "Cash",
       "Credit Card",
@@ -9633,7 +10000,16 @@
     "phones": [
       "9884105541"
     ],
-    "researchNotes": "Same doctor as ID 77 (Dr. Akhila Sangeetha Bhat U). AK Meds is her own clinic with pharmacy, sonography and blood test facilities. Website: drakhilabhat.com"
+    "researchNotes": "Same doctor as ID 77 (Dr. Akhila Sangeetha Bhat U). AK Meds is her own clinic with pharmacy, sonography and blood test facilities. Website: drakhilabhat.com",
+    "experience": "28 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/364807/dr-akhila-sangeetha-bhat-u-5a811b2cd90aa.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/chennai/doctor/dr-akhila-bhat-gynecologist-obstetrician",
+    "clinic": "The Guest Hospital",
+    "geo": {
+      "lat": 13.077459,
+      "lng": 80.238707
+    }
   },
   {
     "id": 100,
@@ -10221,7 +10597,7 @@
     "address": "Ahuja Clinic, B-17 Golf View Apartments, MIG DDA Flats, Saket, New Delhi - 110017",
     "locality": "Ahuja Clinic",
     "hours": "5–7 except for Sundays",
-    "fee": "₹500",
+    "fee": "₹1000",
     "payment": [
       "Cash"
     ],
@@ -10305,7 +10681,17 @@
     "phones": [
       "9810017655"
     ],
-    "researchNotes": "Direct personal phone not found online. Helpline 8512898240 found for appointments. Address confirmed as B-17, Saket."
+    "researchNotes": "Direct personal phone not found online. Helpline 8512898240 found for appointments. Address confirmed as B-17, Saket.",
+    "qualifications": "MBBS, DGO",
+    "experience": "43 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-anju-ahuja-1467292066-577519a24f392.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/anju-ahuja-gynecologist-obstetrician",
+    "clinic": "Ahuja Clinic",
+    "geo": {
+      "lat": 28.526726,
+      "lng": 77.205626
+    }
   },
   {
     "id": 107,
@@ -10317,7 +10703,7 @@
     "address": "Max Super Speciality Hospital, 1-2, Press Enclave Marg, Saket Institutional Area, Saket, New Delhi - 110017",
     "locality": "Max Hospital",
     "hours": "Varying–contact hospital directly; Appointment can also be fixed online",
-    "fee": "~₹1,000",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Credit Card",
@@ -10398,7 +10784,17 @@
     "phones": [
       "9289678787"
     ],
-    "researchNotes": "Principal Director and Head of Unit in Obstetrics & Gynaecology at Max Healthcare. Phone is from healthcare coordination service."
+    "researchNotes": "Principal Director and Head of Unit in Obstetrics & Gynaecology at Max Healthcare. Phone is from healthcare coordination service.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "36 years",
+    "photoUrl": "https://images1-fabric.practo.com/5522434f17be02d33b9f23eef81a794aae128e016d716.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-anuradha-kapur-gynecologist-obstetrician",
+    "clinic": "Max Smart Superspeciality Hospital",
+    "geo": {
+      "lat": 28.5274499,
+      "lng": 77.2138971
+    }
   },
   {
     "id": 108,
@@ -10504,7 +10900,7 @@
     "address": "Moolchand Medcity Hospital, Block M, Near Moolchand Metro Station, Lajpat Nagar 3, Delhi - 110024",
     "locality": "Moolchand Medcity hospital near Moolchand metro station",
     "hours": "9am–11am and 4pm–6pm",
-    "fee": "₹500",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Credit Card",
@@ -10592,7 +10988,17 @@
     "phones": [
       "1142000000"
     ],
-    "researchNotes": "Name in data says 'Bandana Sodhi I guess' - confirmed as Dr. Bandana Sodhi, Sr. Consultant Gynecologist at Moolchand Medcity Hospital. Existing phone 1142000000 is likely Moolchand Hospital main number (011-42000000). Direct phone not found."
+    "researchNotes": "Name in data says 'Bandana Sodhi I guess' - confirmed as Dr. Bandana Sodhi, Sr. Consultant Gynecologist at Moolchand Medcity Hospital. Existing phone 1142000000 is likely Moolchand Hospital main number (011-42000000). Direct phone not found.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DNB",
+    "experience": "35 years",
+    "photoUrl": "https://images1-fabric.practo.com/541fce9025b0d611e23eaf4a64d2f06f86c7485a55e78.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-bandana-sodhi-gynecologist-obstetrician",
+    "clinic": "Womens Clinic",
+    "geo": {
+      "lat": 28.56645,
+      "lng": 77.23508
+    }
   },
   {
     "id": 110,
@@ -11567,7 +11973,17 @@
       "9268880303",
       "8010994994"
     ],
-    "researchNotes": "Now at Max Smart Super Speciality Hospital Saket (not Saket City Hospital). 45 years experience. Wednesdays 11am-2pm. Phone from Credihealth appointment line."
+    "researchNotes": "Now at Max Smart Super Speciality Hospital Saket (not Saket City Hospital). 45 years experience. Wednesdays 11am-2pm. Phone from Credihealth appointment line.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "48 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/265861/dr-manju-khemani-65fad174ee089.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-manju-khemani-gynecologist-obstetrician",
+    "clinic": "Max Superspeciality Hospital",
+    "geo": {
+      "lat": 28.527565,
+      "lng": 77.211978
+    }
   },
   {
     "id": 120,
@@ -11670,7 +12086,11 @@
       "1126515050",
       "8860444888"
     ],
-    "researchNotes": "Phone 011-26515050 matches Max Hospital Saket main number. Appointment number 8860444888 also found. Senior Consultant, gold medalist in OB/GYN."
+    "researchNotes": "Phone 011-26515050 matches Max Hospital Saket main number. Appointment number 8860444888 also found. Senior Consultant, gold medalist in OB/GYN.",
+    "photoUrl": "https://images1-fabric.practo.com/53d013ab3d330bd1082bf516ce9fc2b45d0bd3622beb5.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-meena-naik-gynecologist-obstetrician",
+    "clinic": "Adiva Hospital"
   },
   {
     "id": 121,
@@ -11868,7 +12288,11 @@
       "1126515050",
       "9810247381"
     ],
-    "researchNotes": "Found hospital number 011-26515050 (Max Saket). Personal phone 9810247381 not verified but plausible. Also has clinic at C5/32 SDA (opp IIT gate). 38 years experience, AIIMS graduate."
+    "researchNotes": "Found hospital number 011-26515050 (Max Saket). Personal phone 9810247381 not verified but plausible. Also has clinic at C5/32 SDA (opp IIT gate). 38 years experience, AIIMS graduate.",
+    "experience": "41 years",
+    "photoUrl": "https://images1-fabric.practo.com/552e27d1019b90ec47aa3e71478f9a3fe1d15d5f7e90d.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/meeta-sarkar-gynecologist-obstetrician"
   },
   {
     "id": 123,
@@ -11981,7 +12405,7 @@
     "address": "Sant Parmanand Hospital, 18, Sham Nath Marg, Civil Lines, Delhi - 110054. Also at Sant Parmanand Clinic, KP-4, Pitampura & C-161, Lajpat Nagar 2",
     "locality": "sham nath marg",
     "hours": "",
-    "fee": "₹300",
+    "fee": "₹1000",
     "payment": [
       "Cash",
       "Credit Card",
@@ -12067,7 +12491,16 @@
     "phones": [
       "1123994401"
     ],
-    "researchNotes": "Heads the Dept of OB/GYN at Sant Parmanand Hospital. Hospital phone 011-23994401 (ext 412/416/444/400). Has own website drnirmalaagarwal.com. Multiple clinic locations."
+    "researchNotes": "Heads the Dept of OB/GYN at Sant Parmanand Hospital. Hospital phone 011-23994401 (ext 412/416/444/400). Has own website drnirmalaagarwal.com. Multiple clinic locations.",
+    "experience": "30 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/428708/dr-nirmala-agarwal-58e3776a00765.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/nirmala-agarwal-gynecologist-obstetrician",
+    "clinic": "Sant Parmanand Clinic",
+    "geo": {
+      "lat": 28.567695,
+      "lng": 77.243272
+    }
   },
   {
     "id": 125,
@@ -12079,7 +12512,7 @@
     "address": "Rockland Hospital, Sector 12, Dwarka, New Delhi & Yogashish Clinic, Tirupati Plaza, 205 Delhi Rd, Sector 11, Dwarka, New Delhi",
     "locality": "Sector 11",
     "hours": "",
-    "fee": "₹400",
+    "fee": "₹800",
     "payment": [
       "Cash"
     ],
@@ -12161,7 +12594,17 @@
     "phones": [
       "9910321573"
     ],
-    "researchNotes": "Phone 9910321573 matches. Also associated with Medeor Hospital Dwarka. MBBS, DGO. 19 years experience."
+    "researchNotes": "Phone 9910321573 matches. Also associated with Medeor Hospital Dwarka. MBBS, DGO. 19 years experience.",
+    "qualifications": "MBBS, DGO",
+    "experience": "33 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/283842/dr-nutan-yadav-67a9f65f1a8ab.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-nutan-yadav-gynecologist-obstetrician",
+    "clinic": "Aishani Clinic",
+    "geo": {
+      "lat": 28.587968,
+      "lng": 77.043558
+    }
   },
   {
     "id": 126,
@@ -12352,7 +12795,17 @@
       "01142909090",
       "8010994994"
     ],
-    "researchNotes": "Now at Sitaram Bhartia Institute, not Sant Parmanand Hospital. Hospital phone 011-42111111."
+    "researchNotes": "Now at Sitaram Bhartia Institute, not Sant Parmanand Hospital. Hospital phone 011-42111111.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "22 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/743226/dr-priti-arora-dhamija-pt-5df0bef9af29e.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/priti-arora-dhamija-gynecologist-obstetrician",
+    "clinic": "Sitaram Bhartia Institute",
+    "geo": {
+      "lat": 28.537878,
+      "lng": 77.184673
+    }
   },
   {
     "id": 128,
@@ -12364,7 +12817,7 @@
     "address": "Consultant in Obstetrics and Gynaecology at the Indrapastha Apollo Hospital, Jasola, Sarita Vihar, New Delhi Private consultation at Clinic - D-49, Hauz Khas 110016",
     "locality": "Sarita Vihar",
     "hours": "",
-    "fee": "~₹1,000",
+    "fee": "₹2000",
     "payment": [
       "Cheque"
     ],
@@ -12452,7 +12905,17 @@
       "8080802665",
       "1126925858"
     ],
-    "researchNotes": "Phone numbers found online differ from existing. Consultation fee Rs 2000. 32 years experience."
+    "researchNotes": "Phone numbers found online differ from existing. Consultation fee Rs 2000. 32 years experience.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "46 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/264704/dr-puneet-bedi-5d356420ef41d.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-puneet-bedi-gynecologist-obstetrician",
+    "clinic": "Indraprastha Apollo Hospitals",
+    "geo": {
+      "lat": 28.541326,
+      "lng": 77.283217
+    }
   },
   {
     "id": 129,
@@ -12565,7 +13028,7 @@
     "address": "1370, Pocket 1, Sector C, Vasant Kunj, New Delhi, Delhi 110070",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹1200",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -12645,7 +13108,17 @@
       "8080802665",
       "9811580166"
     ],
-    "researchNotes": "Existing phone 9811580166 not found online. Only generic helpline 8080802665 found. Address confirmed as Vasant Kunj."
+    "researchNotes": "Existing phone 9811580166 not found online. Only generic helpline 8080802665 found. Address confirmed as Vasant Kunj.",
+    "qualifications": "MBBS, DNB - Obstetrics & Gynecology",
+    "experience": "33 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-rachna-verma-1471327522-57b2ad22b10c3.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-rachna-verma-gynecologist-obstetrician",
+    "clinic": "Gynae & Imaging Point",
+    "geo": {
+      "lat": 28.53291,
+      "lng": 77.14806
+    }
   },
   {
     "id": 131,
@@ -12743,7 +13216,7 @@
     "address": "Sitaram Bhartia Institute of Science & Research, B-16, Qutab Institutional Area, Delhi 110016",
     "locality": "Sitaram Bhartia Institute of Research",
     "hours": "Sits all 6 days a week in OPD",
-    "fee": "₹800",
+    "fee": "₹1200",
     "payment": [
       "Cash"
     ],
@@ -12827,7 +13300,17 @@
       "1142111111",
       "1142909090"
     ],
-    "researchNotes": "Phone verified. Full name is Rinku Sengupta. Consultation fee Rs 1200. 30 years experience."
+    "researchNotes": "Phone verified. Full name is Rinku Sengupta. Consultation fee Rs 1200. 30 years experience.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "32 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/262959/dr-rinku-sengupta-6300aaa36f5a6.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-rinku-sengupta-gynecologist-obstetrician",
+    "clinic": "Rainbow Hospitals",
+    "geo": {
+      "lat": 28.529288,
+      "lng": 77.20464
+    }
   },
   {
     "id": 133,
@@ -12839,7 +13322,7 @@
     "address": "Sir Ganga Ram Hospital, Old Rajendra Nagar, New Delhi",
     "locality": "Gangaram Hospital",
     "hours": "",
-    "fee": "₹600",
+    "fee": "₹1000",
     "payment": [
       "Cash"
     ],
@@ -12926,7 +13409,17 @@
       "1142254000",
       "8010994994"
     ],
-    "researchNotes": "IVF and Reproductive Medicine specialist at Sir Ganga Ram Hospital. Hospital emergency number 011-42254000."
+    "researchNotes": "IVF and Reproductive Medicine specialist at Sir Ganga Ram Hospital. Hospital emergency number 011-42254000.",
+    "qualifications": "MBBS, DGO, DNB, FNB - Reproductive Medicine",
+    "experience": "26 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-ruma-satwik--1472021552-57bd443086e4b.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-ruma-satwik-gynecologist-obstetrician",
+    "clinic": "Sir Ganga Ram Hospital",
+    "geo": {
+      "lat": 28.63813,
+      "lng": 77.18936
+    }
   },
   {
     "id": 134,
@@ -12938,7 +13431,7 @@
     "address": "House No 78, Preet Vihar, Mausam Vihar, New Delhi 110051 / Cloudnine Hospital Patparganj",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹1100",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -13018,7 +13511,17 @@
     "phones": [
       "9972899728"
     ],
-    "researchNotes": "40+ years experience. Also at Cloudnine Hospital Patparganj and Max Hospital Patparganj."
+    "researchNotes": "40+ years experience. Also at Cloudnine Hospital Patparganj and Max Hospital Patparganj.",
+    "qualifications": "MS - Obstetrics & Gynaecology, MBBS",
+    "experience": "45 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/225719/dr-rupam-arora-68e4ca733195a.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-rupam-arora-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospitals",
+    "geo": {
+      "lat": 28.629528,
+      "lng": 77.315165
+    }
   },
   {
     "id": 135,
@@ -13516,7 +14019,7 @@
     "address": "Max Super Speciality Hospital 1 - 2, Press Enclave Road Saket New Delhi 110017",
     "locality": "Max Super Speciality Hospital 1 - 2",
     "hours": "",
-    "fee": "",
+    "fee": "₹1200",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -13597,7 +14100,17 @@
       "1126515050",
       "9268880303"
     ],
-    "researchNotes": "Phone verified. Address confirmed. 32 years experience. Specializes in Robotic Surgery, Gynaecologic Laparoscopy."
+    "researchNotes": "Phone verified. Address confirmed. 32 years experience. Specializes in Robotic Surgery, Gynaecologic Laparoscopy.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "33 years",
+    "photoUrl": "https://images1-fabric.practo.com/552243690d02a2d33b9f23eef81a794aae128e016d716.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-sonia-naik-gynecologist-obstetrician",
+    "clinic": "Max Smart Superspeciality Hospital",
+    "geo": {
+      "lat": 28.5274499,
+      "lng": 77.2138971
+    }
   },
   {
     "id": 141,
@@ -13801,7 +14314,7 @@
     "address": "Dr Sushmita Gyne Clinic, 1841 A, B1, Vasant Kunj, Delhi / Sukhmani Hospital, Sector-B, Pocket-7, Vasant Kunj, Delhi 110070",
     "locality": "Vasant Kunj",
     "hours": "",
-    "fee": "₹700",
+    "fee": "₹1000",
     "payment": [
       "All",
       "But Also Cards"
@@ -13884,7 +14397,17 @@
     "phones": [
       "1126134825"
     ],
-    "researchNotes": "Sukhmani Hospital phone: 011-26134825. Also has private clinic and practices at Fortis Vasant Kunj. 25 years experience."
+    "researchNotes": "Sukhmani Hospital phone: 011-26134825. Also has private clinic and practices at Fortis Vasant Kunj. 25 years experience.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "35 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/254315/dr-sushmita-mishra-5ea2cbf4232f4.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-sushmita-mishra-gynecologist-obstetrician",
+    "clinic": "Dr. Sushmita Gyne Clinic",
+    "geo": {
+      "lat": 28.544304,
+      "lng": 77.177367
+    }
   },
   {
     "id": 144,
@@ -13896,7 +14419,7 @@
     "address": "Flat 4001, Sector-D, Pocket 3 & 4, Vasant Kunj, Delhi (Opp Fortis Hospital Exit Gate) / Fortis Flt Lt Rajan Dhall Hospital, Vasant Kunj",
     "locality": "Sector D",
     "hours": "930am–1pm ",
-    "fee": "₹500",
+    "fee": "₹1600",
     "payment": [
       "Cash Only"
     ],
@@ -13976,7 +14499,17 @@
       "9818237391",
       "9899169261"
     ],
-    "researchNotes": "WhatsApp: 9818237391. Director at Fortis Vasant Kunj. Private clinic: Complete Care for Women (CCW). Existing phone may be outdated."
+    "researchNotes": "WhatsApp: 9818237391. Director at Fortis Vasant Kunj. Private clinic: Complete Care for Women (CCW). Existing phone may be outdated.",
+    "qualifications": "MBBS, DGO, DNB - Obstetrics & Gynecology",
+    "experience": "29 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/316035/dr-sutopa-banerjee-605ae9b2b7379.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-sutopa-banerjee-gynecologist-obstetrician",
+    "clinic": "Complete Care for Women",
+    "geo": {
+      "lat": 28.5186699,
+      "lng": 77.1589797
+    }
   },
   {
     "id": 145,
@@ -13988,7 +14521,7 @@
     "address": "Sitaram Bhartia Institute of Science and Research Qutub Institutional Area, New Delhi",
     "locality": "Sitaram Bhartia Institute of Science and Research Qutub Institutional Area",
     "hours": "",
-    "fee": "₹750",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Card"
@@ -14069,7 +14602,17 @@
       "1142111111",
       "8069923891"
     ],
-    "researchNotes": "Phone verified (Sitaram Bhartia hospital number). 21 years experience. Also listed at Rosewalk Hospital Malviya Nagar."
+    "researchNotes": "Phone verified (Sitaram Bhartia hospital number). 21 years experience. Also listed at Rosewalk Hospital Malviya Nagar.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/262961/dr-swati-sinha-6300ac285ae85.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-swati-sinha-gynecologist-obstetrician",
+    "clinic": "Rainbow Hospitals",
+    "geo": {
+      "lat": 28.529288,
+      "lng": 77.20464
+    }
   },
   {
     "id": 146,
@@ -14472,7 +15015,7 @@
     "address": "Sitaram Bhartia Institute of Science & Research, B-16, Qutab Institutional Area, Delhi 110016",
     "locality": "Sitaram Bhartia Hospital",
     "hours": "",
-    "fee": "₹800",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Credit Card",
@@ -14559,7 +15102,17 @@
       "1142111111",
       "8069923891"
     ],
-    "researchNotes": "Duplicate of ID 145. Same doctor at Sitaram Bhartia Hospital. Hospital phone 011-42111111."
+    "researchNotes": "Duplicate of ID 145. Same doctor at Sitaram Bhartia Hospital. Hospital phone 011-42111111.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/262961/dr-swati-sinha-6300ac285ae85.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-swati-sinha-gynecologist-obstetrician",
+    "clinic": "Rainbow Hospitals",
+    "geo": {
+      "lat": 28.529288,
+      "lng": 77.20464
+    }
   },
   {
     "id": 151,
@@ -14772,7 +15325,7 @@
     "address": "Apollo Cradle & Children's Hospital, Chirag Enclave, Delhi; also private clinic at Safdarjung Enclave, Delhi",
     "locality": "Moolchand Hospital & Private Clinic at Safdarjung Enclave",
     "hours": "",
-    "fee": "~₹800",
+    "fee": "₹1500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -14859,7 +15412,17 @@
       "18605004424",
       "9999886583"
     ],
-    "researchNotes": "Now primarily at Apollo Cradle Chirag Enclave. 1860-500-4424 is Apollo appointment line. Previously at Moolchand Hospital."
+    "researchNotes": "Now primarily at Apollo Cradle Chirag Enclave. 1860-500-4424 is Apollo appointment line. Previously at Moolchand Hospital.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "44 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/563837/dr-yuvakshi-juneja-5ca76b3230ab9.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/yuvakshi-juneja-gynecologist-obstetrician",
+    "clinic": "Apollo Cradle",
+    "geo": {
+      "lat": 28.5456878,
+      "lng": 77.2458165
+    }
   },
   {
     "id": 154,
@@ -14871,7 +15434,7 @@
     "address": "Dr. Gangwani's Clinic, 2nd Floor, Central Market, West Punjabi Bagh, Above Affinity Salon, Punjabi Bagh, New Delhi - 110026; also Apollo Cradle Moti Nagar",
     "locality": "Geeta Bhawan",
     "hours": "5pm–7pm",
-    "fee": "₹500",
+    "fee": "₹1000",
     "payment": [
       "Cash",
       "Credit Card",
@@ -14958,7 +15521,17 @@
     "phones": [
       "1130803846"
     ],
-    "researchNotes": "Could not verify phone number from search results. Address updated - now at 2nd Floor Central Market Punjabi Bagh and Apollo Cradle Moti Nagar."
+    "researchNotes": "Could not verify phone number from search results. Address updated - now at 2nd Floor Central Market Punjabi Bagh and Apollo Cradle Moti Nagar.",
+    "qualifications": "MBBS, DNB - Obstetrics & Gynecology",
+    "experience": "17 years",
+    "photoUrl": "https://images1-fabric.practo.com/537b1815e290caf3debfa132844c9a08ac3b1fa68f34b.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-arpita-gangwani-gynecologist-obstetrician",
+    "clinic": "Apollo Cradle",
+    "geo": {
+      "lat": 28.6618079,
+      "lng": 77.1502484
+    }
   },
   {
     "id": 155,
@@ -15067,7 +15640,7 @@
     "address": "Indraprastha Apollo Hospitals, Mathura Road, Sarita Vihar, Delhi; also D-49, Hauz Khas, Delhi - 110016",
     "locality": "",
     "hours": "",
-    "fee": "₹1,000",
+    "fee": "₹2000",
     "payment": [],
     "languages": [
       "English"
@@ -15147,7 +15720,17 @@
       "01171791090",
       "01171791091"
     ],
-    "researchNotes": "Senior gynaecologist with 46 years experience. At Apollo Hospitals Delhi and private clinic in Hauz Khas."
+    "researchNotes": "Senior gynaecologist with 46 years experience. At Apollo Hospitals Delhi and private clinic in Hauz Khas.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "46 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/264704/dr-puneet-bedi-5d356420ef41d.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-puneet-bedi-gynecologist-obstetrician",
+    "clinic": "Indraprastha Apollo Hospitals",
+    "geo": {
+      "lat": 28.541326,
+      "lng": 77.283217
+    }
   },
   {
     "id": 157,
@@ -15159,7 +15742,7 @@
     "address": "Sarthak Medical Centre, P-11, P Block Road, Malviya Nagar, Delhi - 110017 (near Post Office)",
     "locality": "Sarthak Medical Centre",
     "hours": "11:00–3pm, 6:00–8pm",
-    "fee": "₹600",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Credit Card",
@@ -15248,7 +15831,17 @@
       "01125085514",
       "1141881284"
     ],
-    "researchNotes": "Sarthak Medical Centre phone is 011-25085514. Existing phone 1141881284 does not match. Same doctor as ID 164."
+    "researchNotes": "Sarthak Medical Centre phone is 011-25085514. Existing phone 1141881284 does not match. Same doctor as ID 164.",
+    "qualifications": "MBBS, DGO",
+    "experience": "24 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/7102/dr-nimmi-rastogi-68c185ae91135.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-nimmi-rastogi-gynecologist-obstetrician",
+    "clinic": "Sarthak Medical Centre",
+    "geo": {
+      "lat": 28.53812,
+      "lng": 77.21592
+    }
   },
   {
     "id": 158,
@@ -15359,7 +15952,7 @@
     "address": "Indraprastha Apollo Hospitals, Mathura Road, Sarita Vihar, Delhi - 110076",
     "locality": "Indraprastha Apollo",
     "hours": "",
-    "fee": "",
+    "fee": "₹2500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -15442,7 +16035,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=485815626",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Lalita+Badhwar+gynaecologist+Indraprastha+Apollo+Hospital+Delhi",
-    "researchNotes": "Senior Consultant at Indraprastha Apollo since 1995. Over 29 years experience. No direct phone found; use Apollo 24|7 booking."
+    "researchNotes": "Senior Consultant at Indraprastha Apollo since 1995. Over 29 years experience. No direct phone found; use Apollo 24|7 booking.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "44 years",
+    "photoUrl": "https://images1-fabric.practo.com/545c7701c3839611e23eaf4a64d2f06f86c7485a55e78.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/delhi/doctor/dr-lalita-badhwar-gynecologist-obstetrician",
+    "clinic": "Indraprastha Apollo Hospitals",
+    "geo": {
+      "lat": 28.541326,
+      "lng": 77.283217
+    }
   },
   {
     "id": 160,
@@ -16556,7 +17159,7 @@
     "address": "Paras hospital, sushant lok 1, gurgaon haryana and Mum's clinic, south city 2 market, gurgaon, haryana",
     "locality": "south city 2 market",
     "hours": "9am–2pm and 6pm–8pm",
-    "fee": "₹500",
+    "fee": "₹1800",
     "payment": [
       "Cash",
       "Credit Card",
@@ -16649,7 +17252,17 @@
     "phones": [
       "1242219357"
     ],
-    "researchNotes": "No longer at Paras Hospital. Now Director at CK Birla Hospital Gurgaon. Also runs The Mums Clinic. Old address (Paras/Sushant Lok) outdated."
+    "researchNotes": "No longer at Paras Hospital. Now Director at CK Birla Hospital Gurgaon. Also runs The Mums Clinic. Old address (Paras/Sushant Lok) outdated.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "30 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/283121/dr-aruna-kalra-66eaa9cd826aa.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/gurgaon/doctor/dr-aruna-kalra-gynecologist-obstetrician",
+    "clinic": "CK Birla Hospital",
+    "geo": {
+      "lat": 28.423363,
+      "lng": 77.061329
+    }
   },
   {
     "id": 172,
@@ -16661,7 +17274,7 @@
     "address": "Neelkanth Infertility & IVF Hospital, 1 Main Mehrauli-Gurgaon Road, Near Guru Dronacharya Metro Station, DLF Phase 3, Gurugram, Haryana - 122022",
     "locality": "near guru dronacharya metro station",
     "hours": "",
-    "fee": "₹700",
+    "fee": "₹1000",
     "payment": [
       "Cash",
       "Credit Card",
@@ -16747,7 +17360,17 @@
       "01244063697",
       "09810422141"
     ],
-    "researchNotes": "WhatsApp: +91 9818 2373 91. Neelkanth Hospital phones: 0124-4700500, 0124-4063697, 09810422141. 45 years experience."
+    "researchNotes": "WhatsApp: +91 9818 2373 91. Neelkanth Hospital phones: 0124-4700500, 0124-4063697, 09810422141. 45 years experience.",
+    "qualifications": "MBBS",
+    "experience": "45 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/239794/dr-bindu-5acca5c1d07fd.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/gurgaon/doctor/dr-bindu-garg-gynecologist-obstetrician",
+    "clinic": "Neelkanth Infertility & IVF Hospitals",
+    "geo": {
+      "lat": 28.483497,
+      "lng": 77.107694
+    }
   },
   {
     "id": 173,
@@ -16759,7 +17382,7 @@
     "address": "Cloudnine Hospital, Golf Course Road & Sector 47, Gurgaon; also Good Health Clinic, D-232, Sushant Lok Phase 2, Sector 56, Gurgaon",
     "locality": "Max Hospital",
     "hours": "8am–2pm",
-    "fee": "₹1,000",
+    "fee": "₹1500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -16844,7 +17467,17 @@
       "9811130580",
       "9972899728"
     ],
-    "researchNotes": "Former Director at Max Hospital Gurgaon, now at Cloudnine Hospital. Phone: +91 98111 30580. Cloudnine: 99728 99728."
+    "researchNotes": "Former Director at Max Hospital Gurgaon, now at Cloudnine Hospital. Phone: +91 98111 30580. Cloudnine: 99728 99728.",
+    "qualifications": "MBBS, DGO, DNB - Obstetrics & Gynecology",
+    "experience": "30 years",
+    "photoUrl": "https://images1-fabric.practo.com/544742c11c2d34e5b6538ea1bfe7652a7f0989952e790.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/gurgaon/doctor/dr-deepa-dewan-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 28.4248992,
+      "lng": 77.10356
+    }
   },
   {
     "id": 174,
@@ -16950,7 +17583,7 @@
     "address": "Myra IVF Centre, Sushant Shopping Arcade, G-304FF, 3rd Floor, Sushant Lok I, Gurgaon - 122009 (DLF Phase IV area)",
     "locality": "DLF Phase 4",
     "hours": "",
-    "fee": "",
+    "fee": "₹800",
     "payment": [
       "Cash"
     ],
@@ -17039,7 +17672,17 @@
     "phones": [
       "9811233328"
     ],
-    "researchNotes": "Founder of Myra IVF Centre. Could not verify phone from search results. 22+ years experience. Also practices in Nairobi, Kenya."
+    "researchNotes": "Founder of Myra IVF Centre. Could not verify phone from search results. 22+ years experience. Also practices in Nairobi, Kenya.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "30 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-sarita-sukhija-1474547245-57e3ce2d0f396.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/gurgaon/doctor/dr-sarita-sukhija-gynecologist-obstetrician",
+    "clinic": "Myra IVF Centre",
+    "geo": {
+      "lat": 28.460011,
+      "lng": 77.077494
+    }
   },
   {
     "id": 176,
@@ -17051,7 +17694,7 @@
     "address": "Madhukar Rainbow Children Hospital, Malviya Nagar, New Delhi (primarily Delhi-based, not confirmed at Galleria Gurgaon)",
     "locality": "Galleria",
     "hours": "Not sure. it is different on different days. She has been available as early as 8:30am for follow with tests",
-    "fee": "₹750",
+    "fee": "₹1200",
     "payment": [
       "Cash",
       "Credit Card",
@@ -17132,7 +17775,17 @@
     "badges": [],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=753802503",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Swati+Sinha+gynaecologist+Galleria+Gurgaon",
-    "researchNotes": "Dr Swati Sinha appears to practice primarily in Delhi (Sitaram Bhartia Hospital, Rainbow Hospitals Malviya Nagar). No specific Galleria Gurgaon clinic confirmed."
+    "researchNotes": "Dr Swati Sinha appears to practice primarily in Delhi (Sitaram Bhartia Hospital, Rainbow Hospitals Malviya Nagar). No specific Galleria Gurgaon clinic confirmed.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/262961/dr-swati-sinha-6300ac285ae85.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/gurgaon/doctor/dr-swati-sinha-gynecologist-obstetrician",
+    "clinic": "Rainbow Hospitals",
+    "geo": {
+      "lat": 28.529288,
+      "lng": 77.20464
+    }
   },
   {
     "id": 177,
@@ -17228,7 +17881,9 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1037149038",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Rita+Mishra+gynaecologist+Mishra+Health+Care+Centre+Kampoo+Gwalior",
-    "researchNotes": "Address found via Justdial but phone number not available in search results. Listed as paediatrician on Justdial."
+    "researchNotes": "Address found via Justdial but phone number not available in search results. Listed as paediatrician on Justdial.",
+    "dataFlag": "unverified-specialty",
+    "dataFlagReason": "Listed as paediatrician on Justdial, not gynaecologist"
   },
   {
     "id": 178,
@@ -17814,7 +18469,9 @@
     "phones": [
       "403931044410571118001086666"
     ],
-    "researchNotes": "Existing phone appears to be concatenated numbers (040-39310444, 10571, 18001086666). Dr B Lavanya is a consultant at CARE Hospitals Banjara Hills. Specific direct phone not found."
+    "researchNotes": "Existing phone appears to be concatenated numbers (040-39310444, 10571, 18001086666). Dr B Lavanya is a consultant at CARE Hospitals Banjara Hills. Specific direct phone not found.",
+    "dataFlag": "unverified-specialty",
+    "dataFlagReason": "Practo matched a different Dr. Lavanya (physiotherapist at Dilsukhnagar). Original entry is at CARE Hospitals Banjara Hills - could not verify specialty"
   },
   {
     "id": 184,
@@ -17917,7 +18574,7 @@
     "address": "Rainbow Hospitals 22, Road No. 4, (Old Road No. 10), Karvy Lanes, Banjara Hills, Hyderabad 500034",
     "locality": "Karvy Lanes",
     "hours": "24/7",
-    "fee": "₹600",
+    "fee": "₹200",
     "payment": [
       "Cash",
       "Credit Card",
@@ -18008,7 +18665,17 @@
       "8035358317",
       "4023319191"
     ],
-    "researchNotes": "Existing phone 4023319191 does not match found phone 8035358317. She is Clinical Director for OB/GYN at Rainbow Hospitals. Found phone may be a booking helpline."
+    "researchNotes": "Existing phone 4023319191 does not match found phone 8035358317. She is Clinical Director for OB/GYN at Rainbow Hospitals. Found phone may be a booking helpline.",
+    "qualifications": "MBBS",
+    "experience": "5 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/1561449/dr-pranathi-reddy-6792635ec2590.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/hyderabad/doctor/pranathi-reddy-gynecologist-obstetrician",
+    "clinic": "Saikrishna Hospital",
+    "geo": {
+      "lat": 16.741173,
+      "lng": 77.491392
+    }
   },
   {
     "id": 186,
@@ -18425,7 +19092,7 @@
     "address": "Continental Hospitals, Plot No 3, Road No 2, IT & Financial District, Nanakramguda, Gachibowli, Hyderabad - 500032",
     "locality": "Continental Hospital Gachibowli",
     "hours": "Weekdays 11–1700hrs",
-    "fee": "~₹600",
+    "fee": "₹400",
     "payment": [
       "Cash",
       "Credit Card",
@@ -18514,7 +19181,17 @@
       "04061626364",
       "4067000000"
     ],
-    "researchNotes": "Existing phone 4067000000 matches Continental Hospital main number 040-67000000. Full name: Dr Suneetha Kumari Putchala."
+    "researchNotes": "Existing phone 4067000000 matches Continental Hospital main number 040-67000000. Full name: Dr Suneetha Kumari Putchala.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/562544/dr-suneetha-kumari-p-5de89d0254354.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/hyderabad/doctor/dr-suneetha-kumari-gynecologist-obstetrician",
+    "clinic": "Olive Hospital",
+    "geo": {
+      "lat": 17.39362,
+      "lng": 78.42734
+    }
   },
   {
     "id": 191,
@@ -18714,7 +19391,7 @@
     "address": "MY hospital. Indore",
     "locality": "MY hospital. Indore",
     "hours": "24/7",
-    "fee": "",
+    "fee": "₹500",
     "payment": [
       "Cash"
     ],
@@ -18802,7 +19479,12 @@
     "phones": [
       "9827201578"
     ],
-    "researchNotes": "Dr Ruchi Joshi has MS from MGM Medical College & MY Hospital (DAVV) Indore. Could not verify the phone number 9827201578 online. She may now be in Udaipur."
+    "researchNotes": "Dr Ruchi Joshi has MS from MGM Medical College & MY Hospital (DAVV) Indore. Could not verify the phone number 9827201578 online. She may now be in Udaipur.",
+    "qualifications": "MS - Obstetrics & Gynaecology, MBBS",
+    "experience": "14 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/indore/doctor/ruchi-joshi-gynecologist-obstetrician",
+    "clinic": "Zindgi Care Clinic"
   },
   {
     "id": 194,
@@ -18814,7 +19496,7 @@
     "address": "Holy Family Hospital, B-18, Prabhu Marg, Tilak Nagar, Jaipur, Rajasthan - 302004",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹550",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -18902,7 +19584,16 @@
       "01412621929",
       "01414109331"
     ],
-    "researchNotes": "Dr Neetu Ahluwalia practices at Holy Family Hospital, Jaipur. 32 years experience. MD from AFMC Pune."
+    "researchNotes": "Dr Neetu Ahluwalia practices at Holy Family Hospital, Jaipur. 32 years experience. MD from AFMC Pune.",
+    "experience": "32 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/644516/dr-neetu-ahluwalia-5aaca736e94c3.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/jaipur/doctor/neetu-ahluwalia-gynecologist-obstetrician",
+    "clinic": "Holy Family Hospital",
+    "geo": {
+      "lat": 26.893454,
+      "lng": 75.824424
+    }
   },
   {
     "id": 195,
@@ -19286,7 +19977,7 @@
     "address": "Gynae Care Fertility Centre, 1/2, Harish Mukherjee Road, Behind Elgin Gol Mandir, Opposite Gupta Brothers Restaurant, Kolkata - 700025",
     "locality": "Harish Mukherjee Road",
     "hours": "",
-    "fee": "~₹500",
+    "fee": "₹500",
     "payment": [],
     "languages": [
       "English",
@@ -19366,7 +20057,16 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=710235079",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Abhishek+Daga+gynaecologist+Harish+Mukherjee+Road+Kolkata",
-    "researchNotes": "Address confirmed. Consultation fee Rs 1500. Also practices at Tollygunge. Specializes in IVF/infertility. Direct phone not found."
+    "researchNotes": "Address confirmed. Consultation fee Rs 1500. Also practices at Tollygunge. Specializes in IVF/infertility. Direct phone not found.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "21 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/kolkata/doctor/abhishek-daga-gynecologist-obstetrician",
+    "clinic": "GynaeCare Fertility Centre",
+    "geo": {
+      "lat": 22.505098,
+      "lng": 88.345623
+    }
   },
   {
     "id": 200,
@@ -19864,7 +20564,7 @@
     "address": "242/1B, Arvind Tower, Near Khanna Cinema, APC Road, Shyambazar, Kolkata 700004",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹500",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -19943,7 +20643,16 @@
     "phones": [
       "9830931983"
     ],
-    "researchNotes": "32 years experience. Specializes in Gyne Laparoscopy and Vaginal Surgery. Website: gynecologykolkata.com. Email: drpallab@yahoo.com"
+    "researchNotes": "32 years experience. Specializes in Gyne Laparoscopy and Vaginal Surgery. Website: gynecologykolkata.com. Email: drpallab@yahoo.com",
+    "experience": "33 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/267608/dr-pallab-gangopadhyay-592f89fe55ef8.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/kolkata/doctor/dr-pallab-gangopadhyay-gynecologist-obstetrician",
+    "clinic": "Dr. Pallabs Gynaec Center",
+    "geo": {
+      "lat": 22.5946237,
+      "lng": 88.3763034
+    }
   },
   {
     "id": 206,
@@ -20335,7 +21044,9 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=710235079",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Sanjoy+Sen+gynaecologist+AMRI+Salt+Lake+Kolkata",
-    "researchNotes": "Dr. Sanjoy Sen passed away on August 31, 2020 due to COVID-19. He was 65 years old. Was Senior Consultant Gynecology & Obstetrics at Fortis Anandapur and AMRI/Manipal Hospitals."
+    "researchNotes": "Dr. Sanjoy Sen passed away on August 31, 2020 due to COVID-19. He was 65 years old. Was Senior Consultant Gynecology & Obstetrics at Fortis Anandapur and AMRI/Manipal Hospitals.",
+    "dataFlag": "deceased",
+    "dataFlagReason": "Passed away August 2020 (COVID-19)"
   },
   {
     "id": 210,
@@ -20347,7 +21058,7 @@
     "address": "Gynae Care Fertility Centre, 45 Deshapran Sasmal Road, Kolkata 700033 (Near Rabindra Sarobar Metro Gate 6, Opp Bhawani Cinema Hall)",
     "locality": "Gynaecare",
     "hours": "",
-    "fee": "₹600",
+    "fee": "₹500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -20436,7 +21147,16 @@
     "phones": [
       "9433367751"
     ],
-    "researchNotes": "Also at Gynae Care Clinic, Bhowanipore. MBBS, MS, MRCOG1 London. Phone hours: 8am-8pm. Email: gynaecareclinic@yahoo.co.in"
+    "researchNotes": "Also at Gynae Care Clinic, Bhowanipore. MBBS, MS, MRCOG1 London. Phone hours: 8am-8pm. Email: gynaecareclinic@yahoo.co.in",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "21 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/kolkata/doctor/abhishek-daga-gynecologist-obstetrician",
+    "clinic": "GynaeCare Fertility Centre",
+    "geo": {
+      "lat": 22.505098,
+      "lng": 88.345623
+    }
   },
   {
     "id": 211,
@@ -20756,7 +21476,7 @@
     "address": "Gynae Care Clinic, 1/2 Harish Mukherjee Road, Behind Gol Mandir, Near Rabindra Sadan Metro Station, Kolkata 700020",
     "locality": "",
     "hours": "",
-    "fee": "₹500",
+    "fee": "₹1500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -20850,7 +21570,17 @@
     "phones": [
       "8981020004"
     ],
-    "researchNotes": "21 years experience. MBBS, MS OBG, MRCOG London. Also at Royd Nursing Home, Park Street. Website: drpallavidaga.com. Direct clinic phone not found online."
+    "researchNotes": "21 years experience. MBBS, MS OBG, MRCOG London. Also at Royd Nursing Home, Park Street. Website: drpallavidaga.com. Direct clinic phone not found online.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology, MRCOG(UK)",
+    "experience": "21 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/79772/dr-pallavi-daga-5df9d6e366035.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/kolkata/doctor/dr-pallavi-daga-gynecologist-obstetrician",
+    "clinic": "Gynae Care Clinic",
+    "geo": {
+      "lat": 22.53837,
+      "lng": 88.34533
+    }
   },
   {
     "id": 215,
@@ -21941,7 +22671,16 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Cherry+Shah+gynaecologist+Lilavati+Hospital+Bandra+Mumbai",
-    "researchNotes": "Full name: Dr. Cherry C. Shah. 35 years experience. Practices at Lilavati Hospital Bandra and Sujay Hospital Juhu. Adjudged Top 10 OB-GYN Mumbai by India Today for 3 consecutive years."
+    "researchNotes": "Full name: Dr. Cherry C. Shah. 35 years experience. Practices at Lilavati Hospital Bandra and Sujay Hospital Juhu. Adjudged Top 10 OB-GYN Mumbai by India Today for 3 consecutive years.",
+    "qualifications": "MBBS, DGO, MD - Obstetrics & Gynaecology",
+    "experience": "50 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-cherry-shah-gynecologist-obstetrician",
+    "clinic": "DOC Clinic",
+    "geo": {
+      "lat": 19.0880895,
+      "lng": 72.9077283
+    }
   },
   {
     "id": 226,
@@ -22224,7 +22963,15 @@
       "02223803965",
       "23803965"
     ],
-    "researchNotes": "Phone matches (23803965 is part of 022-23803965). Also has number 022-23802584."
+    "researchNotes": "Phone matches (23803965 is part of 022-23803965). Also has number 022-23802584.",
+    "experience": "51 years",
+    "photoUrl": "https://images1-fabric.practo.com/55240e0a70e2492587f15ba537ef51cbc05fb3f3008dc.jpg",
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-duru-shah-gynecologist-obstetrician",
+    "clinic": "Gynaecworld",
+    "geo": {
+      "lat": 18.964322,
+      "lng": 72.817405
+    }
   },
   {
     "id": 229,
@@ -22236,7 +22983,7 @@
     "address": "Jaslok-FertilTree International Fertility Centre, 8th Floor, 15 Pedder Rd, Mumbai 400026",
     "locality": "Jaslok",
     "hours": "9am–4pm",
-    "fee": "~₹2,500",
+    "fee": "₹4000",
     "payment": [
       "Cash",
       "Cheque"
@@ -22323,7 +23070,17 @@
       "02266573175",
       "9920842070"
     ],
-    "researchNotes": "Director of Assisted Reproduction and Genetics at Jaslok Hospital. Also contact Dilnavaz at 9920842070."
+    "researchNotes": "Director of Assisted Reproduction and Genetics at Jaslok Hospital. Also contact Dilnavaz at 9920842070.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, DGO, FCPS",
+    "experience": "46 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-firuza-r-parikh-1469193399-57921cb7b92f3.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-firuza-parikh-gynecologist-obstetrician",
+    "clinic": "Sir H.N. Reliance Foundation Hospital",
+    "geo": {
+      "lat": 18.958851,
+      "lng": 72.820049
+    }
   },
   {
     "id": 230,
@@ -22527,7 +23284,7 @@
     "address": "Building No 61, Ground Floor, Gandhi Nagar, Bandra East, Mumbai 400051, Opposite Bank of Maharashtra, Near MIG Cricket Club",
     "locality": "Own clinic at Kalanagar",
     "hours": "varies by days",
-    "fee": "₹800",
+    "fee": "₹1800",
     "payment": [
       "Cash"
     ],
@@ -22606,7 +23363,17 @@
     "phones": [
       "2226557516"
     ],
-    "researchNotes": "Practices at Obstetrics & Gynaecology Centre, Bandra East. Address is Gandhi Nagar, not Kalanagar as listed. Also attached to Guru Nanak Hospital per original data."
+    "researchNotes": "Practices at Obstetrics & Gynaecology Centre, Bandra East. Address is Gandhi Nagar, not Kalanagar as listed. Also attached to Guru Nanak Hospital per original data.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "33 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/579938/dr-jyoti-shetty-699d5a2154417.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-jyoti-shetty-gynecologist-obstetrician",
+    "clinic": "Obstetrics & Gynaecology Centre",
+    "geo": {
+      "lat": 19.058183,
+      "lng": 72.848238
+    }
   },
   {
     "id": 233,
@@ -22719,7 +23486,7 @@
     "address": "Dr. Gujar's Maternity and Surgical Hospital, 1st Floor, Satnam Apartments, Lokmanya Tilak Road, Mulund East, Mumbai 400081",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹800",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -22793,7 +23560,16 @@
     "badges": [],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Kavita+Gujar+gynaecologist+Mulund+East+Mumbai",
-    "researchNotes": "Name likely Dr Kavita Rajeev Gujar. Also practices at Godrej Memorial Hospital, Vikhroli. 24 years experience. Website: drkavitagujar.in"
+    "researchNotes": "Name likely Dr Kavita Rajeev Gujar. Also practices at Godrej Memorial Hospital, Vikhroli. 24 years experience. Website: drkavitagujar.in",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/580976/dr-dr-kavita-rajeev-gujar-58f4f25c7fb46.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/kavita-gujjar-gynecologist-obstetrician",
+    "clinic": "Dr. Gujars Maternity Hospital",
+    "geo": {
+      "lat": 19.171348,
+      "lng": 72.959069
+    }
   },
   {
     "id": 235,
@@ -23288,7 +24064,7 @@
     "address": "Bombay Hospital & Medical Research Centre, Marine Lines, Mumbai; also Pai Dhungat Nursing Home, Girgaon, Mumbai",
     "locality": "Bombay Hospital",
     "hours": "6:30–8pm",
-    "fee": "₹1,500",
+    "fee": "₹2500",
     "payment": [
       "Cash"
     ],
@@ -23369,7 +24145,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Nitin+Pai+Dhungat+gynaecologist+Bombay+Hospital+Marine+Lines+Mumbai",
-    "researchNotes": "Also practices at Apollo Spectra Hospitals, Tardeo. 20 years experience. DGO, DNB, Member of Royal College UK."
+    "researchNotes": "Also practices at Apollo Spectra Hospitals, Tardeo. 20 years experience. DGO, DNB, Member of Royal College UK.",
+    "qualifications": "DGO, DNB - Obstetrics & Gynecology, MBBS",
+    "experience": "24 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/192659/dr-nitin-pai-dhungat-69707dea1c92e.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-nitin-pai-dhungat-gynecologist-obstetrician",
+    "clinic": "Sir H.N. Reliance Foundation Hospital",
+    "geo": {
+      "lat": 18.958851,
+      "lng": 72.820049
+    }
   },
   {
     "id": 241,
@@ -23478,7 +24264,7 @@
     "address": "Sangita Maternity Surgical & Diagnostic Centre, 11 Ganga Vihar Residency, 174 S V Road, Andheri West, Mumbai 400058, Opp Dena Bank, Behind Center Square",
     "locality": "Shree Ram Nagar",
     "hours": "",
-    "fee": "₹1,200",
+    "fee": "₹2000",
     "payment": [
       "Cash",
       "Debit Card",
@@ -23564,7 +24350,17 @@
     "phones": [
       "2226704687"
     ],
-    "researchNotes": "29 years experience. Address matches existing data. Clinic: Sangita Maternity Surgical & Diagnostic Centre."
+    "researchNotes": "29 years experience. Address matches existing data. Clinic: Sangita Maternity Surgical & Diagnostic Centre.",
+    "qualifications": "MBBS, MD, DGO, FCPS, MSc Counselling",
+    "experience": "30 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/73122/dr-priti-s-vyas-5925349037518.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/priti-vyas-gynecologist-obstetrician",
+    "clinic": "Sangita Maternity Centre",
+    "geo": {
+      "lat": 19.118072,
+      "lng": 72.844186
+    }
   },
   {
     "id": 243,
@@ -23759,7 +24555,9 @@
     "phones": [
       "9892691627"
     ],
-    "researchNotes": "Only first name 'Rahul' provided with no address or locality - unable to identify specific doctor. Too generic to search."
+    "researchNotes": "Only first name 'Rahul' provided with no address or locality - unable to identify specific doctor. Too generic to search.",
+    "dataFlag": "placeholder",
+    "dataFlagReason": "Only first name provided, cannot verify identity"
   },
   {
     "id": 245,
@@ -23863,7 +24661,7 @@
     "address": "Dr L H Hiranandani Hospital, Hill Side Avenue, Hiranandani Gardens, Powai, Mumbai (400 076)",
     "locality": "Hiranandani Gardens",
     "hours": "8am–8pm",
-    "fee": "₹900",
+    "fee": "₹1300",
     "payment": [
       "Cash",
       "Cheque",
@@ -23954,7 +24752,17 @@
     "phones": [
       "08080802665"
     ],
-    "researchNotes": "Full Time Consultant Gynecologist & Obstetrician at Hiranandani Hospital since Jan 2012. 27 years experience. Phone is hospital appointment line."
+    "researchNotes": "Full Time Consultant Gynecologist & Obstetrician at Hiranandani Hospital since Jan 2012. 27 years experience. Phone is hospital appointment line.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "28 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/243363/dr-rakhee-sahu-5ddf70ae28c79.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-rakhee-sahu-gynecologist-obstetrician",
+    "clinic": "Dr L H Hiranandani Hospital",
+    "geo": {
+      "lat": 19.12032,
+      "lng": 72.91731
+    }
   },
   {
     "id": 247,
@@ -24334,7 +25142,9 @@
       "sex-positive"
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
-    "researchNotes": "Placeholder entry - not a real doctor name. Cannot search."
+    "researchNotes": "Placeholder entry - not a real doctor name. Cannot search.",
+    "dataFlag": "placeholder",
+    "dataFlagReason": "Not a real doctor entry"
   },
   {
     "id": 251,
@@ -24346,7 +25156,7 @@
     "address": "Samadhan Chs, Hanuman Chowk, L T Road, Mulund East Landmark: Near Bawarchi Hotel",
     "locality": "Hanuman Chowk",
     "hours": "",
-    "fee": "",
+    "fee": "₹500",
     "payment": [
       "Cash",
       "Cheque"
@@ -24437,7 +25247,17 @@
       "2221635353",
       "2225637519"
     ],
-    "researchNotes": "Name spelled as Samir Pradhan on most platforms. Practices at Samarth Maternity & Nursing Home."
+    "researchNotes": "Name spelled as Samir Pradhan on most platforms. Practices at Samarth Maternity & Nursing Home.",
+    "qualifications": "MBBS, DNB - Obstetrics & Gynecology, DGO",
+    "experience": "31 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/503187/dr-samir-pradhan-5b220b85378c0.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/sameer-pradhan-gynecologist-obstetrician",
+    "clinic": "Godrej Memorial Hospital",
+    "geo": {
+      "lat": 19.10377,
+      "lng": 72.92738
+    }
   },
   {
     "id": 252,
@@ -24639,7 +25459,11 @@
     "phones": [
       "2224444444"
     ],
-    "researchNotes": "Practices at Family Care Hospitals (Pikale Hospital) in Mahim West and S.L. Raheja Hospital. Phone not found online; existing phone 2224444444 looks suspicious (repeated digits)."
+    "researchNotes": "Practices at Family Care Hospitals (Pikale Hospital) in Mahim West and S.L. Raheja Hospital. Phone not found online; existing phone 2224444444 looks suspicious (repeated digits).",
+    "experience": "37 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/525000/dr-shantala-vadeyar-59cb875bd1448.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-shantala-vadeyar-gynecologist-obstetrician"
   },
   {
     "id": 254,
@@ -24837,7 +25661,9 @@
     "phones": [
       "2226007272"
     ],
-    "researchNotes": "Dr Sheetal Mistry is a UROLOGIST, not a gynaecologist. She is not associated with Tulip Clinic. There may be confusion with Dr Sheetal Sabharwal who is at Tulip Women's Health Care Centre."
+    "researchNotes": "Dr Sheetal Mistry is a UROLOGIST, not a gynaecologist. She is not associated with Tulip Clinic. There may be confusion with Dr Sheetal Sabharwal who is at Tulip Women's Health Care Centre.",
+    "dataFlag": "wrong-specialty",
+    "dataFlagReason": "Urologist, not gynaecologist"
   },
   {
     "id": 256,
@@ -24941,7 +25767,7 @@
     "address": "Vazifdar Clinic, 2nd Floor, Deccan Court, S.V. Road, (behind Shopper's Stop, Next to Suburbia Theatre), Khar West, Mumbai Khar hinduja Paris general hospital Masina",
     "locality": "Next to Suburbia Theatre)",
     "hours": "10am–7pm",
-    "fee": "₹800",
+    "fee": "₹1300",
     "payment": [
       "Cash"
     ],
@@ -25031,7 +25857,17 @@
       "9653451280",
       "2226415289"
     ],
-    "researchNotes": "Also practices at Holy Family Hospital, Bandra and Masina Hospital. Own website: drshirazvazifdar.com. Mobile: 9653451280."
+    "researchNotes": "Also practices at Holy Family Hospital, Bandra and Masina Hospital. Own website: drshirazvazifdar.com. Mobile: 9653451280.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "22 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/249309/dr-sonal-kumta-59004f8ff0bd3.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-sonal-kumta-gynecologist-obstetrician",
+    "clinic": "Fortis Hospital",
+    "geo": {
+      "lat": 19.161794,
+      "lng": 72.94181
+    }
   },
   {
     "id": 258,
@@ -25137,7 +25973,7 @@
     "address": "Dr. Shyam V Desai Daftary Total Care Clinic, 2, Ashok Nagar, N S Road No. 11, JVPD Scheme, Juhu, Mumbai - 400049",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹1300",
     "payment": [
       "Cash"
     ],
@@ -25218,7 +26054,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Shyam+V+Desai+gynaecologist+Juhu+Mumbai",
-    "researchNotes": "Also practices at Mothercare Nursing Home, Khar West. 40 years experience. Consultation fee INR 2000. Phone not found in search results."
+    "researchNotes": "Also practices at Mothercare Nursing Home, Khar West. 40 years experience. Consultation fee INR 2000. Phone not found in search results.",
+    "qualifications": "MD - Obstetrics & Gynaecology, MBBS",
+    "experience": "49 years",
+    "photoUrl": "https://images1-fabric.practo.com/555f7da89c49d03c7c0ace395d80182db07ae2c30f034.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-shyam-desai-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 19.1755,
+      "lng": 72.8375
+    }
   },
   {
     "id": 260,
@@ -25331,7 +26177,7 @@
     "address": "Akanksha Maternity & Surgical Hospital 6, Manish Tower, Manish Nagar, Four Bunglow, J P Road, Opposite Manish Shopping Centre, Andheri West, Mumbai She also has a private clinic nearby at Sunderban",
     "locality": "Opposite Manish Shopping Centre",
     "hours": "Mon–Sat  7pm–9pm",
-    "fee": "₹400",
+    "fee": "₹1500",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "Unknown",
@@ -25411,7 +26257,17 @@
       "8779620837",
       "2226353117"
     ],
-    "researchNotes": "Mobile found: 8779620837. Also runs GyneLaproClinic (gynelaproclinic.in) with Dr. Sanket Pisat."
+    "researchNotes": "Mobile found: 8779620837. Also runs GyneLaproClinic (gynelaproclinic.in) with Dr. Sanket Pisat.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "29 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/901130/dr-sudeshna-ray-5fe24b5727af2.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-sudeshna-ray-gynecologist-obstetrician",
+    "clinic": "Apollo Hospitals",
+    "geo": {
+      "lat": 19.0206558,
+      "lng": 72.9467003
+    }
   },
   {
     "id": 262,
@@ -25423,7 +26279,7 @@
     "address": "Kokilaben Dhirubhai Ambani Hospital, Rao Saheb Achutrao Patwardhan Marg, Four Bunglows, Andheri West, Mumbai - 400053",
     "locality": "Kokilaben Ambani",
     "hours": "0900–1730",
-    "fee": "₹1,000",
+    "fee": "₹2000",
     "payment": [
       "Cash"
     ],
@@ -25501,7 +26357,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Suchitra+Pandit+gynaecologist+Kokilaben+Dhirubhai+Ambani+Hospital+Mumbai",
-    "researchNotes": "Senior Consultant & Head of Gynaecology at Kokilaben Hospital. 35+ years experience. MBBS, MD, DGO, MRCOG, FICOG. Phone not found in search results."
+    "researchNotes": "Senior Consultant & Head of Gynaecology at Kokilaben Hospital. 35+ years experience. MBBS, MD, DGO, MRCOG, FICOG. Phone not found in search results.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "43 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/242456/dr-suchitra-pandit-5c1a14d84fa4b.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-suchitra-pandit-gynecologist-obstetrician",
+    "clinic": "Surya Hospitals",
+    "geo": {
+      "lat": 19.08552,
+      "lng": 72.837638
+    }
   },
   {
     "id": 263,
@@ -25513,7 +26379,7 @@
     "address": "Nanavati Super Specialty Hospital, S.V. Road, Opposite Pavan Hans & Juhu Beach, Mumbai / Sujay Hospital, Juhu",
     "locality": "Sujay Hospital",
     "hours": "",
-    "fee": "₹600",
+    "fee": "₹2000",
     "payment": [
       "Cash and Card"
     ],
@@ -25602,7 +26468,17 @@
       "8080802665",
       "9821430760"
     ],
-    "researchNotes": "Also practices at Nanavati Super Speciality Hospital, Vile Parle West. 18 years experience. The phone 8080802665 may be a generic booking number."
+    "researchNotes": "Also practices at Nanavati Super Speciality Hospital, Vile Parle West. 18 years experience. The phone 8080802665 may be a generic booking number.",
+    "qualifications": "MD - Obstetrics & Gynaecology, MBBS",
+    "experience": "29 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-tanuja-uchil-1483697632-586f6de062518.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-tanuja-uchil-gynecologist-obstetrician",
+    "clinic": "Oma Hospital",
+    "geo": {
+      "lat": 19.051376,
+      "lng": 72.901717
+    }
   },
   {
     "id": 264,
@@ -26006,7 +26882,16 @@
       "9820620532",
       "9920914115"
     ],
-    "researchNotes": "Name spelled Uchil on most platforms. Hospital name is Oma Hospital (not Uma). Also reachable at 9820620532, 9920914115. Email: dr.tanuja@omahospital.com"
+    "researchNotes": "Name spelled Uchil on most platforms. Hospital name is Oma Hospital (not Uma). Also reachable at 9820620532, 9920914115. Email: dr.tanuja@omahospital.com",
+    "experience": "43 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/219207/dr-uday-thanawala-thanawalla-5c73bc83b58a1.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-uday-thanawala-gynecologist-obstetrician",
+    "clinic": "Dr Uday J Thanawala Clinic",
+    "geo": {
+      "lat": 19.07363,
+      "lng": 72.999353
+    }
   },
   {
     "id": 268,
@@ -26117,7 +27002,7 @@
     "address": "Cloudnine Hospital, Siddhachal Arcade, CTS No. 1084-C & 1186-A, New Link Road, Malad West, Mumbai",
     "locality": "",
     "hours": "",
-    "fee": "",
+    "fee": "₹1600",
     "payment": [
       "Cash"
     ],
@@ -26196,7 +27081,17 @@
     "phones": [
       "09972899728"
     ],
-    "researchNotes": "Consultant at Cloudnine Hospital, Malad. Also practiced at Sanjeevani Surgical & General Hospital, Malad East. Cloudnine appointment number: 09972899728."
+    "researchNotes": "Consultant at Cloudnine Hospital, Malad. Also practiced at Sanjeevani Surgical & General Hospital, Malad East. Cloudnine appointment number: 09972899728.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/687783/dr-vibha-arora-5ba88fb853448.jpeg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/vibha-arora-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 19.1755,
+      "lng": 72.8375
+    }
   },
   {
     "id": 270,
@@ -26299,7 +27194,11 @@
       "8108232856",
       "2229677788"
     ],
-    "researchNotes": "Hospital also known as Arya Women's Hospital. Website: aryafertilitycentre.com. Mobile: 8108232856. 15+ years experience."
+    "researchNotes": "Hospital also known as Arya Women's Hospital. Website: aryafertilitycentre.com. Mobile: 8108232856. 15+ years experience.",
+    "experience": "37 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/525000/dr-shantala-vadeyar-59cb875bd1448.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-shantala-vadeyar-gynecologist-obstetrician"
   },
   {
     "id": 271,
@@ -26985,7 +27884,7 @@
     "address": "Plot No. 38/39, Main Gulmohar Rd, JVPD Scheme, Juhu, Andheri West, Mumbai",
     "locality": "Criti care juhu & Andheri",
     "hours": "10am by appointment",
-    "fee": "₹600",
+    "fee": "₹1500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -27073,7 +27972,17 @@
     "phones": [
       "9820739032"
     ],
-    "researchNotes": "Practices at Criticare Asia Hospital (Andheri West & East), Surya Hospital (Santacruz West), Cloudnine Hospital (Malad). Phone: +91 98207 39032."
+    "researchNotes": "Practices at Criticare Asia Hospital (Andheri West & East), Surya Hospital (Santacruz West), Cloudnine Hospital (Malad). Phone: +91 98207 39032.",
+    "qualifications": "MBBS, DGO, DNB",
+    "experience": "24 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-poonam-nautiyal-1475990839-57f9d537dbfe0.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-poonam-nautiyal-gynecologist-obstetrician",
+    "clinic": "Criticare Hospital",
+    "geo": {
+      "lat": 19.1154479,
+      "lng": 72.8352922
+    }
   },
   {
     "id": 279,
@@ -27085,7 +27994,7 @@
     "address": "Namaha Specialised Healthcare, Old Shoppers Stop, SV Road, Opposite Shankar Lane, Naman Plaza, Bhadran Nagar, Kandivali West, Mumbai-400067",
     "locality": "Namaha Heathcare",
     "hours": "10am–8pm",
-    "fee": "",
+    "fee": "₹1500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -27177,7 +28086,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Munjaal+V+Kapadia+gynaecologist+Namaha+Healthcare+Kandivali+West+Mumbai",
-    "researchNotes": "21 years experience. Director of Namaha Healthcare. No direct phone found, only third-party helpline 6366530173."
+    "researchNotes": "21 years experience. Director of Namaha Healthcare. No direct phone found, only third-party helpline 6366530173.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "23 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-munjaal-v-kapadia-1471589950-57b6ae3e1e6e6.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-munjaal-v-kapadia-gynecologist-obstetrician",
+    "clinic": "Namaha Health Care",
+    "geo": {
+      "lat": 19.1978336,
+      "lng": 72.848306
+    }
   },
   {
     "id": 280,
@@ -27279,7 +28198,11 @@
       "2243344609",
       "2243344600"
     ],
-    "researchNotes": "24 years experience. Phone numbers are for Nova Speciality Hospital generally."
+    "researchNotes": "24 years experience. Phone numbers are for Nova Speciality Hospital generally.",
+    "experience": "26 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/211722/dr-tejal-kanwar-58e377c64e5f1.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-tejal-kanwar-gynecologist-obstetrician"
   },
   {
     "id": 281,
@@ -27493,7 +28416,7 @@
     "address": "Shah Clinic, Javji Dadaji Road, Grant Road, Mumbai - 400007, Next To Central Bank Of India, Opposite Bhatia Hospital",
     "locality": "",
     "hours": "Shop no 1, Ground floor, Matru mandir, Tardeo road, Opp Bhatia hospital, Next–Central bank of india Mumbai 400007",
-    "fee": "~₹1,000",
+    "fee": "₹400",
     "payment": [
       "Cash",
       "Credit Card",
@@ -27582,7 +28505,16 @@
       "2223820983",
       "9820060177"
     ],
-    "researchNotes": "Phone: 022-23820983, Mobile: 09820060177. Affiliated to Bhatia, H.N. Reliance, Jaslok and Saifee Hospitals."
+    "researchNotes": "Phone: 022-23820983, Mobile: 09820060177. Affiliated to Bhatia, H.N. Reliance, Jaslok and Saifee Hospitals.",
+    "qualifications": "MS - Obstetrics & Gynaecology",
+    "experience": "15 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/pranay-shah-gynecologist-obstetrician",
+    "clinic": "Wellspring IVF",
+    "geo": {
+      "lat": 23.013756,
+      "lng": 72.522775
+    }
   },
   {
     "id": 284,
@@ -27879,7 +28811,17 @@
     "phones": [
       "8652895825"
     ],
-    "researchNotes": "No phone found in search results. Could not verify existing phone 8652895825."
+    "researchNotes": "No phone found in search results. Could not verify existing phone 8652895825.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, FICOG, DGO",
+    "experience": "34 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/42806/dr-vaishali-r-chavan-5d5d0abf93587.JPG",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-vaishali-chavan-gynecologist-obstetrician",
+    "clinic": "Saanvi Gynaecology Center",
+    "geo": {
+      "lat": 18.486731,
+      "lng": 73.89903
+    }
   },
   {
     "id": 287,
@@ -28479,7 +29421,7 @@
     "address": "Sunflower Diagnostics, Near Mithibai College, J.V.P.D Road, 4 Juhu, Mumbai, Maharashtra 400049",
     "locality": "4 Juhu",
     "hours": "1–5pm, Monday–Saturday",
-    "fee": "₹1,000",
+    "fee": "₹800",
     "payment": [
       "Cash",
       "Credit Card",
@@ -28573,7 +29515,17 @@
       "8080802665",
       "9820247804"
     ],
-    "researchNotes": "19 years experience. Practices at Criticare Hospital Juhu, Surya Hospital, Nanavati Hospital. Existing phone 9820247804 not found in results. Found phone 8080802665 may be a booking service."
+    "researchNotes": "19 years experience. Practices at Criticare Hospital Juhu, Surya Hospital, Nanavati Hospital. Existing phone 9820247804 not found in results. Found phone 8080802665 may be a booking service.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "38 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/443130/dr-rajeshwari-pawar-67ac6fb543af8.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-rajeshwari-pawar-gynecologist-obstetrician",
+    "clinic": "Cloudnine Hospital",
+    "geo": {
+      "lat": 18.545888,
+      "lng": 73.900896
+    }
   },
   {
     "id": 294,
@@ -28585,7 +29537,7 @@
     "address": "Dadar Eye & Gynaec Centre, Flat Number 4, Prabhat View, B-Wing, Lakhamsi Nappu Road, Dadar East, Mumbai - 400014, Opposite Swaminarayan Temple",
     "locality": "Mahim",
     "hours": "Depends on the place you visit",
-    "fee": "~₹600",
+    "fee": "₹800",
     "payment": [
       "Cash"
     ],
@@ -28666,7 +29618,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=1344865269",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Shilpa+Shah+Gohil+gynaecologist+Dadar+East+Mumbai",
-    "researchNotes": "21 years experience. Also at S L Raheja Fortis Hospital Mahim West and Clear Vision Eye Clinic Wadala. No direct phone found, only third-party helpline 8512830995."
+    "researchNotes": "21 years experience. Also at S L Raheja Fortis Hospital Mahim West and Clear Vision Eye Clinic Wadala. No direct phone found, only third-party helpline 8512830995.",
+    "qualifications": "MD, DNB, DGO, FCPS",
+    "experience": "23 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-shilpa-shah-gohil-1485240239-5886f7afd329a.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-shilpa-shah-gohil-gynecologist-obstetrician",
+    "clinic": "Dadar Eye & Gynaec Centre",
+    "geo": {
+      "lat": 19.01883,
+      "lng": 72.844837
+    }
   },
   {
     "id": 295,
@@ -28974,7 +29936,16 @@
     "phones": [
       "2261538999"
     ],
-    "researchNotes": "Consultant Obstetrics & Gynaecology at Surya Hospitals. Hospital phone: +91-22-6153 8999. Also practices at Sujay Hospital Juhu."
+    "researchNotes": "Consultant Obstetrics & Gynaecology at Surya Hospitals. Hospital phone: +91-22-6153 8999. Also practices at Sujay Hospital Juhu.",
+    "qualifications": "MBBS, DGO, MD - Obstetrics & Gynaecology",
+    "experience": "50 years",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/dr-cherry-shah-gynecologist-obstetrician",
+    "clinic": "DOC Clinic",
+    "geo": {
+      "lat": 19.0880895,
+      "lng": 72.9077283
+    }
   },
   {
     "id": 298,
@@ -29072,7 +30043,17 @@
     "phones": [
       "2226231919"
     ],
-    "researchNotes": "25 years experience. WhatsApp: 22 26231919. Near DN Nagar metro station."
+    "researchNotes": "25 years experience. WhatsApp: 22 26231919. Near DN Nagar metro station.",
+    "qualifications": "MD - Obstetrics & Gynaecology",
+    "experience": "26 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-komal-n-chavan-1463657372-573da39cb2445.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/komal-n-chavan-gynecologist-obstetrician",
+    "clinic": "Chavan Maternity & Nursing Home",
+    "geo": {
+      "lat": 19.127315,
+      "lng": 72.833891
+    }
   },
   {
     "id": 299,
@@ -29582,7 +30563,7 @@
     "address": "Shop No. 2/C wing, 1st floor,Platinum Heights, Near Versova Telephone Exchange, MHADA-Lokhandwala signal, Andheri West, Mumbai, Maharashtra 400053",
     "locality": "Andheri West",
     "hours": "9:30am–8pm",
-    "fee": "Not sure",
+    "fee": "₹1500",
     "payment": [
       "Cash",
       "Credit Card",
@@ -29669,7 +30650,17 @@
     "phones": [
       "9320048601"
     ],
-    "researchNotes": "Phone and address match. Also known as Dr. Shilpa Bansal Agrawal. Clinic: Harleys Cosmetic & Womens Clinic."
+    "researchNotes": "Phone and address match. Also known as Dr. Shilpa Bansal Agrawal. Clinic: Harleys Cosmetic & Womens Clinic.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "21 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-shilpa-bansal-1471505277-57b5637d62a74.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/mumbai/doctor/shilpa-bansal-gynecologist-obstetrician",
+    "clinic": "Harleys Clinic",
+    "geo": {
+      "lat": 19.1251436,
+      "lng": 72.8298872
+    }
   },
   {
     "id": 305,
@@ -30039,7 +31030,7 @@
     "address": "Dr. Aaradhna Wagh's Gynaec Clinic, Ugam Complex, Matru Milan Vikas Kendra Marg, Sector 40, Nerul, Navi Mumbai 400706; also at D Y Patil Hospital, Nerul",
     "locality": "Cash",
     "hours": "Engl, Hindi, Marathi",
-    "fee": "Partially",
+    "fee": "₹200",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -30116,7 +31107,17 @@
     ],
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1o2QJKrPjKS92cCj6SX73B8siKlW6TlRNKYe0SC7WrX8/edit#gid=2025358399",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Dr+Aaradhana+Wagh+Bhamre+gynaecologist+Nerul+Navi+Mumbai",
-    "researchNotes": "Existing phone '600' appears to be consultation fee, not phone number. Direct clinic phone not found. Also affiliated with D Y Patil Hospital, Nerul."
+    "researchNotes": "Existing phone '600' appears to be consultation fee, not phone number. Direct clinic phone not found. Also affiliated with D Y Patil Hospital, Nerul.",
+    "qualifications": "MS - Obstetrics & Gynaecology",
+    "experience": "17 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-aaradhana-wagh-bhamre-1454594853-56b35b2503d0b.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/navi-mumbai/doctor/dr-aaradhana-wagh-bhamre-gynecologist-obstetrician",
+    "clinic": "Ram Surgical Hospital",
+    "geo": {
+      "lat": 20.901881,
+      "lng": 74.78284
+    }
   },
   {
     "id": 310,
@@ -30206,7 +31207,16 @@
     "phones": [
       "2227891237"
     ],
-    "researchNotes": "Phone number found. 33 years experience. Consultation fee INR 1000."
+    "researchNotes": "Phone number found. 33 years experience. Consultation fee INR 1000.",
+    "experience": "43 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/219207/dr-uday-thanawala-thanawalla-5c73bc83b58a1.png",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/navi-mumbai/doctor/dr-uday-thanawala-gynecologist-obstetrician",
+    "clinic": "Dr Uday J Thanawala Clinic",
+    "geo": {
+      "lat": 19.07363,
+      "lng": 72.999353
+    }
   },
   {
     "id": 311,
@@ -30218,7 +31228,7 @@
     "address": "Motherhood Hospital, Fountain Square Building, Sector 7, Kharghar, Navi Mumbai 410210; also at MGM Hospital, Belapur",
     "locality": "Cash",
     "hours": "Engl HIndi Marathi",
-    "fee": "Yes",
+    "fee": "₹850",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -30297,7 +31307,17 @@
     "phones": [
       "9620396203"
     ],
-    "researchNotes": "Existing phone '500' appears to be consultation fee. Found Motherhood Hospital helpline. 28 years experience. MBBS, MD from BJ Medical College Pune."
+    "researchNotes": "Existing phone '500' appears to be consultation fee. Found Motherhood Hospital helpline. 28 years experience. MBBS, MD from BJ Medical College Pune.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology",
+    "experience": "29 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/309872/dr-pratima-thamke-5ef5cd65f28a6.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/navi-mumbai/doctor/dr-pratima-thamke-gynecologist-obstetrician",
+    "clinic": "Motherhood Hospital",
+    "geo": {
+      "lat": 19.0366979,
+      "lng": 73.0610165
+    }
   },
   {
     "id": 312,
@@ -30950,7 +31970,9 @@
       "01752358685",
       "1752358685"
     ],
-    "researchNotes": "Phone matches (existing has STD code embedded: 175-2358685). Note: Dr. Neena Sachdeva listed as MS Paediatrics, not gynaecology on some sources."
+    "researchNotes": "Phone matches (existing has STD code embedded: 175-2358685). Note: Dr. Neena Sachdeva listed as MS Paediatrics, not gynaecology on some sources.",
+    "dataFlag": "unverified-specialty",
+    "dataFlagReason": "Listed as MS Paediatrics, not gynaecologist"
   },
   {
     "id": 319,
@@ -31245,7 +32267,7 @@
     "address": "Laxmi Clinic, 366/1, Near Ganpati Mandir, Laxmi Road, Narayan Peth, Pune 411030",
     "locality": "Narayan Peth",
     "hours": "",
-    "fee": "₹500",
+    "fee": "₹800",
     "payment": [
       "Cash"
     ],
@@ -31331,7 +32353,17 @@
       "8317235052",
       "2024451529"
     ],
-    "researchNotes": "Different phone found than existing. Existing phone 2024451529 might be old landline (020-24451529). Has own website drnakharegynaecologist.com. 30+ years experience. MBBS, DGO, MRCOG(UK)."
+    "researchNotes": "Different phone found than existing. Existing phone 2024451529 might be old landline (020-24451529). Has own website drnakharegynaecologist.com. 30+ years experience. MBBS, DGO, MRCOG(UK).",
+    "qualifications": "MBBS, DGO, MRCOG(UK)",
+    "experience": "36 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/228772/dr-meeta-nakhare-58f49d8c62e2f.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/pune/doctor/dr-meeta-nakhare-gynecologist-obstetrician",
+    "clinic": "Laxmi Clinic",
+    "geo": {
+      "lat": 18.664832,
+      "lng": 73.806247
+    }
   },
   {
     "id": 323,
@@ -31343,7 +32375,7 @@
     "address": "Flat No.9, Jaykar Apartment, Bhau Patil Road, Pune 411003; also at Karnik Clinic, Bopodi and KEM Hospital, Pune",
     "locality": "KEM pune. Clinic is in aundh road near lic building",
     "hours": "",
-    "fee": "",
+    "fee": "₹600",
     "payment": [
       "Cash"
     ],
@@ -31429,7 +32461,17 @@
     "phones": [
       "9881742578"
     ],
-    "researchNotes": "Phone found. In charge of IVF centre at KEM Hospital, Pune. MBBS, DNB. Email: mugdhaparasnis@gmail.com. Also at Deoyani Multi Speciality Hospital, Kothrud."
+    "researchNotes": "Phone found. In charge of IVF centre at KEM Hospital, Pune. MBBS, DNB. Email: mugdhaparasnis@gmail.com. Also at Deoyani Multi Speciality Hospital, Kothrud.",
+    "qualifications": "MBBS, DNB - Obstetrics & Gynecology",
+    "experience": "27 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/567648/dr-mugdha-parasnis-5f1d34bea685c.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/pune/doctor/mugdha-parasnis-gynecologist-obstetrician",
+    "clinic": "Karnik Clinic",
+    "geo": {
+      "lat": 18.56492,
+      "lng": 73.830223
+    }
   },
   {
     "id": 324,
@@ -32518,7 +33560,7 @@
     "address": "Happy Women Clinic, Shop No. 35, W Marredpally Main Rd, Santoshimaa Colony, Secunderabad, Telangana 500026. Also at Rainbow Children's Hospital, Kharkhana Main Road, Secunderabad 500009",
     "locality": "Cash",
     "hours": "Engl Hindi Telugu Tamil",
-    "fee": "Yes",
+    "fee": "₹500",
     "payment": [],
     "languages": [],
     "wheelchairAccessible": "",
@@ -32599,7 +33641,17 @@
       "9550448916",
       "08035358320"
     ],
-    "researchNotes": "Existing phone '400' is likely consultation fee, not a phone number. Existing address 'Cash' is payment mode data. Found actual clinic details."
+    "researchNotes": "Existing phone '400' is likely consultation fee, not a phone number. Existing address 'Cash' is payment mode data. Found actual clinic details.",
+    "qualifications": "MBBS, DGO, MD, PG Diploma in Sexology",
+    "experience": "31 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/462074/dr-divya-t-sudarshan-60f1b721b2eb0.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/hyderabad/doctor/divya-t-sudarshan-gynecologist-obstetrician",
+    "clinic": "Happy Women Clinic",
+    "geo": {
+      "lat": 17.4554,
+      "lng": 78.50738
+    }
   },
   {
     "id": 336,
@@ -32805,7 +33857,7 @@
     "address": "Jupiter Hospital, Eastern Express Highway, Service Road, Thane West, Thane - 400601",
     "locality": "Jupiter Hospital",
     "hours": "",
-    "fee": "₹650",
+    "fee": "₹600",
     "payment": [
       "Cash"
     ],
@@ -32884,7 +33936,17 @@
     "phones": [
       "2221725555"
     ],
-    "researchNotes": "No existing phone. Found Jupiter Hospital main number 022-21725555. Consultant Obstetrician & Gynaecologist."
+    "researchNotes": "No existing phone. Found Jupiter Hospital main number 022-21725555. Consultant Obstetrician & Gynaecologist.",
+    "qualifications": "DGO, FCPS, DNB - Obstetrics & Gynecology, MBBS",
+    "experience": "27 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-manasi-gore-1454673615-56b48ecf782bc.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/thane/doctor/dr-manasi-gore-gynecologist-obstetrician",
+    "clinic": "Shivum Polyclinic",
+    "geo": {
+      "lat": 19.187686,
+      "lng": 72.972343
+    }
   },
   {
     "id": 339,
@@ -32999,7 +34061,7 @@
     "address": "Gr. Floor Rajveer Chambers, Kadwa Lane Jambli Naka, Thane West, Thane - 400601",
     "locality": "Kadwa Lane Jambli Naka",
     "hours": "9:30am–1pm; 5:30pm–9pm",
-    "fee": "₹500",
+    "fee": "₹1200",
     "payment": [
       "Cash"
     ],
@@ -33088,7 +34150,17 @@
     "phones": [
       "9819288765"
     ],
-    "researchNotes": "Phone matches. Address confirmed."
+    "researchNotes": "Phone matches. Address confirmed.",
+    "qualifications": "MBBS, MS - Obstetrics & Gynaecology",
+    "experience": "49 years",
+    "photoUrl": "https://images1-fabric.practo.com/doctor/211819/dr-surekha-jain-60e939e70289d.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/thane/doctor/dr-surekha-jain-gynecologist-obstetrician",
+    "clinic": "Jain Multispeciality Hospital",
+    "geo": {
+      "lat": 28.70856,
+      "lng": 77.167067
+    }
   },
   {
     "id": 341,
@@ -33378,7 +34450,7 @@
     "address": "GBH American Hospital, 101, Kothi Bagh, Bhatt Ji Ki Bari, Meera Girls College Road, Udaipur - 313001, Rajasthan",
     "locality": "GBH American Hospital",
     "hours": "",
-    "fee": "₹280",
+    "fee": "₹500",
     "payment": [
       "Cash"
     ],
@@ -33464,7 +34536,17 @@
       "02942426000",
       "2943056000"
     ],
-    "researchNotes": "Existing phone 2943056000 looks like partial landline (0294-3056000). Hospital main numbers are 0294-3535000 and 0294-2426000. Dr's direct number found as 9772123112."
+    "researchNotes": "Existing phone 2943056000 looks like partial landline (0294-3056000). Hospital main numbers are 0294-3535000 and 0294-2426000. Dr's direct number found as 9772123112.",
+    "qualifications": "MBBS, MD - Obstetrics & Gynaecology, FCPS",
+    "experience": "25 years",
+    "photoUrl": "https://images1-fabric.practo.com/dr-vijay-pawar-1470735511-57a9a497d2741.jpg",
+    "verified": true,
+    "practoUrl": "https://www.practo.com/visakhapatnam/doctor/dr-vijay-pawar-gynecologist-obstetrician",
+    "clinic": "Sims Fertility Centre",
+    "geo": {
+      "lat": 17.661945,
+      "lng": 75.907316
+    }
   },
   {
     "id": 345,

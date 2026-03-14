@@ -1,6 +1,7 @@
 'use client'
 
-import { MapPin, Clock, Languages, Phone, Map, FileText } from 'lucide-react'
+import Image from 'next/image'
+import { MapPin, Clock, Languages, Phone, Map, FileText, CheckCircle2, Briefcase, ExternalLink } from 'lucide-react'
 import { type Doctor } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
@@ -17,9 +18,29 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
   return (
     <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
       <div className="px-5 py-[18px]">
-        <h3 className="font-serif text-[20px] font-semibold text-text-primary">
-          {doctor.name}
-        </h3>
+        <div className="flex items-start gap-3">
+          {doctor.photoUrl ? (
+            <Image
+              src={doctor.photoUrl}
+              alt=""
+              width={40}
+              height={40}
+              unoptimized
+              className="h-10 w-10 shrink-0 rounded-full object-cover"
+            />
+          ) : null}
+          <div className="min-w-0">
+            <h3 className="flex items-center gap-1.5 font-serif text-[20px] font-semibold text-text-primary">
+              <span>{doctor.name}</span>
+              {doctor.verified && (
+                <CheckCircle2 size={16} className="shrink-0 text-green-600 dark:text-green-400" />
+              )}
+            </h3>
+            {doctor.qualifications && (
+              <p className="mt-0.5 text-[13px] text-text-muted">{doctor.qualifications}</p>
+            )}
+          </div>
+        </div>
 
         <div className="mt-3 flex flex-col gap-2">
           {(doctor.locality || doctor.fee) && (
@@ -28,6 +49,12 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
               <span>
                 {[doctor.locality, doctor.fee].filter(Boolean).join(' \u00B7 ')}
               </span>
+            </div>
+          )}
+          {doctor.experience && (
+            <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+              <Briefcase size={15} color="#999" className="shrink-0" />
+              <span>{doctor.experience} exp.</span>
             </div>
           )}
           {doctor.hours && (
@@ -50,6 +77,18 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
               <Badge key={badge} badgeKey={badge} />
             ))}
           </div>
+        )}
+
+        {doctor.practoUrl && (
+          <a
+            href={doctor.practoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-1 text-[13px] text-text-muted transition-colors hover:text-text-primary"
+          >
+            <ExternalLink size={12} className="shrink-0" />
+            <span>Practo profile</span>
+          </a>
         )}
       </div>
 
