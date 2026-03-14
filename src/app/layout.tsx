@@ -15,9 +15,26 @@ const alegreyaSans = Alegreya_Sans({
   display: 'swap',
 })
 
+const siteUrl = 'https://trustedgyn.com'
+
 export const metadata: Metadata = {
-  title: 'TrustedGyn',
-  description: 'Find trusted gynecologists in India',
+  title: 'TrustedGyn — Find a Safe, Non-Judgmental Gynaecologist in India',
+  description: 'A crowdsourced directory of trusted gynecologists in India who provide respectful, judgment-free care regardless of your lifestyle, identity, or choices.',
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'TrustedGyn — Find a Safe, Non-Judgmental Gynaecologist in India',
+    description: 'A crowdsourced directory of trusted gynecologists in India who provide respectful, judgment-free care regardless of your lifestyle, identity, or choices.',
+    url: siteUrl,
+    siteName: 'TrustedGyn',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TrustedGyn — Find a Safe, Non-Judgmental Gynaecologist in India',
+    description: 'A crowdsourced directory of trusted gynecologists in India who provide respectful, judgment-free care regardless of your lifestyle, identity, or choices.',
+  },
 }
 
 export default function RootLayout({
