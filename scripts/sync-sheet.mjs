@@ -189,6 +189,250 @@ function deriveResponseCount(aboutReccer) {
   return Math.max(segments.length, 1)
 }
 
+// ─── Data cleaning ──────────────────────────────────────────────────
+
+function cleanFee(raw) {
+  if (!raw) return ''
+  let s = raw.trim()
+
+  // Skip if it looks like an address or non-fee data
+  if (s.length > 40 || /hospital|center|clinic|road|marg|nagar/i.test(s)) return ''
+
+  // Remove conversational noise
+  s = s.replace(/i\s*think\s*(it'?s?|its?)\s*/gi, '~')
+  s = s.replace(/around\s*/gi, '~')
+  s = s.replace(/approx\.?\s*/gi, '~')
+  s = s.replace(/about\s*/gi, '~')
+
+  // Remove "rs", "Rs.", "INR", currency words
+  s = s.replace(/\b(rs\.?|inr|rupees?)\b/gi, '').trim()
+
+  // Handle ranges like "300-500", "1000 - 1500", "300 to 500"
+  const rangeMatch = s.match(/~?\s*(\d[\d,]*)\s*[-–—to]+\s*(\d[\d,]*)/)
+  if (rangeMatch) {
+    const upper = parseInt(rangeMatch[2].replace(/,/g, ''), 10)
+    if (upper >= 10 && upper <= 100000) return `~₹${upper.toLocaleString('en-IN')}`
+  }
+
+  // Handle single numbers with optional ~
+  const hasApprox = s.includes('~')
+  const numMatch = s.match(/(\d[\d,]*)/)
+  if (numMatch) {
+    const num = parseInt(numMatch[1].replace(/,/g, ''), 10)
+    if (num >= 10 && num <= 100000) {
+      return `${hasApprox ? '~' : ''}₹${num.toLocaleString('en-IN')}`
+    }
+  }
+
+  // Remove trailing hyphens, stray chars
+  s = s.replace(/[-–—/\\]+$/, '').replace(/^[-–—/\\]+/, '').trim()
+  if (!s || s === '₹') return ''
+  return s
+}
+
+function cleanHours(raw) {
+  if (!raw) return ''
+  let s = raw.trim()
+
+  // Skip non-hours data (phone numbers, addresses, vague text)
+  if (/^\d{10,}/.test(s)) return '' // phone number
+  if (/no idea|varies|varied|by appointment|probably|weekdays evening/i.test(s)) return s
+
+  // Normalize separators: . → : for times
+  s = s.replace(/(\d)\.(\d{2})/g, '$1:$2')
+
+  // Normalize am/pm spacing
+  s = s.replace(/\s*(a\.?m\.?|p\.?m\.?)/gi, (_, p) => p.replace(/\./g, '').toLowerCase())
+
+  // Strip leading zeros from hours: 06:30 → 6:30, 08:00 → 8:00, 09am → 9am
+  s = s.replace(/\b0(\d:\d{2})/g, '$1')
+  s = s.replace(/\b0(\d)(am|pm)/gi, '$1$2')
+
+  // Remove :00 minutes (8:00pm → 8pm) but keep :30, :15 etc.
+  s = s.replace(/(\d):00\s*(am|pm)/gi, '$1$2')
+  // Fix leftover :0 from prior stripping (8:0pm → 8pm)
+  s = s.replace(/(\d):0(am|pm)/gi, '$1$2')
+
+  // "24*7" → "24/7", "24 hrs" / "24 hours" → "24/7"
+  s = s.replace(/24\s*\*\s*7/, '24/7')
+  s = s.replace(/24\s*(hrs|hours)\b/gi, '24/7')
+
+  // Add am/pm to bare numbers where context is clear
+  // "9-6" → likely "9am–6pm"
+  // "5-8pm" → "5–8pm"
+
+  // Normalize range separators: "to", "-", "—" → "–"
+  s = s.replace(/\s*(?:to|-|—)\s*/g, '–')
+
+  // Fix "9–6" style (no am/pm) → leave as is, it's clear enough
+  // Fix "&" and "/" separators between time blocks
+  s = s.replace(/\s*[&]\s*/g, ', ')
+  s = s.replace(/\s*[/]\s*/g, ', ')
+
+  // Trim trailing periods, dots, ellipsis
+  s = s.replace(/[.\s]+$/, '').trim()
+
+  // Remove trailing partial words like "...mo"
+  s = s.replace(/\.\.\.\w*$/, '').trim()
+
+  // Capitalize day abbreviations
+  s = s.replace(/\b(mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)\b/gi, (d) =>
+    d.charAt(0).toUpperCase() + d.slice(1).toLowerCase()
+  )
+  s = s.replace(/\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/gi, (d) =>
+    d.charAt(0).toUpperCase() + d.slice(1).toLowerCase()
+  )
+
+  // Capitalize sentence starts
+  s = s.replace(/^[a-z]/, c => c.toUpperCase())
+
+  // Capitalize after semicolons/commas that start new segments
+  s = s.replace(/([;,]\s*)([a-z])/g, (_, sep, c) => sep + c.toUpperCase())
+
+  // "24, 7" → "24/7"
+  s = s.replace(/24\s*,\s*7/, '24/7')
+
+  // Remove "ish", "approx" noise
+  s = s.replace(/\s*\(ish\)|\s*ish\b/gi, '')
+  s = s.replace(/\(approx\)/gi, '')
+
+  // "dont know" / "not sure" / "no idea" → empty
+  if (/^(dont|don.t)\s*know$/i.test(s) || /^not\s*sure$/i.test(s) || /^no\s*idea$/i.test(s)) return ''
+
+  // "varies by days" → "Varies by day"
+  s = s.replace(/varies\s+by\s+days?/gi, 'Varies by day')
+  s = s.replace(/^varied$/i, 'Varies')
+
+  // Filter out phone numbers that ended up in hours
+  if (/^\d{10,}$/.test(s.replace(/[–\-,\s]/g, ''))) return ''
+
+  // Filter out languages that ended up in hours
+  if (/^(english|hindi|kannada|telugu|marathi|malayalam|gujarati|bengali|tamil|punjabi)/i.test(s)) return ''
+
+  return s
+}
+
+function cleanAddress(raw) {
+  if (!raw) return ''
+  let s = raw.trim()
+
+  // Remove conversational noise
+  s = s.replace(/don'?t\s+remember\s+exact\s+address\s*(but)?\s*(one\s+can\s+always\s+)?(call\s+(her|him|them)\s+and\s+ask\.?\s*)?/gi, '')
+  s = s.replace(/somewhere\s+near\s+/gi, 'Near ')
+  s = s.replace(/it\s+is\s+(good\s+to\s+)?(call|near)\s+/gi, '')
+  s = s.replace(/she'?s?\s+there\s+every\s+morning[^.]*\./gi, '')
+  s = s.replace(/you\s+can\s+time\s+your\s+visit\s+accordingly\.?\s*/gi, '')
+  s = s.replace(/but\s+it\s+is\s+good\s+to\s+call[^.]*\.\s*/gi, '')
+
+  // Remove trailing/leading junk
+  s = s.replace(/[,\s·.]+$/, '').replace(/^[,\s·.]+/, '').trim()
+
+  // Collapse whitespace
+  s = s.replace(/\s+/g, ' ')
+
+  return s
+}
+
+function cleanPhone(raw) {
+  if (!raw) return ''
+  let s = raw.replace(/[\s\-()]/g, '').trim()
+  s = s.replace(/^\+?91(?=\d{10})/, '')
+  s = s.replace(/^0(?=\d{10})/, '')
+  s = s.split(/[,/]/)[0].trim()
+  s = s.replace(/[^\d]/g, '')
+  return s
+}
+
+function cleanLanguages(raw) {
+  if (!raw) return []
+  return raw
+    .split(/[,/&]/)
+    .map(s => s.trim())
+    .filter(s => {
+      if (!s || s.length < 2) return false
+      // Filter out fee amounts, "Rs.", numbers, noise
+      if (/^(rs\.?|₹|\d+|free|minimal|yep|probably|happily)/i.test(s)) return false
+      if (/\d{3,}/.test(s)) return false // numbers like "150", "300-500"
+      if (/not\s*(sure|aware)/i.test(s)) return false
+      if (/^(i\s|did|for\s|as\s)/i.test(s)) return false
+      return true
+    })
+    .map(s => titleCase(s))
+}
+
+function cleanPayment(raw) {
+  if (!raw) return []
+  return raw
+    .split(/[,/&]/)
+    .map(s => s.trim())
+    .filter(s => {
+      if (!s || s.length < 2) return false
+      // Filter out hours, personal info, noise
+      if (/^\d{1,2}[:\.]?\d{0,2}\s*(am|pm|hrs|to|-)/i.test(s)) return false
+      if (/^(mon|tue|wed|thu|fri|sat|sun|all\s*day|always|9-|9am|10|11|12)/i.test(s)) return false
+      if (/not\s*sure|don.t\s*know|i.m\s*not/i.test(s)) return false
+      if (/as\s*far\s*as/i.test(s)) return false
+      return true
+    })
+    .map(s => {
+      const lower = s.toLowerCase()
+      if (lower === 'cash') return 'Cash'
+      if (lower === 'card' || lower === 'cards') return 'Card'
+      if (/credit/i.test(s) && /debit/i.test(s)) return 'Card'
+      if (/credit/i.test(s)) return 'Credit Card'
+      if (/debit/i.test(s)) return 'Debit Card'
+      if (/cheque/i.test(s)) return 'Cheque'
+      if (/paytm|e-wallet|internet|upi/i.test(s)) return 'UPI/Digital'
+      if (/insurance/i.test(s)) return 'Insurance'
+      if (/all/i.test(s)) return 'All'
+      return titleCase(s)
+    })
+    .filter((v, i, a) => a.indexOf(v) === i) // dedupe
+}
+
+function cleanWheelchair(raw) {
+  if (!raw) return ''
+  const lower = raw.trim().toLowerCase()
+  if (/^(yes|yep|yes\b)/i.test(lower)) return 'Yes'
+  if (/partial/i.test(lower)) return 'Partial'
+  if (/elevator|lift/i.test(lower)) return 'Elevator'
+  if (/^no\b|nope|not\s*(wheelchair|really|the\s*clinic)|unfortunately/i.test(lower)) return 'No'
+  if (/not\s*sure|don.t\s*know|i.m\s*not|maybe/i.test(lower)) return 'Unknown'
+  // Filter out completely wrong data (personal descriptions, cash, etc.)
+  if (lower.length > 60 || /cash|rs\.|credit|married|female|male|survivor|year/i.test(lower)) return ''
+  return ''
+}
+
+function cleanHygienic(raw) {
+  if (!raw) return ''
+  const lower = raw.trim().toLowerCase()
+  if (/^(yes|yep|happily|definitely|extremely|very\s*clean)/i.test(lower)) return 'Yes'
+  if (/maybe|probably/i.test(lower)) return 'Maybe'
+  if (/^no\b/i.test(lower)) return 'No'
+  if (/don.t\s*know|not\s*sure/i.test(lower)) return ''
+  if (lower.length > 80) return '' // long descriptions, just skip
+  return ''
+}
+
+function titleCase(s) {
+  if (!s) return ''
+  return s
+    .toLowerCase()
+    .replace(/\b\w/g, c => c.toUpperCase())
+    .replace(/\b(And|Or|Of|The|To|In|For|A|An)\b/g, w => w.toLowerCase())
+    .replace(/^./, c => c.toUpperCase())
+}
+
+function cleanLocality(raw) {
+  if (!raw) return ''
+  let s = raw.trim()
+  // Filter out age ranges, numbers, garbage
+  if (/^\d{2}-\d{2}$/.test(s)) return '' // age range
+  if (/^\d+$/.test(s)) return '' // just a number
+  if (s.length < 3) return ''
+  return s
+}
+
 // ─── Locality extraction ────────────────────────────────────────────
 
 function extractLocality(address) {
@@ -255,23 +499,17 @@ function parseDoctorsFromTab(rows, city, gid) {
     const { name, gender, ageRange } = parseNameField(nameField)
     if (!name || name.length < 2) continue
 
-    const phone = (fieldValues[2] || '').trim()
-    const address = (fieldValues[3] || '').trim()
-    const locality = extractLocality(address)
-    const hours = (fieldValues[4] || '').trim()
-    const fee = (fieldValues[5] || '').trim()
-    const payment = (fieldValues[6] || '')
-      .split(',')
-      .map((s) => s.trim())
-      .filter(Boolean)
-    const languages = (fieldValues[7] || '')
-      .split(',')
-      .map((s) => s.trim())
-      .filter(Boolean)
+    const phone = cleanPhone(fieldValues[2] || '')
+    const address = cleanAddress(fieldValues[3] || '')
+    const locality = cleanLocality(extractLocality(address))
+    const hours = cleanHours(fieldValues[4] || '')
+    const fee = cleanFee(fieldValues[5] || '')
+    const payment = cleanPayment(fieldValues[6] || '')
+    const languages = cleanLanguages(fieldValues[7] || '')
 
-    const wheelchairAccessible = (fieldValues[8] || '').trim()
+    const wheelchairAccessible = cleanWheelchair(fieldValues[8] || '')
     const otherDisability = (fieldValues[9] || '').trim()
-    const hygienic = (fieldValues[10] || '').trim()
+    const hygienic = cleanHygienic(fieldValues[10] || '')
 
     const aboutReccer = (fieldValues[11] || '').trim()
     const testimonial = (fieldValues[12] || '').trim()

@@ -6,8 +6,9 @@ import {
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
   Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
 } from 'lucide-react'
-import { BADGE_CONFIG, INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
+import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
+import { Badge } from './badge'
 
 type DoctorDetailProps = {
   doctor: Doctor
@@ -102,18 +103,9 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
 
           {doctor.badges.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {doctor.badges.map((badge) => {
-                const config = BADGE_CONFIG[badge]
-                return (
-                  <span
-                    key={badge}
-                    className="rounded-full px-2.5 py-0.5 text-[13px] font-medium"
-                    style={{ backgroundColor: config.bg, color: config.text }}
-                  >
-                    {config.label}
-                  </span>
-                )
-              })}
+              {doctor.badges.map((badge) => (
+                <Badge key={badge} badgeKey={badge} />
+              ))}
             </div>
           )}
 

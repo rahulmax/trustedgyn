@@ -4,15 +4,17 @@ export const BADGE_CONFIG: Record<BadgeKey, {
   label: string
   bg: string
   text: string
+  darkBg: string
+  darkText: string
 }> = {
-  'queer-friendly': { label: 'Queer-friendly', bg: '#ededf5', text: '#4a4a72' },
-  'reproductive-autonomy': { label: 'Repro autonomy', bg: '#f0ebe5', text: '#6a5a42' },
-  'trauma-informed': { label: 'Trauma-informed', bg: '#f0e8e8', text: '#724a4a' },
-  'accessible': { label: 'Accessible', bg: '#e5ecf0', text: '#3a5a6a' },
-  'financially-considerate': { label: 'Affordable', bg: '#e6f0e6', text: '#3a6a3a' },
-  'confidential-autonomous': { label: 'Confidential & Autonomous', bg: '#ebebeb', text: '#4a4a4a' },
-  'sex-positive': { label: 'Sex-positive', bg: '#e8e8f0', text: '#4a4a6a' },
-  'non-traditional-family': { label: 'Non-trad family', bg: '#ecebe5', text: '#5a5a42' },
+  'queer-friendly': { label: 'Queer-friendly', bg: '#ededf5', text: '#4a4a72', darkBg: '#2a2a3a', darkText: '#b0b0d0' },
+  'reproductive-autonomy': { label: 'Repro autonomy', bg: '#f0ebe5', text: '#6a5a42', darkBg: '#2e2a24', darkText: '#c0aa88' },
+  'trauma-informed': { label: 'Trauma-informed', bg: '#f0e8e8', text: '#724a4a', darkBg: '#302424', darkText: '#c09090' },
+  'accessible': { label: 'Accessible', bg: '#e5ecf0', text: '#3a5a6a', darkBg: '#1e2830', darkText: '#88b0c8' },
+  'financially-considerate': { label: 'Affordable', bg: '#e6f0e6', text: '#3a6a3a', darkBg: '#1e2e1e', darkText: '#88c088' },
+  'confidential-autonomous': { label: 'Confidential & Autonomous', bg: '#ebebeb', text: '#4a4a4a', darkBg: '#2a2a2a', darkText: '#b0b0b0' },
+  'sex-positive': { label: 'Sex-positive', bg: '#e8e8f0', text: '#4a4a6a', darkBg: '#28283a', darkText: '#a8a8c8' },
+  'non-traditional-family': { label: 'Non-trad family', bg: '#ecebe5', text: '#5a5a42', darkBg: '#2a2a22', darkText: '#b0b098' },
 }
 
 export const INCLUSIVITY_GROUP_LABELS: Record<BadgeKey, string> = {

@@ -1,8 +1,8 @@
 'use client'
 
 import { MapPin, Clock, Languages, Phone, Map, FileText } from 'lucide-react'
-import { BADGE_CONFIG } from '@/lib/badges'
 import { type Doctor } from '@/lib/types'
+import { Badge } from './badge'
 
 type DoctorCardProps = {
   doctor: Doctor
@@ -13,7 +13,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
 
   return (
-    <div className="overflow-hidden rounded-[18px] bg-white shadow-sm">
+    <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
       <div className="px-5 py-[18px]">
         <h3 className="font-serif text-[20px] font-semibold text-text-primary">
           {doctor.name}
@@ -44,26 +44,17 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
 
         {doctor.badges.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {doctor.badges.map((badge) => {
-              const config = BADGE_CONFIG[badge]
-              return (
-                <span
-                  key={badge}
-                  className="rounded-full px-2.5 py-0.5 text-[13px] font-medium"
-                  style={{ backgroundColor: config.bg, color: config.text }}
-                >
-                  {config.label}
-                </span>
-              )
-            })}
+            {doctor.badges.map((badge) => (
+              <Badge key={badge} badgeKey={badge} />
+            ))}
           </div>
         )}
       </div>
 
-      {doctor.testimonial && (
-        <div className="border-t border-border bg-[#f8f8f8] px-5 py-3.5">
+      {(Array.isArray(doctor.testimonial) ? doctor.testimonial[0] : doctor.testimonial) && (
+        <div className="border-t border-border bg-card-inset px-5 py-3.5">
           <p className="text-[15px] italic text-text-secondary">
-            &ldquo;{doctor.testimonial}&rdquo;
+            &ldquo;{Array.isArray(doctor.testimonial) ? doctor.testimonial[0] : doctor.testimonial}&rdquo;
           </p>
         </div>
       )}
@@ -72,8 +63,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         {doctor.phone ? (
           <a
             href={`tel:${doctor.phone}`}
-            className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold transition-colors hover:bg-gray-50"
-            style={{ color: '#3a7a3a' }}
+            className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-call transition-colors hover:bg-card-inset"
           >
             <Phone size={16} />
             <span>Call</span>
@@ -88,8 +78,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold transition-colors hover:bg-gray-50"
-          style={{ color: '#3a5a6a' }}
+          className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-map transition-colors hover:bg-card-inset"
         >
           <Map size={16} />
           <span>Map</span>
@@ -97,8 +86,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         <button
           type="button"
           onClick={() => onViewDetails(doctor)}
-          className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold transition-colors hover:bg-gray-50"
-          style={{ color: '#4a4a6a' }}
+          className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold text-details transition-colors hover:bg-card-inset"
         >
           <FileText size={16} />
           <span>Details</span>

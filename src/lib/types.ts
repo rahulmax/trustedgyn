@@ -27,7 +27,7 @@ export type Doctor = {
   city: string
   wheelchairAccessible: string
   hygienic: string
-  testimonial: string
+  testimonial: string | string[]
   responseCount: number
   badges: BadgeKey[]
   inclusivity: Record<BadgeKey, InclusivityGroup>
