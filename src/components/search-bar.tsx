@@ -9,8 +9,8 @@ type SearchBarProps = {
 
 export function SearchBar({ value, onChange }: SearchBarProps) {
   return (
-    <div className="flex items-center gap-2 rounded-[14px] bg-white px-4 py-3 shadow-sm">
-      <Search size={20} color="#999" className="shrink-0" />
+    <div className="flex items-center gap-2 rounded-[14px] bg-card px-4 py-3 shadow-sm">
+      <Search size={20} className="shrink-0 text-text-muted" />
       <input
         type="text"
         value={value}
@@ -23,7 +23,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         className="shrink-0 rounded-lg p-1 transition-colors hover:bg-bg"
         aria-label="Filters"
       >
-        <SlidersHorizontal size={18} color="#999" />
+        <SlidersHorizontal size={18} className="text-text-muted" />
       </button>
     </div>
   )

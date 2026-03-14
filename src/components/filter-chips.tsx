@@ -19,12 +19,11 @@ export function FilterChips({ activeFilters, onToggle, totalCount, filteredCount
     <div className="scrollbar-hide flex gap-2 overflow-x-auto">
       <button
         type="button"
-        className="shrink-0 rounded-full px-4 py-2 text-[15px] font-medium whitespace-nowrap transition-colors"
-        style={{
-          backgroundColor: isAllActive ? '#2a2a2a' : '#ffffff',
-          color: isAllActive ? '#ffffff' : '#555555',
-          boxShadow: isAllActive ? 'none' : '0 1px 3px rgba(0,0,0,0.08)',
-        }}
+        className={`shrink-0 rounded-full px-4 py-2 text-[15px] font-medium whitespace-nowrap transition-colors ${
+          isAllActive
+            ? 'bg-chip-active text-chip-active-text'
+            : 'bg-chip-inactive text-chip-inactive-text shadow-[0_1px_3px_rgba(0,0,0,0.08)]'
+        }`}
         onClick={() => {
           if (!isAllActive) {
             activeFilters.forEach((f) => onToggle(f))
@@ -39,12 +38,11 @@ export function FilterChips({ activeFilters, onToggle, totalCount, filteredCount
           <button
             key={key}
             type="button"
-            className="shrink-0 rounded-full px-4 py-2 text-[15px] font-medium whitespace-nowrap transition-colors"
-            style={{
-              backgroundColor: isActive ? '#2a2a2a' : '#ffffff',
-              color: isActive ? '#ffffff' : '#555555',
-              boxShadow: isActive ? 'none' : '0 1px 3px rgba(0,0,0,0.08)',
-            }}
+            className={`shrink-0 rounded-full px-4 py-2 text-[15px] font-medium whitespace-nowrap transition-colors ${
+              isActive
+                ? 'bg-chip-active text-chip-active-text'
+                : 'bg-chip-inactive text-chip-inactive-text shadow-[0_1px_3px_rgba(0,0,0,0.08)]'
+            }`}
             onClick={() => onToggle(key)}
           >
             {BADGE_CONFIG[key].label}

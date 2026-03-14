@@ -106,7 +106,7 @@ export function Directory({ doctors }: DirectoryProps) {
 
   return (
     <div className="mx-auto max-w-[480px] px-4 pb-28">
-      <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-4">
+      <div className="pt-4">
         <div className="flex items-center justify-between">
           <CityPicker
             cities={cities}
@@ -115,18 +115,18 @@ export function Directory({ doctors }: DirectoryProps) {
           />
           <a
             href="tel:181"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-sm"
             aria-label="Women Helpline: 181"
           >
-            <PhoneCall size={20} color="#bb3333" />
+            <PhoneCall size={20} className="text-emergency" />
           </a>
         </div>
         <h1 className="mt-4 font-serif text-[28px] font-bold text-text-primary">
           Find a gynaecologist you can trust
         </h1>
-        <div className="mt-3">
-          <SearchBar value={searchQuery} onChange={setSearchQuery} />
-        </div>
+      </div>
+      <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-3">
+        <SearchBar value={searchQuery} onChange={setSearchQuery} />
       </div>
 
       <div className="mt-3">

@@ -12,13 +12,12 @@ export function StickyFooter() {
   }
 
   return (
-    <div className="fixed right-0 bottom-0 left-0 z-40 border-t border-[#e8e8e8] bg-white pb-8">
+    <div className="fixed right-0 bottom-0 left-0 z-40 border-t border-border bg-card pb-8">
       <div className="mx-auto flex max-w-[480px] items-center justify-between px-5 py-2.5">
         <button
           type="button"
           onClick={() => scrollToSection('helplines')}
-          className="flex items-center gap-1.5 text-[14px] font-semibold transition-colors hover:opacity-80"
-          style={{ color: '#bb3333' }}
+          className="flex items-center gap-1.5 text-[14px] font-semibold text-emergency transition-colors hover:opacity-80"
         >
           <Siren size={15} />
           <span>Helplines</span>

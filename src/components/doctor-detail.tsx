@@ -1,9 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
-  Users, Check, Minus, HelpCircle,
+  Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
 } from 'lucide-react'
 import { BADGE_CONFIG, INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
@@ -27,12 +28,16 @@ function AnswerIcon({ answer }: { answer: string }) {
   if (answer === 'Maybe') {
     return <Minus size={14} color="#bba050" className="shrink-0" />
   }
-  return <HelpCircle size={14} color="#bbb" className="shrink-0" />
+  return <HelpCircle size={14} className="shrink-0 text-text-muted" />
 }
 
 export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
   const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
+  const testimonials = Array.isArray(doctor.testimonial)
+    ? doctor.testimonial.filter(Boolean)
+    : doctor.testimonial ? [doctor.testimonial] : []
+  const [testimonialIndex, setTestimonialIndex] = useState(0)
 
   return (
     <div className="min-h-screen bg-bg pb-24">
@@ -45,7 +50,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         <span>Back to results</span>
       </button>
 
-      <div className="overflow-hidden rounded-[18px] bg-white shadow-sm">
+      <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
         <div className="px-5 py-5">
           <h2 className="font-serif text-[22px] font-bold text-text-primary">
             {doctor.name}
@@ -59,37 +64,37 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           <div className="mt-4 flex flex-col gap-2.5">
             {doctor.locality && (
               <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <MapPin size={15} color="#999" className="shrink-0" />
+                <MapPin size={15} className="shrink-0 text-text-muted" />
                 <span>{doctor.locality}, {doctor.city}</span>
               </div>
             )}
             {doctor.address && (
               <div className="flex items-start gap-2 text-[15px] text-text-secondary">
-                <Building2 size={15} color="#999" className="mt-0.5 shrink-0" />
+                <Building2 size={15} className="mt-0.5 shrink-0 text-text-muted" />
                 <span>{doctor.address}</span>
               </div>
             )}
             {doctor.hours && (
               <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Clock size={15} color="#999" className="shrink-0" />
+                <Clock size={15} className="shrink-0 text-text-muted" />
                 <span>{doctor.hours}</span>
               </div>
             )}
             {doctor.fee && (
               <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <IndianRupee size={15} color="#999" className="shrink-0" />
+                <IndianRupee size={15} className="shrink-0 text-text-muted" />
                 <span>{doctor.fee}</span>
               </div>
             )}
             {doctor.languages.length > 0 && (
               <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Languages size={15} color="#999" className="shrink-0" />
+                <Languages size={15} className="shrink-0 text-text-muted" />
                 <span>{doctor.languages.join(', ')}</span>
               </div>
             )}
             {doctor.payment.length > 0 && (
               <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Wallet size={15} color="#999" className="shrink-0" />
+                <Wallet size={15} className="shrink-0 text-text-muted" />
                 <span>{doctor.payment.join(', ')}</span>
               </div>
             )}
@@ -116,16 +121,14 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
             {doctor.phone ? (
               <a
                 href={`tel:${doctor.phone}`}
-                className="flex items-center justify-center gap-2 rounded-[12px] py-3 text-[15px] font-semibold transition-colors hover:opacity-80"
-                style={{ backgroundColor: '#e6f0e6', color: '#3a6a3a' }}
+                className="flex items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call transition-colors hover:opacity-80"
               >
                 <Phone size={16} />
                 <span>Call</span>
               </a>
             ) : (
               <div
-                className="flex items-center justify-center gap-2 rounded-[12px] py-3 text-[15px] font-semibold opacity-40"
-                style={{ backgroundColor: '#e6f0e6', color: '#3a6a3a' }}
+                className="flex items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call opacity-40"
               >
                 <Phone size={16} />
                 <span>Call</span>
@@ -135,8 +138,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-[12px] py-3 text-[15px] font-semibold transition-colors hover:opacity-80"
-              style={{ backgroundColor: '#e5ecf0', color: '#3a5a6a' }}
+              className="flex items-center justify-center gap-2 rounded-[12px] bg-map-bg py-3 text-[15px] font-semibold text-map transition-colors hover:opacity-80"
             >
               <Map size={16} />
               <span>Directions</span>
@@ -144,14 +146,43 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           </div>
         </div>
 
-        {doctor.testimonial && (
+        {testimonials.length > 0 && (
           <div className="border-t border-border px-5 py-4">
-            <p className="mb-2 text-[12px] font-medium tracking-wider text-text-muted uppercase">
-              Testimonial
-            </p>
-            <p className="text-[15px] italic text-text-secondary">
-              &ldquo;{doctor.testimonial}&rdquo;
-            </p>
+            <div className="mb-2 flex items-center justify-between">
+              <p className="text-[12px] font-medium tracking-wider text-text-muted uppercase">
+                Testimonial{testimonials.length > 1 ? 's' : ''}
+              </p>
+              {testimonials.length > 1 && (
+                <span className="text-[12px] text-text-muted">
+                  {testimonialIndex + 1} / {testimonials.length}
+                </span>
+              )}
+            </div>
+            <div className="relative">
+              {testimonials.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() => setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)}
+                  className="absolute -left-3 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-card text-text-muted shadow-sm transition-colors hover:text-text-primary"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+              )}
+              <p className={`text-[15px] italic text-text-secondary ${testimonials.length > 1 ? 'px-6' : ''}`}>
+                &ldquo;{testimonials[testimonialIndex]}&rdquo;
+              </p>
+              {testimonials.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
+                  className="absolute -right-3 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-card text-text-muted shadow-sm transition-colors hover:text-text-primary"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              )}
+            </div>
           </div>
         )}
 
@@ -162,7 +193,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                 Inclusivity Details
               </p>
               {doctor.responseCount > 0 && (
-                <div className="flex items-center gap-1 text-[13px] text-[#bbb]">
+                <div className="flex items-center gap-1 text-[13px] text-text-muted">
                   <Users size={13} />
                   <span>Based on {doctor.responseCount} response{doctor.responseCount !== 1 ? 's' : ''}</span>
                 </div>
@@ -231,6 +262,15 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           </div>
         )}
       </div>
+
+      <button
+        type="button"
+        onClick={onBack}
+        className="mt-4 flex w-full items-center justify-center gap-2 rounded-[18px] bg-card py-3.5 text-[15px] font-semibold text-text-secondary shadow-sm transition-colors hover:text-text-primary"
+      >
+        <ArrowLeft size={16} />
+        <span>Back to results</span>
+      </button>
     </div>
   )
 }

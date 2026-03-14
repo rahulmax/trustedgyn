@@ -30,23 +30,22 @@ export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[15px] font-medium text-text-primary shadow-sm transition-colors hover:bg-gray-50"
+        className="flex items-center gap-1.5 rounded-full bg-card px-4 py-2 text-[15px] font-medium text-text-primary shadow-sm transition-colors hover:bg-card-inset"
       >
-        <MapPin size={16} color="#999" />
+        <MapPin size={16} className="text-text-muted" />
         <span>{selected || 'All Cities'}</span>
         <ChevronDown
           size={16}
-          color="#999"
-          className={`transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`text-text-muted transition-transform ${open ? 'rotate-180' : ''}`}
         />
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 z-50 mt-2 max-h-[60vh] w-64 overflow-y-auto rounded-[14px] bg-white py-2 shadow-lg">
+        <div className="absolute top-full left-0 z-50 mt-2 max-h-[60vh] w-64 overflow-y-auto rounded-[14px] bg-card py-2 shadow-lg">
           <button
             type="button"
             onClick={() => { onSelect(''); setOpen(false) }}
-            className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[15px] transition-colors hover:bg-gray-50 ${
+            className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[15px] transition-colors hover:bg-card-inset ${
               !selected ? 'font-semibold text-text-primary' : 'text-text-secondary'
             }`}
           >
@@ -60,7 +59,7 @@ export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
               key={city.name}
               type="button"
               onClick={() => { onSelect(city.name); setOpen(false) }}
-              className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[15px] transition-colors hover:bg-gray-50 ${
+              className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[15px] transition-colors hover:bg-card-inset ${
                 selected === city.name ? 'font-semibold text-text-primary' : 'text-text-secondary'
               }`}
             >

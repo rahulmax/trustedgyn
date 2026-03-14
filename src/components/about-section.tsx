@@ -12,18 +12,18 @@ export function AboutSection() {
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className="flex w-full items-center justify-between rounded-[14px] bg-white px-5 py-4 text-left shadow-sm"
+        className="flex w-full items-center justify-between rounded-[14px] bg-card px-5 py-4 text-left shadow-sm"
       >
         <span className="text-[15px] font-semibold text-text-primary">About this directory</span>
         {expanded ? (
-          <ChevronUp size={18} color="#999" />
+          <ChevronUp size={18} className="text-text-muted" />
         ) : (
-          <ChevronDown size={18} color="#999" />
+          <ChevronDown size={18} className="text-text-muted" />
         )}
       </button>
 
       {expanded && (
-        <div className="mt-2 rounded-[14px] bg-white px-5 py-5 shadow-sm">
+        <div className="mt-2 rounded-[14px] bg-card px-5 py-5 shadow-sm">
           <p className="text-[15px] leading-relaxed text-text-secondary">
             A crowdsourced directory of trusted gynecologists in India who provide respectful,
             judgment-free care — regardless of your lifestyle, identity, or choices.
@@ -61,7 +61,7 @@ export function AboutSection() {
                   href={`tel:${helpline.number}`}
                   className="flex items-center gap-2 text-[14px] text-text-secondary transition-colors hover:text-text-primary"
                 >
-                  <Phone size={14} color="#999" className="shrink-0" />
+                  <Phone size={14} className="shrink-0 text-text-muted" />
                   <span className="font-medium">{helpline.label}</span>
                   <span className="text-text-muted">{helpline.number}</span>
                 </a>
