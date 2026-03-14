@@ -2,6 +2,8 @@
 
 import { BADGE_CONFIG } from '@/lib/badges'
 import { type BadgeKey } from '@/lib/types'
+import { useTranslation } from '@/lib/translation-context'
+import { type UIStrings } from '@/lib/i18n'
 
 type FilterChipsProps = {
   activeFilters: BadgeKey[]
@@ -12,7 +14,19 @@ type FilterChipsProps = {
 
 const badgeKeys = Object.keys(BADGE_CONFIG) as BadgeKey[]
 
+const BADGE_LABEL_KEYS: Record<BadgeKey, keyof UIStrings> = {
+  'queer-friendly': 'badgeQueerFriendly',
+  'reproductive-autonomy': 'badgeReproAutonomy',
+  'trauma-informed': 'badgeTraumaInformed',
+  'accessible': 'badgeAccessible',
+  'financially-considerate': 'badgeAffordable',
+  'confidential-autonomous': 'badgeConfidentialAutonomous',
+  'sex-positive': 'badgeSexPositive',
+  'non-traditional-family': 'badgeNonTradFamily',
+}
+
 export function FilterChips({ activeFilters, onToggle, totalCount, filteredCount }: FilterChipsProps) {
+  const { t } = useTranslation()
   const isAllActive = activeFilters.length === 0
 
   return (
@@ -30,7 +44,7 @@ export function FilterChips({ activeFilters, onToggle, totalCount, filteredCount
           }
         }}
       >
-        All ({isAllActive ? totalCount : filteredCount})
+        {t('allFilter')} ({isAllActive ? totalCount : filteredCount})
       </button>
       {badgeKeys.map((key) => {
         const isActive = activeFilters.includes(key)
@@ -45,7 +59,7 @@ export function FilterChips({ activeFilters, onToggle, totalCount, filteredCount
             }`}
             onClick={() => onToggle(key)}
           >
-            {BADGE_CONFIG[key].label}
+            {t(BADGE_LABEL_KEYS[key])}
           </button>
         )
       })}

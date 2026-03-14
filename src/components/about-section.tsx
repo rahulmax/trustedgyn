@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp, Phone } from 'lucide-react'
 import { HELPLINES, EXTERNAL_URLS } from '@/lib/constants'
+import { useTranslation } from '@/lib/translation-context'
 
 export function AboutSection() {
+  const { t } = useTranslation()
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -14,7 +16,7 @@ export function AboutSection() {
         onClick={() => setExpanded(!expanded)}
         className="flex w-full items-center justify-between rounded-[14px] bg-card px-5 py-4 text-left shadow-sm"
       >
-        <span className="text-[15px] font-semibold text-text-primary">About this directory</span>
+        <span className="text-[15px] font-semibold text-text-primary">{t('aboutThisDirectory')}</span>
         {expanded ? (
           <ChevronUp size={18} className="text-text-muted" />
         ) : (
@@ -25,12 +27,11 @@ export function AboutSection() {
       {expanded && (
         <div className="mt-2 rounded-[14px] bg-card px-5 py-5 shadow-sm">
           <p className="text-[15px] leading-relaxed text-text-secondary">
-            A crowdsourced directory of trusted gynecologists in India who provide respectful,
-            judgment-free care — regardless of your lifestyle, identity, or choices.
+            {t('missionStatement')}
           </p>
 
           <p className="mt-4 text-[14px] text-text-secondary">
-            Based on the crowdsourced directory by{' '}
+            {t('creditLine')}{' '}
             <a
               href={EXTERNAL_URLS.creatorTwitter}
               target="_blank"
@@ -46,13 +47,13 @@ export function AboutSection() {
               rel="noopener noreferrer"
               className="underline"
             >
-              View original doc
+              {t('viewOriginalDoc')}
             </a>
           </p>
 
           <div id="helplines" className="mt-5 border-t border-border pt-4">
             <p className="mb-3 text-[12px] font-medium tracking-wider text-text-muted uppercase">
-              Helplines
+              {t('helplines')}
             </p>
             <div className="flex flex-col gap-2.5">
               {HELPLINES.map((helpline) => (
@@ -70,7 +71,7 @@ export function AboutSection() {
           </div>
 
           <p className="mt-5 border-t border-border pt-4 text-[13px] text-text-muted">
-            Content licensed under CC BY-NC-SA 4.0
+            {t('license')}
           </p>
         </div>
       )}

@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Alegreya, Alegreya_Sans } from 'next/font/google'
+import { TranslationProvider } from '@/lib/translation-context'
 import './globals.css'
 
 const alegreya = Alegreya({
@@ -37,6 +38,12 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,7 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${alegreya.variable} ${alegreyaSans.variable} font-sans antialiased`}>
-        {children}
+        <TranslationProvider>
+          {children}
+        </TranslationProvider>
       </body>
     </html>
   )

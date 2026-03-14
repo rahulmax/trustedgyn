@@ -2,6 +2,7 @@
 
 import { MapPin, Clock, Languages, Phone, Map, FileText } from 'lucide-react'
 import { type Doctor } from '@/lib/types'
+import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
 
 type DoctorCardProps = {
@@ -10,6 +11,7 @@ type DoctorCardProps = {
 }
 
 export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
+  const { t } = useTranslation()
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
 
   return (
@@ -66,12 +68,12 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
             className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-call transition-colors hover:bg-card-inset"
           >
             <Phone size={16} />
-            <span>Call</span>
+            <span>{t('call')}</span>
           </a>
         ) : (
           <div className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-text-muted opacity-40">
             <Phone size={16} />
-            <span>Call</span>
+            <span>{t('call')}</span>
           </div>
         )}
         <a
@@ -81,7 +83,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
           className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-map transition-colors hover:bg-card-inset"
         >
           <Map size={16} />
-          <span>Map</span>
+          <span>{t('map')}</span>
         </a>
         <button
           type="button"
@@ -89,7 +91,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
           className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold text-details transition-colors hover:bg-card-inset"
         >
           <FileText size={16} />
-          <span>Details</span>
+          <span>{t('details')}</span>
         </button>
       </div>
     </div>

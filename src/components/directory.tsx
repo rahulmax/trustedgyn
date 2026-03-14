@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback } from 'react'
 import { PhoneCall, MessageSquare, Search } from 'lucide-react'
 import { type Doctor, type BadgeKey } from '@/lib/types'
+import { useTranslation } from '@/lib/translation-context'
 import { CityPicker } from './city-picker'
 import { SearchBar } from './search-bar'
 import { ChatInput } from './chat-input'
@@ -11,12 +12,15 @@ import { DoctorCard } from './doctor-card'
 import { DoctorDetail } from './doctor-detail'
 import { AboutSection } from './about-section'
 import { StickyFooter } from './sticky-footer'
+import { LanguagePicker } from './language-picker'
 
 type DirectoryProps = {
   doctors: Doctor[]
 }
 
 export function Directory({ doctors }: DirectoryProps) {
+  const { t } = useTranslation()
+
   const cities = useMemo(() => {
     const counts = new Map<string, number>()
     for (const d of doctors) {
@@ -120,6 +124,11 @@ export function Directory({ doctors }: DirectoryProps) {
     )
   }
 
+  const plural = filteredDoctors.length !== 1 ? 's' : ''
+  const countText = selectedCity
+    ? t('trustedDoctorsIn', { count: filteredDoctors.length, plural, city: selectedCity })
+    : t('trustedDoctors', { count: filteredDoctors.length, plural })
+
   return (
     <div className="mx-auto max-w-[480px] px-4 pb-28">
       <div className="pt-4">
@@ -129,16 +138,19 @@ export function Directory({ doctors }: DirectoryProps) {
             selected={selectedCity}
             onSelect={setSelectedCity}
           />
-          <a
-            href="tel:181"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-sm"
-            aria-label="Women Helpline: 181"
-          >
-            <PhoneCall size={20} className="text-emergency" />
-          </a>
+          <div className="flex items-center gap-2">
+            <LanguagePicker />
+            <a
+              href="tel:181"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-sm"
+              aria-label="Women Helpline: 181"
+            >
+              <PhoneCall size={20} className="text-emergency" />
+            </a>
+          </div>
         </div>
         <h1 className="mt-4 font-serif text-[28px] font-bold text-text-primary">
-          Find a gynaecologist you can trust
+          {t('heroTitle')}
         </h1>
       </div>
       <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-3">
@@ -157,7 +169,7 @@ export function Directory({ doctors }: DirectoryProps) {
             type="button"
             onClick={() => setChatMode(!chatMode)}
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-card shadow-sm transition-colors"
-            aria-label={chatMode ? 'Switch to search' : 'Switch to AI chat'}
+            aria-label={chatMode ? t('switchToSearch') : t('switchToChat')}
           >
             {chatMode ? (
               <Search size={18} className="text-text-muted" />
@@ -178,7 +190,7 @@ export function Directory({ doctors }: DirectoryProps) {
       </div>
 
       <p className="mt-4 text-[14px] text-text-muted">
-        {filteredDoctors.length} trusted doctor{filteredDoctors.length !== 1 ? 's' : ''}{selectedCity ? ` in ${selectedCity}` : ''}
+        {countText}
       </p>
 
       <div className="mt-3 flex flex-col gap-4">

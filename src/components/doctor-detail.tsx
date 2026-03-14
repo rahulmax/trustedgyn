@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
+import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
 
 type DoctorDetailProps = {
@@ -32,7 +33,19 @@ function AnswerIcon({ answer }: { answer: string }) {
   return <HelpCircle size={14} className="shrink-0 text-text-muted" />
 }
 
+const GROUP_LABEL_KEYS: Record<BadgeKey, keyof ReturnType<typeof useTranslation>['strings']> = {
+  'queer-friendly': 'groupLgbtq',
+  'reproductive-autonomy': 'groupRepro',
+  'trauma-informed': 'groupTrauma',
+  'accessible': 'groupAccessibility',
+  'financially-considerate': 'groupFinancial',
+  'confidential-autonomous': 'groupConfidentiality',
+  'sex-positive': 'groupSexual',
+  'non-traditional-family': 'groupFamily',
+}
+
 export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
+  const { t, language } = useTranslation()
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
   const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
   const testimonials = Array.isArray(doctor.testimonial)
@@ -48,7 +61,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         className="flex items-center gap-2 px-1 py-4 text-[15px] text-text-secondary transition-colors hover:text-text-primary"
       >
         <ArrowLeft size={18} />
-        <span>Back to results</span>
+        <span>{t('backToResults')}</span>
       </button>
 
       <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
@@ -116,14 +129,14 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                 className="flex items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call transition-colors hover:opacity-80"
               >
                 <Phone size={16} />
-                <span>Call</span>
+                <span>{t('call')}</span>
               </a>
             ) : (
               <div
                 className="flex items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call opacity-40"
               >
                 <Phone size={16} />
-                <span>Call</span>
+                <span>{t('call')}</span>
               </div>
             )}
             <a
@@ -133,7 +146,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
               className="flex items-center justify-center gap-2 rounded-[12px] bg-map-bg py-3 text-[15px] font-semibold text-map transition-colors hover:opacity-80"
             >
               <Map size={16} />
-              <span>Directions</span>
+              <span>{t('directions')}</span>
             </a>
           </div>
         </div>
@@ -142,7 +155,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           <div className="border-t border-border px-5 py-4">
             <div className="mb-2 flex items-center justify-between">
               <p className="text-[12px] font-medium tracking-wider text-text-muted uppercase">
-                Testimonial{testimonials.length > 1 ? 's' : ''}
+                {testimonials.length > 1 ? t('testimonials') : t('testimonial')}
               </p>
               {testimonials.length > 1 && (
                 <span className="text-[12px] text-text-muted">
@@ -182,12 +195,12 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           <div className="border-t border-border px-5 py-4">
             <div className="flex items-center justify-between">
               <p className="text-[12px] font-medium tracking-wider text-text-muted uppercase">
-                Inclusivity Details
+                {t('inclusivityDetails')}
               </p>
               {doctor.responseCount > 0 && (
                 <div className="flex items-center gap-1 text-[13px] text-text-muted">
                   <Users size={13} />
-                  <span>Based on {doctor.responseCount} response{doctor.responseCount !== 1 ? 's' : ''}</span>
+                  <span>{t('basedOnResponses', { count: doctor.responseCount, plural: doctor.responseCount !== 1 ? 's' : '' })}</span>
                 </div>
               )}
             </div>
@@ -200,6 +213,9 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
 
                 if (filteredQuestions.length === 0) return null
 
+                const labelKey = GROUP_LABEL_KEYS[key]
+                const groupLabel = language !== 'en' && labelKey ? t(labelKey) : (INCLUSIVITY_GROUP_LABELS[key] ?? key)
+
                 return (
                   <div key={key}>
                     <div className="mb-2 flex items-center gap-2">
@@ -208,7 +224,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                         style={{ backgroundColor: dotColor }}
                       />
                       <span className="text-[15px] font-semibold text-text-primary">
-                        {INCLUSIVITY_GROUP_LABELS[key] ?? key}
+                        {groupLabel}
                       </span>
                     </div>
                     <div className="flex flex-col gap-1.5 pl-4">
@@ -230,7 +246,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           <div className="border-t border-border px-5 py-3.5">
             <div className="flex items-center gap-2 text-[14px] text-text-secondary">
               <ShieldCheck size={14} color="#5a9a5a" className="shrink-0" />
-              <span>Office reported as hygienic</span>
+              <span>{t('officeHygienic')}</span>
             </div>
           </div>
         )}
@@ -245,9 +261,9 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
             >
               <ExternalLink size={14} className="shrink-0" />
               <div>
-                <span className="underline">View original entry on Google Sheets</span>
+                <span className="underline">{t('viewOriginal')}</span>
                 <p className="mt-0.5 text-[13px] text-text-muted">
-                  From the crowdsourced directory by @AmbaAzaad
+                  {t('originalCredit')}
                 </p>
               </div>
             </a>
@@ -261,7 +277,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         className="mt-4 flex w-full items-center justify-center gap-2 rounded-[18px] bg-card py-3.5 text-[15px] font-semibold text-text-secondary shadow-sm transition-colors hover:text-text-primary"
       >
         <ArrowLeft size={16} />
-        <span>Back to results</span>
+        <span>{t('backToResults')}</span>
       </button>
     </div>
   )
