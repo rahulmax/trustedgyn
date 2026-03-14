@@ -1,0 +1,77 @@
+import { type BadgeKey } from './types'
+
+export const BADGE_CONFIG: Record<BadgeKey, {
+  label: string
+  bg: string
+  text: string
+}> = {
+  'queer-friendly': { label: 'Queer-friendly', bg: '#ededf5', text: '#4a4a72' },
+  'reproductive-autonomy': { label: 'Repro autonomy', bg: '#f0ebe5', text: '#6a5a42' },
+  'trauma-informed': { label: 'Trauma-informed', bg: '#f0e8e8', text: '#724a4a' },
+  'accessible': { label: 'Accessible', bg: '#e5ecf0', text: '#3a5a6a' },
+  'financially-considerate': { label: 'Affordable', bg: '#e6f0e6', text: '#3a6a3a' },
+  'confidential-autonomous': { label: 'Confidential & Autonomous', bg: '#ebebeb', text: '#4a4a4a' },
+  'sex-positive': { label: 'Sex-positive', bg: '#e8e8f0', text: '#4a4a6a' },
+  'non-traditional-family': { label: 'Non-trad family', bg: '#ecebe5', text: '#5a5a42' },
+}
+
+export const INCLUSIVITY_GROUP_LABELS: Record<BadgeKey, string> = {
+  'queer-friendly': 'LGBTQ+ & Gender',
+  'reproductive-autonomy': 'Reproductive Choices',
+  'trauma-informed': 'Trauma & Safety',
+  'accessible': 'Accessibility',
+  'financially-considerate': 'Financial Accessibility',
+  'confidential-autonomous': 'Confidentiality & Autonomy',
+  'sex-positive': 'Sexual Health & Expression',
+  'non-traditional-family': 'Family & Parenting',
+}
+
+export const INCLUSIVITY_QUESTION_LABELS: Record<string, string> = {
+  'welcomes-trans': 'Welcomes trans and non-cis folks',
+  'discusses-gender-dysphoria': 'Discusses gender dysphoria non-judgmentally',
+  'queer-sexuality': 'Discusses queer sexuality non-judgmentally',
+  'kink-polyamory': 'Discusses kink and polyamory',
+  'no-marriage-as-cure': 'Won\'t advocate marriage/pregnancy as cure',
+  'accepts-sexual-history': 'Accepts sexual history regardless of marital status',
+  'celibate-childfree': 'Respects celibate or child-free choices',
+  'birth-control-options': 'Offers birth control without advocating abstinence',
+  'morning-after-pill': 'Prescribes morning-after pill without judgment',
+  'respects-abortion-choice': 'Respects choice to keep or abort',
+  'surgical-abortions': 'Equipped for surgical abortions',
+  'pill-abortions': 'Supports pill-based abortions',
+  'respects-fertility-choices': 'Respects your fertility choices',
+  'infertility-treatment': 'Discusses infertility treatment non-judgmentally',
+  'welcomes-survivors': 'Welcomes abuse and trauma survivors',
+  'supports-minors': 'Supports minors regardless of sexual history',
+  'respects-boundaries': 'Respects your physical and emotional boundaries',
+  'accepts-criticism': 'Accepts criticism of patient interaction',
+  'welcomes-std': 'Welcomes folks with AIDS or STDs',
+  'mental-illness-sexuality': 'Discusses sexuality of folks with mental illness',
+  'examines-professionally': 'Examines professionally without causing embarrassment',
+  'answers-without-judgment': 'Answers questions without making you feel judged',
+  'refers-competently': 'Refers to non-judgmental allied practitioners',
+  'discusses-sex-work': 'Discusses sex work non-judgmentally',
+  'advocates-sexual-satisfaction': 'Advocates for your sexual satisfaction',
+  'discusses-masturbation': 'Discusses masturbation non-judgmentally',
+  'menstrual-hygiene-choices': 'Respects menstrual hygiene choices (cups, tampons)',
+  'respects-hymen-views': 'Respects your views on hymen',
+  'wheelchair-accessible': 'Wheelchair accessible office',
+  'other-disability': 'Other disability accommodations',
+  'disability-sexuality': 'Discusses sexuality of disabled folks',
+  'welcomes-poor-illiterate': 'Welcomes poor and illiterate folks',
+  'no-unnecessary-tests': 'Won\'t prescribe unnecessary tests',
+  'welcomes-oppressed-groups': 'Welcomes oppressed communities',
+  'respects-dietary-choices': 'Respects dietary choices',
+  'alternative-therapies': 'Works with alternative therapies',
+  'keeps-info-private': 'Keeps info private from parents/partner',
+  'treats-as-autonomous': 'Treats you as autonomous',
+  'advocates-legal-rights': 'Advocates for your legal rights',
+  'respects-companions': 'Respects your choice of companion',
+  'supports-single-parenting': 'Supports single parenting and surrogacy',
+  'non-traditional-birthing': 'Supports non-traditional birthing',
+  'welcomes-companions-delivery': 'Welcomes companions in delivery room',
+  'respects-surgical-decisions': 'Respects your decisions on surgical procedures',
+  'refuses-sex-reveal': 'Refuses to illegally reveal foetus sex',
+  'up-to-date-knowledge': 'Up-to-date on endometriosis, PTSD, etc.',
+  'screens-for-cancers': 'Screens for cervical, breast, ovarian cancers',
+}
