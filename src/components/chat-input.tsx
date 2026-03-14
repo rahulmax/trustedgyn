@@ -48,15 +48,10 @@ export function ChatInput({ onFiltersExtracted, cities }: ChatInputProps) {
       setSummary(data.summary)
       setQuery('')
 
-      const searchTerms = [
-        ...data.searchTerms,
-        ...data.languages,
-      ]
-
       onFiltersExtracted({
         city: data.city ?? undefined,
         badges: data.badges as BadgeKey[],
-        searchTerms,
+        searchTerms: data.searchTerms ?? [],
       })
     } catch {
       setSummary('Something went wrong. Please try again.')
