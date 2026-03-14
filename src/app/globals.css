@@ -21,3 +21,11 @@ body {
   font-feature-settings: 'lnum' 1, 'tnum' 1;
   background-color: var(--color-bg);
 }
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
