@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useMemo, useCallback } from 'react'
-import { PhoneCall } from 'lucide-react'
+import { PhoneCall, MessageSquare, Search } from 'lucide-react'
 import { type Doctor, type BadgeKey } from '@/lib/types'
 import { CityPicker } from './city-picker'
 import { SearchBar } from './search-bar'
+import { ChatInput } from './chat-input'
 import { FilterChips } from './filter-chips'
 import { DoctorCard } from './doctor-card'
 import { DoctorDetail } from './doctor-detail'
@@ -43,6 +44,9 @@ export function Directory({ doctors }: DirectoryProps) {
   const [activeFilters, setActiveFilters] = useState<BadgeKey[]>([])
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null)
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [chatMode, setChatMode] = useState(false)
+
+  const cityNames = useMemo(() => cities.map(c => c.name), [cities])
 
   const filteredDoctors = useMemo(() => {
     let result = doctors
@@ -96,6 +100,18 @@ export function Directory({ doctors }: DirectoryProps) {
     })
   }, [scrollPosition])
 
+  const handleChatFilters = useCallback((filters: {
+    city?: string
+    badges: BadgeKey[]
+    searchTerms: string[]
+  }) => {
+    if (filters.city) {
+      setSelectedCity(filters.city)
+    }
+    setActiveFilters(filters.badges)
+    setSearchQuery(filters.searchTerms.join(' '))
+  }, [])
+
   if (selectedDoctor) {
     return (
       <div className="mx-auto max-w-[480px] px-4">
@@ -126,7 +142,30 @@ export function Directory({ doctors }: DirectoryProps) {
         </h1>
       </div>
       <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-3">
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
+        <div className="flex items-center gap-2">
+          <div className="min-w-0 flex-1">
+            {chatMode ? (
+              <ChatInput
+                onFiltersExtracted={handleChatFilters}
+                cities={cityNames}
+              />
+            ) : (
+              <SearchBar value={searchQuery} onChange={setSearchQuery} />
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={() => setChatMode(!chatMode)}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-card shadow-sm transition-colors"
+            aria-label={chatMode ? 'Switch to search' : 'Switch to AI chat'}
+          >
+            {chatMode ? (
+              <Search size={18} className="text-text-muted" />
+            ) : (
+              <MessageSquare size={18} className="text-text-muted" />
+            )}
+          </button>
+        </div>
       </div>
 
       <div className="mt-3">
