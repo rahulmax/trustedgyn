@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, useCallback, useRef, type ReactNode } from 'react'
-import { type UIStrings, type LanguageCode, getEnglishStrings, loadTranslation, t as translate } from './i18n'
+import { type UIStrings, type LanguageCode, LANGUAGES, getEnglishStrings, loadTranslation, getNotoFontUrl, getNotoFontFamily, t as translate } from './i18n'
 
 type TranslationContextValue = {
   language: LanguageCode
@@ -30,6 +30,35 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     if (language !== 'en') {
       loadTranslation(language).then(setStrings)
     }
+  }, [language])
+
+  // Load Noto fonts for non-English languages
+  useEffect(() => {
+    const langConfig = LANGUAGES.find(l => l.code === language)
+    const script = langConfig?.script
+    if (!script) {
+      // English — reset to Alegreya
+      document.documentElement.style.removeProperty('--noto-sans')
+      document.documentElement.style.removeProperty('--noto-serif')
+      document.documentElement.classList.remove('noto-active')
+      return
+    }
+
+    // Inject Google Fonts link if not already present
+    const linkId = `noto-font-${script}`
+    if (!document.getElementById(linkId)) {
+      const link = document.createElement('link')
+      link.id = linkId
+      link.rel = 'stylesheet'
+      link.href = getNotoFontUrl(script)
+      document.head.appendChild(link)
+    }
+
+    // Set CSS custom properties for Noto fonts
+    const { sans, serif } = getNotoFontFamily(script)
+    document.documentElement.style.setProperty('--noto-sans', sans)
+    document.documentElement.style.setProperty('--noto-serif', serif)
+    document.documentElement.classList.add('noto-active')
   }, [language])
 
   const setLanguage = useCallback((code: LanguageCode) => {

@@ -1,0 +1,40 @@
+[   11276ms] ReferenceError: gtag is not defined
+    at <anonymous>:1:1
+    at https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:686:429
+    at https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:687:132
+    at lR (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:688:31)
+    at Od.kR (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:685:92)
+    at Od.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:240:187)
+    at k.apply (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:171:466)
+    at kb (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:134:209)
+    at jb (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:133:527)
+    at Od.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:195:473)
+    at k.apply (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:171:466)
+    at kb (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:134:209)
+    at k.tq (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:136:117)
+    at xf (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:206:960)
+    at https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:627:315
+    at Cg (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:222:13)
+    at e (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:565:230)
+    at https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:140:125
+    at Array.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:566:414)
+    at Object.execute (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:566:154)
+    at fB (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:566:874)
+    at jB (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:571:117)
+    at CC (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:599:327)
+    at EC (https://www.googletagmanager.com/gtm.js?id=GTM-PSMVGL5:601:75)
+    at nrWrapper (https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician:6:15071)
+[   18390ms] [ERROR] Access to fetch at 'https://sentry.practo.com/api/93/envelope/?sentry_key=732878d0e40e41fd983db947947f98bb&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.120.4' from origin 'https://www.practo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician:30
+[   18407ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://sentry.practo.com/api/93/envelope/?sentry_key=732878d0e40e41fd983db947947f98bb&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.120.4:0
+[   18695ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://cdn-cookieyes.com/client_data/31d7595b5a228d8bce856037/script.js:0
+[   18724ms] [ERROR] Access to fetch at 'https://sentry.practo.com/api/93/envelope/?sentry_key=732878d0e40e41fd983db947947f98bb&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.120.4' from origin 'https://www.practo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician:30
+[   18724ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://sentry.practo.com/api/93/envelope/?sentry_key=732878d0e40e41fd983db947947f98bb&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.120.4:0
+[   18737ms] [ERROR] Access to fetch at 'https://sentry.practo.com/api/93/envelope/?sentry_key=732878d0e40e41fd983db947947f98bb&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.120.4' from origin 'https://www.practo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician:30
+[   18737ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://sentry.practo.com/api/93/envelope/?sentry_key=732878d0e40e41fd983db947947f98bb&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.120.4:0
+[   58359ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician:0
+[   58361ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://www.practo.com/bangalore/doctor/anupama-rohidekar-gynecologist-obstetrician:0
+[   75089ms] [WARNING] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155 @ https://www.practostatic.com/web-assets/javascripts/vendor-entry.7e96c593f4f7.js:54
+[   85572ms] [WARNING] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155 @ https://www.practostatic.com/web-assets/javascripts/vendor-entry.7e96c593f4f7.js:54
+[   92964ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0

@@ -55,6 +55,15 @@ body {
   font-family: var(--font-alegreya), Georgia, serif;
 }
 
+/* When a non-English language is active, use Noto fonts */
+html.noto-active body {
+  font-family: var(--noto-sans), var(--font-alegreya-sans), 'Helvetica Neue', sans-serif;
+}
+
+html.noto-active .font-serif {
+  font-family: var(--noto-serif), var(--font-alegreya), Georgia, serif;
+}
+
 .badge-pill {
   background-color: var(--badge-bg);
   color: var(--badge-text);

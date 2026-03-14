@@ -59,19 +59,24 @@ CRITICAL RULES:
 5. For medical/technical terms that people commonly say in English even when speaking ${lang.label}, keep the English: "gynaecologist" can stay as-is or use the common ${lang.label} equivalent.
 
 SPECIFIC TRANSLATION GUIDANCE:
-- "Call" = the action of making a phone call (not "listen" or "hear")
-- "Map" = a geographical map/location map
-- "Directions" = navigation directions to a place
-- "Testimonial" = a patient's review/experience/feedback about a doctor (not "interview" or "certificate")
+- "gynaecologist" → MUST be translated into ${lang.label}. Use the common native word for a women's doctor / स्त्री रोग विशेषज्ञ / பெண் மருத்துவர் etc. Do NOT keep it in English.
+- "Call" = the action of making a phone call. Translate it: कॉल करें / அழைக்கவும் etc.
+- "Map" = a geographical map. Translate it: नक्शा / வரைபடம் etc.
+- "Details" = more information. Translate it.
+- "Directions" = navigation directions to a place. Translate it.
+- "Testimonial" = a patient's review/experience/feedback about a doctor (NOT "interview", NOT "certificate"). Use the word for "experience" or "review": अनुभव / அனுபவம் etc.
 - "Crowdsourced" = collected from community contributions (translate the concept, don't transliterate)
-- "Queer-friendly" = welcoming to LGBTQ+ people
-- "Sex-positive" = open and non-judgmental about sexuality
-- "Trauma-informed" = sensitive to people who have experienced trauma/abuse
-- "Non-trad family" = supportive of non-traditional family structures (single parents, surrogacy, etc.)
-- "Repro autonomy" = reproductive autonomy (respects choices about pregnancy, abortion, birth control)
-- "Confidential & Autonomous" = keeps your information private, treats you as an independent adult
-- "Affordable" = reasonably priced, won't charge unnecessarily
-- "Accessible" = physically accessible (wheelchair, etc.) and accommodating
+- ALL badge labels MUST be translated into ${lang.label}. Do NOT leave them in English:
+  - "Queer-friendly" = welcoming to LGBTQ+ people. Translate: समलैंगिक-मित्र / LGBTQ+ நட்பான etc.
+  - "Sex-positive" = open and non-judgmental about sexuality. Translate the concept.
+  - "Trauma-informed" = sensitive to people who have experienced trauma/abuse. Translate.
+  - "Non-trad family" = supportive of non-traditional family structures. Translate.
+  - "Repro autonomy" = reproductive autonomy / freedom of reproductive choices. Translate.
+  - "Confidential & Autonomous" = keeps your information private, treats you as independent. Translate.
+  - "Affordable" = reasonably priced, won't charge unnecessarily. Translate.
+  - "Accessible" = physically accessible (wheelchair, etc.). Translate.
+- ALL button labels, section headings, and UI text MUST be in ${lang.label}. Do NOT leave any user-facing text in English.
+- Only keep in English: "LGBTQ+", "CC BY-NC-SA 4.0", "@AmbaAzaad", "Google Sheets", "AI"
 
 Return a JSON object with the EXACT same keys as the input.`,
           },
