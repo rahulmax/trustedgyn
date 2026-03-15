@@ -83,12 +83,16 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
   const [copied, setCopied] = useState(false)
 
   const handleShare = async () => {
-    if (navigator.share) {
-      await navigator.share({ title: doctor.name, url: fullUrl })
-    } else {
-      await navigator.clipboard.writeText(fullUrl)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: doctor.name, url: fullUrl })
+      } else {
+        await navigator.clipboard.writeText(fullUrl)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      }
+    } catch {
+      // User cancelled share sheet or clipboard permission denied
     }
   }
 
