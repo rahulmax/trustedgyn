@@ -17,9 +17,10 @@ import { ThemeToggle } from './theme-toggle'
 
 type DirectoryProps = {
   doctors: Doctor[]
+  defaultCity?: string
 }
 
-export function Directory({ doctors }: DirectoryProps) {
+export function Directory({ doctors, defaultCity }: DirectoryProps) {
   const { t } = useTranslation()
 
   const cities = useMemo(() => {
@@ -32,7 +33,7 @@ export function Directory({ doctors }: DirectoryProps) {
       .sort((a, b) => a.name.localeCompare(b.name))
   }, [doctors])
 
-  const [selectedCity, setSelectedCity] = useState('')
+  const [selectedCity, setSelectedCity] = useState(defaultCity ?? '')
   const [inputValue, setInputValue] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [fallbackQuery, setFallbackQuery] = useState('')
