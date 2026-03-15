@@ -7,7 +7,7 @@ import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
   Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
-  BadgeCheck, Briefcase, Stethoscope,
+  Briefcase, Stethoscope,
 } from 'lucide-react'
 import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
@@ -47,21 +47,30 @@ const GROUP_LABEL_KEYS: Record<BadgeKey, keyof ReturnType<typeof useTranslation>
   'non-traditional-family': 'groupFamily',
 }
 
+type BackLinkProps = {
+  onBack: (() => void) | string
+  label: string
+  className: string
+  iconSize?: number
+}
+
+function BackLink({ onBack, label, className, iconSize = 18 }: BackLinkProps) {
+  return typeof onBack === 'string' ? (
+    <Link href={onBack} className={className}>
+      <ArrowLeft size={iconSize} />
+      <span>{label}</span>
+    </Link>
+  ) : (
+    <button type="button" onClick={onBack} className={className}>
+      <ArrowLeft size={iconSize} />
+      <span>{label}</span>
+    </button>
+  )
+}
+
 export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
   const { t, language } = useTranslation()
 
-  const BackLink = ({ className, iconSize = 18 }: { className: string; iconSize?: number }) =>
-    typeof onBack === 'string' ? (
-      <Link href={onBack} className={className}>
-        <ArrowLeft size={iconSize} />
-        <span>{t('backToResults')}</span>
-      </Link>
-    ) : (
-      <button type="button" onClick={onBack} className={className}>
-        <ArrowLeft size={iconSize} />
-        <span>{t('backToResults')}</span>
-      </button>
-    )
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
   const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
   const testimonials = Array.isArray(doctor.testimonial)
@@ -71,7 +80,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-bg pb-24">
-      <BackLink className="flex items-center gap-2 px-1 py-4 text-[15px] text-text-secondary transition-colors hover:text-text-primary" />
+      <BackLink onBack={onBack} label={t('backToResults')} className="flex items-center gap-2 px-1 py-4 text-[15px] text-text-secondary transition-colors hover:text-text-primary" />
 
       <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
         <div className="px-5 pt-5 pb-4">
@@ -348,7 +357,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         )}
       </div>
 
-      <BackLink className="mt-4 flex w-full items-center justify-center gap-2 rounded-[18px] bg-card py-3.5 text-[15px] font-semibold text-text-secondary shadow-sm transition-colors hover:text-text-primary" iconSize={16} />
+      <BackLink onBack={onBack} label={t('backToResults')} className="mt-4 flex w-full items-center justify-center gap-2 rounded-[18px] bg-card py-3.5 text-[15px] font-semibold text-text-secondary shadow-sm transition-colors hover:text-text-primary" iconSize={16} />
     </div>
   )
 }
