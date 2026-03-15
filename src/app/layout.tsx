@@ -13,6 +13,7 @@ const alegreyaSans = Alegreya_Sans({
   variable: '--font-alegreya-sans',
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 })
 

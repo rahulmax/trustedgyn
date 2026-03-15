@@ -99,7 +99,7 @@ export function SearchBar({ value, onChange, onAIFilters, onFallbackSearch, citi
   }
 
   return (
-    <div className="flex items-center gap-2 rounded-[14px] bg-card px-4 py-3 shadow-sm">
+    <div className="flex h-[46px] items-center gap-2 rounded-[14px] bg-card px-4 shadow-sm">
       <Search size={20} className="shrink-0 text-text-muted" />
       <input
         ref={inputRef}

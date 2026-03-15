@@ -31,19 +31,7 @@ export function Directory({ doctors }: DirectoryProps) {
       .sort((a, b) => a.name.localeCompare(b.name))
   }, [doctors])
 
-  const defaultCity = useMemo(() => {
-    let maxCity = ''
-    let maxCount = 0
-    for (const c of cities) {
-      if (c.count > maxCount) {
-        maxCount = c.count
-        maxCity = c.name
-      }
-    }
-    return maxCity
-  }, [cities])
-
-  const [selectedCity, setSelectedCity] = useState(defaultCity)
+  const [selectedCity, setSelectedCity] = useState('')
   const [inputValue, setInputValue] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [fallbackQuery, setFallbackQuery] = useState('')
@@ -201,7 +189,7 @@ export function Directory({ doctors }: DirectoryProps) {
             </div>
           </div>
           <HeroTitle />
-          <p className="mt-2 text-[15px] leading-relaxed text-text-secondary">
+          <p className="mt-3 text-[15px] leading-snug tracking-[-0.01em] text-text-secondary">
             {t('heroStrapline')}
           </p>
         </div>

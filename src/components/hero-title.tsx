@@ -67,7 +67,7 @@ export function HeroTitle() {
 
   if (language !== 'en') {
     return (
-      <h1 className="mt-4 font-serif text-[28px] font-bold text-text-primary">
+      <h1 className="mt-6 font-serif text-[28px] font-bold leading-[1.15] tracking-[-0.01em] text-text-primary">
         {t('heroTitle')}
       </h1>
     )
@@ -78,11 +78,11 @@ export function HeroTitle() {
   const color = getColor(current.badgeKey)
 
   return (
-    <h1 className="mt-4 font-serif text-[28px] font-bold leading-[1.3] text-text-primary">
+    <h1 className="mt-6 font-serif text-[28px] font-bold leading-[1.15] tracking-[-0.01em] text-text-primary">
       {'Find '}
       {current.article}
       {' '}
-      <span className="relative inline-block h-[1.3em] overflow-hidden align-bottom">
+      <span className="relative inline-block h-[1.15em] overflow-hidden align-bottom">
         {animating ? (
           <>
             <span

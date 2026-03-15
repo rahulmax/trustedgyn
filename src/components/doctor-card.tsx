@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { MapPin, Clock, Languages, Phone, Map, FileText, BadgeCheck, Briefcase, ExternalLink } from 'lucide-react'
+import { MapPin, Clock, Languages, Phone, Map, BadgeCheck, Briefcase, ExternalLink } from 'lucide-react'
 import { type Doctor } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
@@ -16,7 +16,13 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
 
   return (
-    <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={() => onViewDetails(doctor)}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onViewDetails(doctor) }}
+      className="cursor-pointer overflow-hidden rounded-[18px] bg-card shadow-sm transition-colors hover:bg-card-inset"
+    >
       <div className="px-5 py-[18px]">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -84,6 +90,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
             href={doctor.practoUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="mt-3 inline-flex items-center gap-1 text-[13px] text-text-muted transition-colors hover:text-text-primary"
           >
             <ExternalLink size={12} className="shrink-0" />
@@ -100,10 +107,11 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         </div>
       )}
 
-      <div className="grid grid-cols-3 border-t border-border">
+      <div className="grid grid-cols-2 border-t border-border">
         {doctor.phone ? (
           <a
             href={`tel:${doctor.phone}`}
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-call transition-colors hover:bg-card-inset"
           >
             <Phone size={16} />
@@ -119,19 +127,12 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-map transition-colors hover:bg-card-inset"
+          onClick={(e) => e.stopPropagation()}
+          className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold text-map transition-colors hover:bg-card-inset"
         >
           <Map size={16} />
           <span>{t('map')}</span>
         </a>
-        <button
-          type="button"
-          onClick={() => onViewDetails(doctor)}
-          className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold text-details transition-colors hover:bg-card-inset"
-        >
-          <FileText size={16} />
-          <span>{t('details')}</span>
-        </button>
       </div>
     </div>
   )

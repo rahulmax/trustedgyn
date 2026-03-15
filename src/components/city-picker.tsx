@@ -11,7 +11,7 @@ type CityPickerProps = {
 
 const TIER_1_CITIES = new Set([
   'Mumbai', 'Delhi', 'Bengaluru', 'Chennai', 'Kolkata',
-  'Hyderabad', 'Pune', 'Ahmedabad',
+  'Hyderabad', 'Pune',
 ])
 
 export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
