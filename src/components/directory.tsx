@@ -12,6 +12,7 @@ import { DoctorDetail } from './doctor-detail'
 import { AboutSection } from './about-section'
 import { StickyFooter } from './sticky-footer'
 import { LanguagePicker } from './language-picker'
+import { HeroTitle } from './hero-title'
 
 type DirectoryProps = {
   doctors: Doctor[]
@@ -112,15 +113,21 @@ export function Directory({ doctors }: DirectoryProps) {
     return doctors.filter((d) => d.city === selectedCity).length
   }, [doctors, selectedCity])
 
+  const clearSearchStatus = useCallback(() => {
+    setSearchStatus({ type: 'idle', message: '' })
+  }, [])
+
   const handleToggleFilter = useCallback((badge: BadgeKey) => {
+    clearSearchStatus()
     setActiveFilters((prev) =>
       prev.includes(badge)
         ? prev.filter((f) => f !== badge)
         : [...prev, badge]
     )
-  }, [])
+  }, [clearSearchStatus])
 
   const handleViewDetails = useCallback((doctor: Doctor) => {
+    clearSearchStatus()
     setScrollPosition(window.scrollY)
     setSelectedDoctor(doctor)
     window.scrollTo(0, 0)
@@ -129,7 +136,7 @@ export function Directory({ doctors }: DirectoryProps) {
         setDetailVisible(true)
       })
     })
-  }, [])
+  }, [clearSearchStatus])
 
   const handleBack = useCallback(() => {
     setDetailVisible(false)
@@ -173,14 +180,14 @@ export function Directory({ doctors }: DirectoryProps) {
     : t('trustedDoctors', { count: filteredDoctors.length, plural })
 
   return (
-    <div className="mx-auto max-w-[480px] px-4 pb-28">
+    <div className="mx-auto max-w-[480px] overflow-x-hidden px-4 pb-28">
       {!selectedDoctor && (
         <div className="pt-4">
           <div className="flex items-center justify-between">
             <CityPicker
               cities={cities}
               selected={selectedCity}
-              onSelect={setSelectedCity}
+              onSelect={(city) => { clearSearchStatus(); setSelectedCity(city) }}
             />
             <div className="flex items-center gap-2">
               <LanguagePicker />
@@ -193,9 +200,7 @@ export function Directory({ doctors }: DirectoryProps) {
               </a>
             </div>
           </div>
-          <h1 className="mt-4 font-serif text-[28px] font-bold text-text-primary">
-            {t('heroTitle')}
-          </h1>
+          <HeroTitle />
         </div>
       )}
       <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-3">
