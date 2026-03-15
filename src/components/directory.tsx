@@ -9,7 +9,7 @@ import { SearchBar, SearchStatus as SearchStatusDisplay } from './search-bar'
 import { FilterChips } from './filter-chips'
 import { DoctorCard } from './doctor-card'
 import { DoctorDetail } from './doctor-detail'
-import { AboutSection } from './about-section'
+import { AboutSection, AboutDrawer } from './about-section'
 import { StickyFooter } from './sticky-footer'
 import { LanguagePicker } from './language-picker'
 import { HeroTitle } from './hero-title'
@@ -42,6 +42,8 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null)
   const [detailVisible, setDetailVisible] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [drawerHelplines, setDrawerHelplines] = useState(false)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [searchStatus, setSearchStatus] = useState<{ type: 'idle' | 'loading' | 'result' | 'error'; message: string }>({ type: 'idle', message: '' })
   const detailRef = useRef<HTMLDivElement>(null)
@@ -276,7 +278,15 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
             <AboutSection />
           </div>
 
-          <StickyFooter />
+          <StickyFooter
+            onAbout={() => { setDrawerHelplines(false); setDrawerOpen(true) }}
+            onHelplines={() => { setDrawerHelplines(true); setDrawerOpen(true) }}
+          />
+          <AboutDrawer
+            open={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+            scrollToHelplines={drawerHelplines}
+          />
         </>
       )}
     </div>

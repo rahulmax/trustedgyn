@@ -236,7 +236,13 @@ function cleanHours(raw) {
 
   // Skip non-hours data (phone numbers, addresses, vague text)
   if (/^\d{10,}/.test(s)) return '' // phone number
-  if (/no idea|varies|varied|by appointment|probably|weekdays evening/i.test(s)) return s
+
+  // Filter out vague/unhelpful entries
+  if (/^(unsure|not\s*sure|no\s*idea|don'?t\s*know|probably|varies?d?|varied)$/i.test(s.replace(/[,.\s]+/g, ' ').trim())) return ''
+  if (/^unsure/i.test(s) && s.length < 50) return ''
+
+  // Let through descriptive but imprecise entries
+  if (/by appointment/i.test(s)) return s
 
   // Normalize separators: . → : for times
   s = s.replace(/(\d)\.(\d{2})/g, '$1:$2')
@@ -343,21 +349,103 @@ function cleanPhone(raw) {
   return s
 }
 
+const KNOWN_LANGUAGES = new Set([
+  'english', 'hindi', 'kannada', 'telugu', 'tamil', 'malayalam',
+  'marathi', 'gujarati', 'bengali', 'punjabi', 'urdu', 'odia',
+  'assamese', 'konkani', 'tulu', 'sindhi', 'nepali', 'bhojpuri',
+  'rajasthani', 'maithili', 'dogri', 'kashmiri', 'manipuri',
+  'french', 'german', 'arabic', 'spanish',
+])
+
 function cleanLanguages(raw) {
   if (!raw) return []
-  return raw
-    .split(/[,/&]/)
-    .map(s => s.trim())
-    .filter(s => {
-      if (!s || s.length < 2) return false
-      // Filter out fee amounts, "Rs.", numbers, noise
-      if (/^(rs\.?|₹|\d+|free|minimal|yep|probably|happily)/i.test(s)) return false
-      if (/\d{3,}/.test(s)) return false // numbers like "150", "300-500"
-      if (/not\s*(sure|aware)/i.test(s)) return false
-      if (/^(i\s|did|for\s|as\s)/i.test(s)) return false
+
+  // Strip conversational noise before splitting
+  let s = raw
+    .replace(/\bfor\s+sure\b/gi, '')
+    .replace(/\bfluent\s+in\b/gi, '')
+    .replace(/\bcan\s+(understand|speak)\b/gi, '')
+    .replace(/\band\b/gi, ',')
+    .replace(/\./g, ',')
+    .replace(/\s{2,}/g, ',')
+
+  const LANGUAGE_MISSPELLINGS = new Set([
+    'gujrathi', 'gujrati', 'gujurati', 'punjabj', 'panjabi',
+    'bangla', 'malyalam', 'engl',
+  ])
+
+  const isLanguageWord = (w) => {
+    const clean = w.toLowerCase().replace(/[^a-z]/g, '')
+    return KNOWN_LANGUAGES.has(clean) || LANGUAGE_MISSPELLINGS.has(clean)
+  }
+
+  // If no comma/slash/& separators exist but multiple known languages are space-separated, split on spaces
+  if (!s.includes(',') && !s.includes('/') && !s.includes('&')) {
+    const words = s.trim().split(/\s+/)
+    const allKnown = words.every(isLanguageWord)
+    if (allKnown && words.length > 1) {
+      s = words.join(',')
+    }
+  }
+
+  // Split then rejoin fragments with unmatched parentheses
+  const rawParts = s.split(/[,/&]/).map(seg => seg.trim())
+  const parts = []
+  for (let i = 0; i < rawParts.length; i++) {
+    if (rawParts[i].includes('(') && !rawParts[i].includes(')')) {
+      // Join with next parts until we find the closing paren
+      let joined = rawParts[i]
+      while (i + 1 < rawParts.length && !joined.includes(')')) {
+        i++
+        joined += ', ' + rawParts[i]
+      }
+      parts.push(joined)
+    } else {
+      parts.push(rawParts[i])
+    }
+  }
+
+  return parts
+    .filter(seg => {
+      if (!seg || seg.length < 2) return false
+      // Filter out fee amounts, numbers, noise, survey answers
+      if (/^(rs\.?|₹|\d+|free|minimal|yep|probably|happily|maybe)/i.test(seg)) return false
+      if (/\d{3,}/.test(seg)) return false
+      if (/not\s*(sure|aware)/i.test(seg)) return false
+      if (/^(i\s|did|for\s|as\s|can\s|she|he|they|try|sure)/i.test(seg)) return false
+      if (/anything\s*else/i.test(seg)) return false
+      // Only keep if it looks like a language name (short, no long phrases)
+      if (seg.split(/\s+/).length > 4) return false
       return true
     })
-    .map(s => titleCase(s))
+    .map(seg => {
+      // Clean up parenthetical notes like "Hindi (Can Understand Tamil and Telugu)"
+      const parenMatch = seg.match(/^(.+?)\s*\((.+)\)\s*$/)
+      if (parenMatch) {
+        const main = parenMatch[1].trim()
+        const inner = parenMatch[2]
+          .replace(/can\s+(understand|speak)/gi, '')
+          .replace(/\band\b/gi, ',')
+          .split(',')
+          .map(s => s.trim())
+          .filter(s => s.length >= 2)
+        return [main, ...inner]
+      }
+      return [seg]
+    })
+    .flat()
+    .map(seg => {
+      // Fix common misspellings
+      const lower = seg.trim().toLowerCase()
+      if (lower === 'gujrathi' || lower === 'gujrati' || lower === 'gujurati') return 'Gujarati'
+      if (lower === 'punjabj' || lower === 'panjabi') return 'Punjabi'
+      if (lower === 'bangla') return 'Bengali'
+      if (lower === 'malyalam') return 'Malayalam'
+      if (lower === 'engl') return 'English'
+      return titleCase(seg.trim())
+    })
+    .filter(seg => seg.length >= 2)
+    .filter((v, i, a) => a.indexOf(v) === i) // dedupe
 }
 
 function cleanPayment(raw) {

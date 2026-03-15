@@ -9,7 +9,7 @@ import {
   Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
   Briefcase, Stethoscope, Share2,
 } from 'lucide-react'
-import { doctorSlug } from '@/lib/utils'
+import { doctorSlug, getValidTestimonials } from '@/lib/utils'
 import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
@@ -74,9 +74,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
 
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
   const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
-  const testimonials = Array.isArray(doctor.testimonial)
-    ? doctor.testimonial.filter(Boolean)
-    : doctor.testimonial ? [doctor.testimonial] : []
+  const testimonials = getValidTestimonials(doctor.testimonial)
   const [testimonialIndex, setTestimonialIndex] = useState(0)
   const permalink = `/doctor/${doctorSlug(doctor)}`
   const fullUrl = `https://trustedgyn.com${permalink}`
@@ -254,7 +252,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
             )}
             <button
               onClick={handleShare}
-              className="flex flex-1 min-w-[calc(50%-6px)] items-center justify-center gap-2 rounded-[12px] bg-card-inset py-3 text-[15px] font-semibold text-text-secondary transition-colors hover:opacity-80"
+              className="flex flex-1 min-w-[calc(50%-6px)] cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-card-inset py-3 text-[15px] font-semibold text-text-secondary transition-colors hover:opacity-80"
             >
               <Share2 size={16} />
               <span>{copied ? 'Copied!' : 'Share'}</span>
@@ -262,16 +260,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
           </div>
         </div>
 
-        {typeof onBack === 'function' && (
-          <div className="px-5 pb-2">
-            <Link
-              href={permalink}
-              className="mt-2 block text-center text-sm text-text-muted underline underline-offset-2 hover:text-text-secondary"
-            >
-              View full page →
-            </Link>
-          </div>
-        )}
+
 
         {testimonials.length > 0 && (
           <div className="border-t border-border px-5 py-4">
@@ -296,7 +285,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                   <ChevronLeft size={16} />
                 </button>
               )}
-              <p className={`text-[15px] italic text-text-secondary ${testimonials.length > 1 ? 'px-6' : ''}`}>
+              <p className={`text-[15px] italic tracking-tight text-text-secondary ${testimonials.length > 1 ? 'px-6' : ''}`} style={{ wordSpacing: '0.05em' }}>
                 &ldquo;{testimonials[testimonialIndex]}&rdquo;
               </p>
               {testimonials.length > 1 && (

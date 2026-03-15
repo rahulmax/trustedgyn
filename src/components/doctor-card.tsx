@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Clock, Languages, Phone, Map, BadgeCheck, Briefcase, ExternalLink } from 'lucide-react'
 import { type Doctor } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
-import { citySlug } from '@/lib/utils'
+import { citySlug, getValidTestimonials } from '@/lib/utils'
 import { Badge } from './badge'
 
 type DoctorCardProps = {
@@ -60,7 +60,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
                   href={`/city/${citySlug(doctor.city)}`}
                   onClick={(e) => e.stopPropagation()}
                   onKeyDown={(e) => e.stopPropagation()}
-                  className="underline underline-offset-2 hover:text-text-primary"
+                  className="hover:text-text-primary"
                 >
                   {doctor.city}
                 </Link>
@@ -110,13 +110,16 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         )}
       </div>
 
-      {(Array.isArray(doctor.testimonial) ? doctor.testimonial[0] : doctor.testimonial) && (
-        <div className="border-t border-border bg-card-inset px-5 py-3.5">
-          <p className="text-[15px] italic text-text-secondary">
-            &ldquo;{Array.isArray(doctor.testimonial) ? doctor.testimonial[0] : doctor.testimonial}&rdquo;
-          </p>
-        </div>
-      )}
+      {(() => {
+        const valid = getValidTestimonials(doctor.testimonial)
+        return valid.length > 0 ? (
+          <div className="border-t border-border bg-card-inset px-5 py-3.5">
+            <p className="line-clamp-3 text-[15px] italic tracking-tight text-text-secondary" style={{ wordSpacing: '0.05em' }}>
+              &ldquo;{valid[0]}&rdquo;
+            </p>
+          </div>
+        ) : null
+      })()}
 
       <div className="grid grid-cols-2 border-t border-border">
         {doctor.phone ? (

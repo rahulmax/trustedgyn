@@ -76,12 +76,12 @@ export default async function DoctorPage({ params }: Props) {
   }
 
   return (
-    <>
+    <div className="mx-auto max-w-[480px] px-4">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <DoctorDetail doctor={doctor} onBack="/" />
-    </>
+    </div>
   )
 }

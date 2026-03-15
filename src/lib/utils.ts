@@ -36,6 +36,19 @@ export function getActiveDoctors(): Doctor[] {
   return (doctors as Doctor[]).filter((d) => isActiveDoctorFlag(d.dataFlag))
 }
 
+const JUNK_TESTIMONIALS = new Set([
+  'maybe', 'probably yes', 'probably not', 'yes', 'no', 'not sure',
+])
+
+export function isValidTestimonial(text: string): boolean {
+  return text.length > 0 && !JUNK_TESTIMONIALS.has(text.toLowerCase().trim())
+}
+
+export function getValidTestimonials(testimonial: string | string[]): string[] {
+  const all = Array.isArray(testimonial) ? testimonial : [testimonial]
+  return all.filter((t) => t && isValidTestimonial(t))
+}
+
 export function getUniqueCities(): string[] {
   const cities = new Set(getActiveDoctors().map((d) => d.city))
   return Array.from(cities).sort()
