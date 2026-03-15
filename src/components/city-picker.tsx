@@ -9,9 +9,17 @@ type CityPickerProps = {
   onSelect: (city: string) => void
 }
 
+const TIER_1_CITIES = new Set([
+  'Mumbai', 'Delhi', 'Bengaluru', 'Chennai', 'Kolkata',
+  'Hyderabad', 'Pune', 'Ahmedabad',
+])
+
 export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const tier1 = cities.filter(c => TIER_1_CITIES.has(c.name))
+  const rest = cities.filter(c => !TIER_1_CITIES.has(c.name))
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -24,6 +32,20 @@ export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
       return () => document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [open])
+
+  const cityButton = (city: { name: string; count: number }) => (
+    <button
+      key={city.name}
+      type="button"
+      onClick={() => { onSelect(city.name); setOpen(false) }}
+      className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[15px] transition-colors hover:bg-card-inset ${
+        selected === city.name ? 'font-semibold text-text-primary' : 'text-text-secondary'
+      }`}
+    >
+      <span>{city.name}</span>
+      <span className="text-[13px] text-text-muted">{city.count}</span>
+    </button>
+  )
 
   return (
     <div ref={containerRef} className="relative">
@@ -54,19 +76,13 @@ export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
               {cities.reduce((sum, c) => sum + c.count, 0)}
             </span>
           </button>
-          {cities.map((city) => (
-            <button
-              key={city.name}
-              type="button"
-              onClick={() => { onSelect(city.name); setOpen(false) }}
-              className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-[15px] transition-colors hover:bg-card-inset ${
-                selected === city.name ? 'font-semibold text-text-primary' : 'text-text-secondary'
-              }`}
-            >
-              <span>{city.name}</span>
-              <span className="text-[13px] text-text-muted">{city.count}</span>
-            </button>
-          ))}
+          {tier1.map(cityButton)}
+          {rest.length > 0 && (
+            <>
+              <div className="mx-4 my-1.5 border-t border-border" />
+              {rest.map(cityButton)}
+            </>
+          )}
         </div>
       )}
     </div>

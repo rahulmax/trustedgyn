@@ -4,6 +4,7 @@
   --color-bg: #f2f2f2;
   --color-card: #ffffff;
   --color-card-inset: #f8f8f8;
+  --color-text-heading: #3a3530;
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #666666;
   --color-text-muted: #999999;
@@ -26,6 +27,7 @@
     --color-bg: #121212;
     --color-card: #1e1e1e;
     --color-card-inset: #171717;
+    --color-text-heading: #e8e0d8;
     --color-text-primary: #e8e8e8;
     --color-text-secondary: #a0a0a0;
     --color-text-muted: #707070;

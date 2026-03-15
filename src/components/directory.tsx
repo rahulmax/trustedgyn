@@ -1,12 +1,11 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
-import { PhoneCall, MessageSquare, Search } from 'lucide-react'
+import { useState, useMemo, useCallback, useRef } from 'react'
+import { PhoneCall, SlidersHorizontal } from 'lucide-react'
 import { type Doctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { CityPicker } from './city-picker'
-import { SearchBar } from './search-bar'
-import { ChatInput } from './chat-input'
+import { SearchBar, SearchStatus as SearchStatusDisplay } from './search-bar'
 import { FilterChips } from './filter-chips'
 import { DoctorCard } from './doctor-card'
 import { DoctorDetail } from './doctor-detail'
@@ -44,11 +43,16 @@ export function Directory({ doctors }: DirectoryProps) {
   }, [cities])
 
   const [selectedCity, setSelectedCity] = useState(defaultCity)
+  const [inputValue, setInputValue] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [languageFilter, setLanguageFilter] = useState<string[]>([])
   const [activeFilters, setActiveFilters] = useState<BadgeKey[]>([])
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null)
+  const [detailVisible, setDetailVisible] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const [chatMode, setChatMode] = useState(false)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const [searchStatus, setSearchStatus] = useState<{ type: 'idle' | 'loading' | 'result' | 'error'; message: string }>({ type: 'idle', message: '' })
+  const detailRef = useRef<HTMLDivElement>(null)
 
   const cityNames = useMemo(() => cities.map(c => c.name), [cities])
 
@@ -60,11 +64,13 @@ export function Directory({ doctors }: DirectoryProps) {
     }
 
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase()
-      result = result.filter(
-        (d) =>
+      const terms = searchQuery.toLowerCase().split(/\s+/)
+      result = result.filter((d) =>
+        terms.some((q) =>
           d.name.toLowerCase().includes(q) ||
-          d.locality.toLowerCase().includes(q)
+          d.locality.toLowerCase().includes(q) ||
+          (d.clinic && d.clinic.toLowerCase().includes(q))
+        )
       )
     }
 
@@ -74,8 +80,16 @@ export function Directory({ doctors }: DirectoryProps) {
       )
     }
 
+    if (languageFilter.length > 0) {
+      result = result.filter((d) =>
+        languageFilter.some((lang) =>
+          d.languages.some((dl) => dl.toLowerCase() === lang.toLowerCase())
+        )
+      )
+    }
+
     return result
-  }, [doctors, selectedCity, searchQuery, activeFilters])
+  }, [doctors, selectedCity, searchQuery, activeFilters, languageFilter])
 
   const cityDoctorCount = useMemo(() => {
     if (!selectedCity) return doctors.length
@@ -94,35 +108,39 @@ export function Directory({ doctors }: DirectoryProps) {
     setScrollPosition(window.scrollY)
     setSelectedDoctor(doctor)
     window.scrollTo(0, 0)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setDetailVisible(true)
+      })
+    })
   }, [])
 
   const handleBack = useCallback(() => {
-    setSelectedDoctor(null)
-    const pos = scrollPosition
-    requestAnimationFrame(() => {
-      window.scrollTo(0, pos)
-    })
+    setDetailVisible(false)
+    setTimeout(() => {
+      setSelectedDoctor(null)
+      const pos = scrollPosition
+      requestAnimationFrame(() => {
+        window.scrollTo(0, pos)
+      })
+    }, 300)
   }, [scrollPosition])
 
   const handleChatFilters = useCallback((filters: {
     city?: string
     badges: BadgeKey[]
     searchTerms: string[]
+    languages?: string[]
   }) => {
     if (filters.city) {
       setSelectedCity(filters.city)
     }
     setActiveFilters(filters.badges)
-    setSearchQuery(filters.searchTerms.join(' '))
+    setSearchQuery(filters.searchTerms.length > 0 ? filters.searchTerms.join(' ') : '')
+    setLanguageFilter(filters.languages ?? [])
+    setInputValue('')
   }, [])
 
-  if (selectedDoctor) {
-    return (
-      <div className="mx-auto max-w-[480px] px-4">
-        <DoctorDetail doctor={selectedDoctor} onBack={handleBack} />
-      </div>
-    )
-  }
 
   const plural = filteredDoctors.length !== 1 ? 's' : ''
   const countText = selectedCity
@@ -131,83 +149,111 @@ export function Directory({ doctors }: DirectoryProps) {
 
   return (
     <div className="mx-auto max-w-[480px] px-4 pb-28">
-      <div className="pt-4">
-        <div className="flex items-center justify-between">
-          <CityPicker
-            cities={cities}
-            selected={selectedCity}
-            onSelect={setSelectedCity}
-          />
-          <div className="flex items-center gap-2">
-            <LanguagePicker />
-            <a
-              href="tel:181"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-sm"
-              aria-label="Women Helpline: 181"
-            >
-              <PhoneCall size={20} className="text-emergency" />
-            </a>
+      {!selectedDoctor && (
+        <div className="pt-4">
+          <div className="flex items-center justify-between">
+            <CityPicker
+              cities={cities}
+              selected={selectedCity}
+              onSelect={setSelectedCity}
+            />
+            <div className="flex items-center gap-2">
+              <LanguagePicker />
+              <a
+                href="tel:181"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-sm"
+                aria-label="Women Helpline: 181"
+              >
+                <PhoneCall size={20} className="text-emergency" />
+              </a>
+            </div>
           </div>
+          <h1 className="mt-4 font-serif text-[28px] font-bold text-text-primary">
+            {t('heroTitle')}
+          </h1>
         </div>
-        <h1 className="mt-4 font-serif text-[28px] font-bold text-text-primary">
-          {t('heroTitle')}
-        </h1>
-      </div>
+      )}
       <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-3">
         <div className="flex items-center gap-2">
           <div className="min-w-0 flex-1">
-            {chatMode ? (
-              <ChatInput
-                onFiltersExtracted={handleChatFilters}
-                cities={cityNames}
-              />
-            ) : (
-              <SearchBar value={searchQuery} onChange={setSearchQuery} />
-            )}
+            <SearchBar
+              value={inputValue}
+              onChange={setInputValue}
+              onAIFilters={handleChatFilters}
+              cities={cityNames}
+              status={searchStatus}
+              onStatusChange={setSearchStatus}
+            />
           </div>
           <button
             type="button"
-            onClick={() => setChatMode(!chatMode)}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-card shadow-sm transition-colors"
-            aria-label={chatMode ? t('switchToSearch') : t('switchToChat')}
+            onClick={() => setFiltersOpen(!filtersOpen)}
+            className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-sm transition-colors ${
+              filtersOpen || activeFilters.length > 0
+                ? 'bg-text-primary text-bg'
+                : 'bg-card text-text-muted'
+            }`}
+            aria-label={t('filters')}
           >
-            {chatMode ? (
-              <Search size={18} className="text-text-muted" />
-            ) : (
-              <MessageSquare size={18} className="text-text-muted" />
+            <SlidersHorizontal size={18} />
+            {activeFilters.length > 0 && !filtersOpen && (
+              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-emergency text-[10px] font-bold text-white">
+                {activeFilters.length}
+              </span>
             )}
           </button>
         </div>
+        {searchStatus.type !== 'idle' && (
+          <div className="mt-2">
+            <SearchStatusDisplay status={searchStatus} />
+          </div>
+        )}
+        {filtersOpen && (
+          <div className="mt-3">
+            <FilterChips
+              activeFilters={activeFilters}
+              onToggle={handleToggleFilter}
+              totalCount={cityDoctorCount}
+              filteredCount={filteredDoctors.length}
+            />
+          </div>
+        )}
       </div>
 
-      <div className="mt-3">
-        <FilterChips
-          activeFilters={activeFilters}
-          onToggle={handleToggleFilter}
-          totalCount={cityDoctorCount}
-          filteredCount={filteredDoctors.length}
-        />
-      </div>
+      {selectedDoctor ? (
+        <div
+          ref={detailRef}
+          className="transition-all duration-300 ease-out"
+          style={{
+            opacity: detailVisible ? 1 : 0,
+            transform: detailVisible ? 'translateY(0)' : 'translateY(24px)',
+          }}
+        >
+          <DoctorDetail doctor={selectedDoctor} onBack={handleBack} />
+        </div>
+      ) : (
+        <>
+          <p className="mt-4 text-[14px] text-text-muted">
+            {countText}
+          </p>
 
-      <p className="mt-4 text-[14px] text-text-muted">
-        {countText}
-      </p>
+          <div className="mt-3 flex flex-col gap-4">
+            {filteredDoctors.map((doctor) => (
+              <DoctorCard
+                key={doctor.id}
+                doctor={doctor}
+                onViewDetails={handleViewDetails}
+              />
+            ))}
+          </div>
 
-      <div className="mt-3 flex flex-col gap-4">
-        {filteredDoctors.map((doctor) => (
-          <DoctorCard
-            key={doctor.id}
-            doctor={doctor}
-            onViewDetails={handleViewDetails}
-          />
-        ))}
-      </div>
+          <div className="mt-8">
+            <AboutSection />
+          </div>
 
-      <div className="mt-8">
-        <AboutSection />
-      </div>
-
-      <StickyFooter />
+          <StickyFooter />
+        </>
+      )}
     </div>
   )
 }

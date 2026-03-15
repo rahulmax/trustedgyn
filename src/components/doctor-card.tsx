@@ -18,19 +18,9 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
   return (
     <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
       <div className="px-5 py-[18px]">
-        <div className="flex items-start gap-3">
-          {doctor.photoUrl ? (
-            <Image
-              src={doctor.photoUrl}
-              alt=""
-              width={40}
-              height={40}
-              unoptimized
-              className="h-10 w-10 shrink-0 rounded-full object-cover"
-            />
-          ) : null}
+        <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="flex items-center gap-1.5 font-serif text-[20px] font-semibold text-text-primary">
+            <h3 className="flex items-center gap-1.5 font-serif text-[22px] font-semibold text-text-heading">
               <span>{doctor.name}</span>
               {doctor.verified && (
                 <CheckCircle2 size={16} className="shrink-0 text-green-600 dark:text-green-400" />
@@ -40,6 +30,16 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
               <p className="mt-0.5 text-[13px] text-text-muted">{doctor.qualifications}</p>
             )}
           </div>
+          {doctor.photoUrl && (
+            <Image
+              src={doctor.photoUrl}
+              alt=""
+              width={44}
+              height={44}
+              unoptimized
+              className="h-11 w-11 shrink-0 rounded-full object-cover"
+            />
+          )}
         </div>
 
         <div className="mt-3 flex flex-col gap-2">

@@ -73,8 +73,47 @@ export function AboutSection() {
           <p className="mt-5 border-t border-border pt-4 text-[13px] text-text-muted">
             {t('license')}
           </p>
+
+          <p className="mt-4 border-t border-border pt-4 text-[13px] font-medium text-text-secondary">
+            Built by{' '}
+            <a
+              href="https://rahulmax.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition-colors hover:text-text-primary"
+            >
+              rahulmax
+            </a>
+          </p>
         </div>
       )}
+
+      <div className="mt-6 px-1 pb-4">
+        <div className="space-y-0 text-[13px] leading-relaxed text-text-secondary">
+          <p className="border-t border-border pt-3 pb-3">
+            This directory is provided &ldquo;as is&rdquo; for informational purposes only.
+            It does not constitute medical advice, endorsement, or recommendation of any healthcare provider.
+            Doctor listings are crowdsourced from publicly available data and community submissions &mdash;
+            information may be inaccurate, outdated, or incomplete.
+            We make no warranties regarding the accuracy, reliability, or completeness of any listing.
+          </p>
+          <p className="border-t border-border pt-3 pb-3">
+            Always verify a doctor&rsquo;s credentials, registration, and suitability independently before
+            seeking treatment. You assume all risk associated with your use of this information.
+            The creators and operators of this directory shall not be liable for any loss, damage,
+            or adverse outcome arising from reliance on the information provided here.
+          </p>
+          <p className="border-t border-border pt-3 pb-3">
+            No personal data is collected or stored. This site does not use cookies for tracking.
+            If you are a listed doctor and wish to update or remove your information,
+            or if you have any grievances, please contact{' '}
+            <a href="mailto:hello@rahulmax.com" className="underline">hello@rahulmax.com</a>.
+          </p>
+          <p className="border-t border-border pt-3">
+            Built for India &middot; Information Technology Act, 2000
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

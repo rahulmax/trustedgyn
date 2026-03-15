@@ -67,20 +67,10 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
       </button>
 
       <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
-        <div className="px-5 py-5">
-          <div className="flex items-start gap-3">
-            {doctor.photoUrl ? (
-              <Image
-                src={doctor.photoUrl}
-                alt=""
-                width={56}
-                height={56}
-                unoptimized
-                className="h-14 w-14 shrink-0 rounded-full object-cover"
-              />
-            ) : null}
+        <div className="px-5 pt-5 pb-4">
+          <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <h2 className="flex items-center gap-1.5 font-serif text-[22px] font-bold text-text-primary">
+              <h2 className="flex items-center gap-1.5 font-serif text-[24px] font-bold text-text-heading">
                 <span>{doctor.name}</span>
                 {doctor.verified && (
                   <CheckCircle2 size={18} className="shrink-0 text-green-600 dark:text-green-400" />
@@ -95,80 +85,105 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                 </p>
               )}
             </div>
+            {doctor.photoUrl && (
+              <Image
+                src={doctor.photoUrl}
+                alt=""
+                width={56}
+                height={56}
+                unoptimized
+                className="h-14 w-14 shrink-0 rounded-full object-cover"
+              />
+            )}
           </div>
+        </div>
 
-          <div className="mt-4 flex flex-col gap-2.5">
-            {doctor.experience && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Briefcase size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.experience} experience</span>
-              </div>
-            )}
-            {doctor.clinic && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Stethoscope size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.clinic}</span>
-              </div>
-            )}
-            {doctor.locality && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <MapPin size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.locality}, {doctor.city}</span>
-              </div>
-            )}
-            {doctor.address && (
-              <div className="flex items-start gap-2 text-[15px] text-text-secondary">
-                <Building2 size={15} className="mt-0.5 shrink-0 text-text-muted" />
-                <span>{doctor.address}</span>
-              </div>
-            )}
-            {doctor.hours && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Clock size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.hours}</span>
-              </div>
-            )}
-            {doctor.fee && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <IndianRupee size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.fee}</span>
-              </div>
-            )}
-            {doctor.languages.length > 0 && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Languages size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.languages.join(', ')}</span>
-              </div>
-            )}
-            {doctor.payment.length > 0 && (
-              <div className="flex items-center gap-2 text-[15px] text-text-secondary">
-                <Wallet size={15} className="shrink-0 text-text-muted" />
-                <span>{doctor.payment.join(', ')}</span>
-              </div>
-            )}
-            {doctor.phones && doctor.phones.length > 1 && (
-              <div className="flex items-start gap-2 text-[15px] text-text-secondary">
-                <Phone size={15} className="mt-0.5 shrink-0 text-text-muted" />
-                <div className="flex flex-col gap-0.5">
-                  {doctor.phones.map((p) => (
-                    <a key={p} href={`tel:${p}`} className="transition-colors hover:text-text-primary">
-                      {p}
-                    </a>
-                  ))}
+        {(doctor.experience || doctor.clinic || doctor.locality || doctor.address) && (
+          <div className="border-t border-border px-5 py-4">
+            <div className="flex flex-col gap-2.5">
+              {doctor.experience && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <Briefcase size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.experience} experience</span>
                 </div>
-              </div>
-            )}
+              )}
+              {doctor.clinic && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <Stethoscope size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.clinic}</span>
+                </div>
+              )}
+              {doctor.locality && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <MapPin size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.locality}, {doctor.city}</span>
+                </div>
+              )}
+              {doctor.address && (
+                <div className="flex items-start gap-2 text-[15px] text-text-secondary">
+                  <Building2 size={15} className="mt-0.5 shrink-0 text-text-muted" />
+                  <span>{doctor.address}</span>
+                </div>
+              )}
+            </div>
           </div>
+        )}
 
-          {doctor.badges.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-1.5">
+        {(doctor.hours || doctor.fee || doctor.languages.length > 0 || doctor.payment.length > 0 || (doctor.phones && doctor.phones.length > 1)) && (
+          <div className="border-t border-border px-5 py-4">
+            <div className="flex flex-col gap-2.5">
+              {doctor.hours && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <Clock size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.hours}</span>
+                </div>
+              )}
+              {doctor.fee && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <IndianRupee size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.fee}</span>
+                </div>
+              )}
+              {doctor.languages.length > 0 && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <Languages size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.languages.join(', ')}</span>
+                </div>
+              )}
+              {doctor.payment.length > 0 && (
+                <div className="flex items-center gap-2 text-[15px] text-text-secondary">
+                  <Wallet size={15} className="shrink-0 text-text-muted" />
+                  <span>{doctor.payment.join(', ')}</span>
+                </div>
+              )}
+              {doctor.phones && doctor.phones.length > 1 && (
+                <div className="flex items-start gap-2 text-[15px] text-text-secondary">
+                  <Phone size={15} className="mt-0.5 shrink-0 text-text-muted" />
+                  <div className="flex flex-col gap-0.5">
+                    {doctor.phones.map((p, i) => (
+                      <a key={p} href={`tel:${p}`} className="transition-colors hover:text-text-primary">
+                        {doctor.phonesDisplay?.[i] ?? p}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {doctor.badges.length > 0 && (
+          <div className="border-t border-border px-5 py-4">
+            <div className="flex flex-wrap gap-1.5">
               {doctor.badges.map((badge) => (
                 <Badge key={badge} badgeKey={badge} />
               ))}
             </div>
-          )}
+          </div>
+        )}
 
-          <div className={`mt-5 grid gap-3 ${doctor.practoUrl ? 'grid-cols-3' : 'grid-cols-2'}`}>
+        <div className="border-t border-border px-5 py-4">
+          <div className={`grid gap-3 ${doctor.practoUrl ? 'grid-cols-3' : 'grid-cols-2'}`}>
             {doctor.phone ? (
               <a
                 href={`tel:${doctor.phone}`}

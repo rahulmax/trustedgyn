@@ -37,7 +37,7 @@ Respond with JSON:
 - city: matched city from the provided list, or null
 - badges: matched badge keys from the list above
 - languages: any languages mentioned (e.g. "Marathi", "Hindi", "Tamil")
-- searchTerms: ONLY doctor name or locality/area keywords to search by. Do NOT include badge-related words, languages, or city names here. Leave empty [] if no specific name or area is mentioned.
+- searchTerms: ONLY use this for specific doctor names or specific locality/area/neighborhood keywords (e.g. "Koramangala", "Dr. Suman"). This should be empty [] in most cases. NEVER put generic words like "gynaecologist", "doctor", "trusted", "good", "best", "non-judgmental", "safe" etc. here. NEVER put city names, languages, or badge-related concepts here. When in doubt, leave it as [].
 - summary: a brief, warm one-line acknowledgment of what you understood (e.g. "Looking for a queer-friendly doctor in Pune who speaks Marathi")`
 
 type ChatRequest = {

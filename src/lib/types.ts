@@ -18,7 +18,9 @@ export type Doctor = {
   gender: string
   ageRange: string
   phone: string
+  phoneDisplay?: string
   phones?: string[]
+  phonesDisplay?: string[]
   address: string
   locality: string
   hours: string
