@@ -13,6 +13,7 @@ import { AboutSection } from './about-section'
 import { StickyFooter } from './sticky-footer'
 import { LanguagePicker } from './language-picker'
 import { HeroTitle } from './hero-title'
+import { ThemeToggle } from './theme-toggle'
 
 type DirectoryProps = {
   doctors: Doctor[]
@@ -178,6 +179,7 @@ export function Directory({ doctors }: DirectoryProps) {
               onSelect={(city) => { clearSearchStatus(); setSelectedCity(city) }}
             />
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <LanguagePicker />
               <a
                 href="tel:181"

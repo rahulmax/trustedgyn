@@ -52,7 +52,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('trustedgyn-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')}catch(e){}})()` }} />
+      </head>
       <body className={`${alegreya.variable} ${alegreyaSans.variable} font-sans antialiased`}>
         <svg className="pointer-events-none fixed inset-0 z-[9999] h-full w-full opacity-[0.035] dark:opacity-[0.04]" aria-hidden="true">
           <filter id="grain">

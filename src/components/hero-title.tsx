@@ -38,7 +38,7 @@ export function HeroTitle() {
 
   const isDark = useMemo(() => {
     if (typeof window === 'undefined') return false
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    return document.documentElement.classList.contains('dark')
   }, [])
 
   const getColor = (badgeKey: BadgeKey) => {
