@@ -45,6 +45,7 @@ export function Directory({ doctors }: DirectoryProps) {
   const [selectedCity, setSelectedCity] = useState(defaultCity)
   const [inputValue, setInputValue] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [fallbackQuery, setFallbackQuery] = useState('')
   const [languageFilter, setLanguageFilter] = useState<string[]>([])
   const [activeFilters, setActiveFilters] = useState<BadgeKey[]>([])
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null)
@@ -63,6 +64,7 @@ export function Directory({ doctors }: DirectoryProps) {
       result = result.filter((d) => d.city === selectedCity)
     }
 
+    // AI-derived search terms (specific name/locality from AI)
     if (searchQuery.trim()) {
       const terms = searchQuery.toLowerCase().split(/\s+/)
       result = result.filter((d) =>
@@ -72,6 +74,20 @@ export function Directory({ doctors }: DirectoryProps) {
           (d.clinic && d.clinic.toLowerCase().includes(q))
         )
       )
+    }
+
+    // Fallback text search (broad match when AI unavailable)
+    if (fallbackQuery.trim() && !searchQuery.trim() && activeFilters.length === 0 && languageFilter.length === 0) {
+      const terms = fallbackQuery.toLowerCase().split(/\s+/).filter(t => t.length > 1)
+      result = result.filter((d) => {
+        const haystack = [
+          d.name, d.locality, d.city, d.address,
+          d.clinic || '', d.qualifications || '',
+          ...d.languages, ...d.badges,
+          ...(d.testimonial ? (Array.isArray(d.testimonial) ? d.testimonial : [d.testimonial]) : []),
+        ].join(' ').toLowerCase()
+        return terms.some((q) => haystack.includes(q))
+      })
     }
 
     if (activeFilters.length > 0) {
@@ -89,7 +105,7 @@ export function Directory({ doctors }: DirectoryProps) {
     }
 
     return result
-  }, [doctors, selectedCity, searchQuery, activeFilters, languageFilter])
+  }, [doctors, selectedCity, searchQuery, fallbackQuery, activeFilters, languageFilter])
 
   const cityDoctorCount = useMemo(() => {
     if (!selectedCity) return doctors.length
@@ -138,7 +154,16 @@ export function Directory({ doctors }: DirectoryProps) {
     setActiveFilters(filters.badges)
     setSearchQuery(filters.searchTerms.length > 0 ? filters.searchTerms.join(' ') : '')
     setLanguageFilter(filters.languages ?? [])
+    setFallbackQuery('')
     setInputValue('')
+  }, [])
+
+  const handleFallbackSearch = useCallback((query: string) => {
+    setFallbackQuery(query)
+    // Clear any previous AI filters so fallback has a clean slate
+    setSearchQuery('')
+    setActiveFilters([])
+    setLanguageFilter([])
   }, [])
 
 
@@ -180,6 +205,7 @@ export function Directory({ doctors }: DirectoryProps) {
               value={inputValue}
               onChange={setInputValue}
               onAIFilters={handleChatFilters}
+              onFallbackSearch={handleFallbackSearch}
               cities={cityNames}
               status={searchStatus}
               onStatusChange={setSearchStatus}

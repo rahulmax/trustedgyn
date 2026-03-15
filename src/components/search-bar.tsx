@@ -28,18 +28,22 @@ type SearchBarProps = {
   value: string
   onChange: (value: string) => void
   onAIFilters: (filters: ChatFilters) => void
+  onFallbackSearch: (query: string) => void
   cities: string[]
   status: SearchStatus
   onStatusChange: (status: SearchStatus) => void
 }
 
-export function SearchBar({ value, onChange, onAIFilters, cities, status, onStatusChange }: SearchBarProps) {
+export function SearchBar({ value, onChange, onAIFilters, onFallbackSearch, cities, status, onStatusChange }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [abortController, setAbortController] = useState<AbortController | null>(null)
 
   const handleSubmit = async () => {
     const trimmed = value.trim()
     if (!trimmed || status.type === 'loading') return
+
+    // Always apply local text filter immediately
+    onFallbackSearch(trimmed)
 
     const controller = new AbortController()
     setAbortController(controller)
@@ -52,6 +56,16 @@ export function SearchBar({ value, onChange, onAIFilters, cities, status, onStat
         body: JSON.stringify({ query: trimmed, cities }),
         signal: controller.signal,
       })
+
+      if (!res.ok) {
+        if (res.status === 429) {
+          onStatusChange({ type: 'error', message: 'Too many searches. Results shown by keyword match.' })
+        } else {
+          onStatusChange({ type: 'error', message: 'AI search unavailable. Results shown by keyword match.' })
+        }
+        setAbortController(null)
+        return
+      }
 
       const data = (await res.json()) as ChatResponse
 
@@ -66,7 +80,7 @@ export function SearchBar({ value, onChange, onAIFilters, cities, status, onStat
       })
     } catch (e) {
       if ((e as Error).name !== 'AbortError') {
-        onStatusChange({ type: 'error', message: 'Something went wrong. Please try again.' })
+        onStatusChange({ type: 'error', message: 'AI search unavailable. Results shown by keyword match.' })
       }
     }
 

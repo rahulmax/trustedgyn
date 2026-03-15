@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { MapPin, Clock, Languages, Phone, Map, FileText, CheckCircle2, Briefcase, ExternalLink } from 'lucide-react'
+import { MapPin, Clock, Languages, Phone, Map, FileText, BadgeCheck, Briefcase, ExternalLink } from 'lucide-react'
 import { type Doctor } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
@@ -23,7 +23,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
             <h3 className="flex items-center gap-1.5 font-serif text-[22px] font-semibold text-text-heading">
               <span>{doctor.name}</span>
               {doctor.verified && (
-                <CheckCircle2 size={16} className="shrink-0 text-green-600 dark:text-green-400" />
+                <BadgeCheck size={16} className="shrink-0 text-green-600 dark:text-green-400" />
               )}
             </h3>
             {doctor.qualifications && (
