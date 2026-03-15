@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
@@ -15,7 +16,7 @@ import { Badge } from './badge'
 
 type DoctorDetailProps = {
   doctor: Doctor
-  onBack: () => void
+  onBack: (() => void) | string
 }
 
 function getGroupScore(group: Record<string, string>): number {
@@ -48,6 +49,19 @@ const GROUP_LABEL_KEYS: Record<BadgeKey, keyof ReturnType<typeof useTranslation>
 
 export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
   const { t, language } = useTranslation()
+
+  const BackLink = ({ className, iconSize = 18 }: { className: string; iconSize?: number }) =>
+    typeof onBack === 'string' ? (
+      <Link href={onBack} className={className}>
+        <ArrowLeft size={iconSize} />
+        <span>{t('backToResults')}</span>
+      </Link>
+    ) : (
+      <button type="button" onClick={onBack} className={className}>
+        <ArrowLeft size={iconSize} />
+        <span>{t('backToResults')}</span>
+      </button>
+    )
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
   const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
   const testimonials = Array.isArray(doctor.testimonial)
@@ -56,22 +70,15 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
   const [testimonialIndex, setTestimonialIndex] = useState(0)
 
   return (
-    <div className="min-h-screen bg-bg pb-24">
-      <button
-        type="button"
-        onClick={onBack}
-        className="flex items-center gap-2 px-1 py-4 text-[15px] text-text-secondary transition-colors hover:text-text-primary"
-      >
-        <ArrowLeft size={18} />
-        <span>{t('backToResults')}</span>
-      </button>
+    <div className="min-h-screen overflow-x-hidden bg-bg pb-24">
+      <BackLink className="flex items-center gap-2 px-1 py-4 text-[15px] text-text-secondary transition-colors hover:text-text-primary" />
 
       <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
         <div className="px-5 pt-5 pb-4">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <h2 className="flex items-center gap-1.5 font-serif text-[24px] font-bold text-text-heading">
-                <span>{doctor.name}</span>
+              <h2 className="flex items-center gap-1.5 font-serif text-[24px] font-bold break-words text-text-heading">
+                <span className="break-words">{doctor.name}</span>
                 {/* TODO: add verified badge once logic is defined */}
               </h2>
               {doctor.qualifications && (
@@ -181,7 +188,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         )}
 
         <div className="border-t border-border px-5 py-4">
-          <div className={`grid gap-3 ${doctor.practoUrl ? 'grid-cols-3' : 'grid-cols-2'}`}>
+          <div className={`grid gap-3 overflow-hidden ${doctor.practoUrl ? 'grid-cols-3' : 'grid-cols-2'}`}>
             {doctor.phone ? (
               <a
                 href={`tel:${doctor.phone}`}
@@ -341,14 +348,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         )}
       </div>
 
-      <button
-        type="button"
-        onClick={onBack}
-        className="mt-4 flex w-full items-center justify-center gap-2 rounded-[18px] bg-card py-3.5 text-[15px] font-semibold text-text-secondary shadow-sm transition-colors hover:text-text-primary"
-      >
-        <ArrowLeft size={16} />
-        <span>{t('backToResults')}</span>
-      </button>
+      <BackLink className="mt-4 flex w-full items-center justify-center gap-2 rounded-[18px] bg-card py-3.5 text-[15px] font-semibold text-text-secondary shadow-sm transition-colors hover:text-text-primary" iconSize={16} />
     </div>
   )
 }
