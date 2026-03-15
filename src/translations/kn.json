@@ -1,5 +1,6 @@
 {
   "heroTitle": "ನೀವು ನಂಬಬಹುದಾದ ಸ್ತ್ರೀರೋಗ ತಜ್ಞರನ್ನು ಹುಡುಕಿ",
+  "heroStrapline": "A crowdsourced directory of gynecologists in India who provide respectful, judgment-free care.",
   "searchPlaceholder": "ವೈದ್ಯರು, ನಗರಗಳು, ಭಾಷೆಗಳು ಹುಡುಕಿ...",
   "trustedDoctorsIn": "{city} ನಲ್ಲಿ {count} ನಂಬಬಹುದಾದ ವೈದ್ಯ{plural}",
   "trustedDoctors": "{count} ನಂಬಬಹುದಾದ ವೈದ್ಯ{plural}",

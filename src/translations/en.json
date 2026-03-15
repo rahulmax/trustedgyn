@@ -1,5 +1,6 @@
 {
   "heroTitle": "Find a gynaecologist you can trust",
+  "heroStrapline": "A crowdsourced directory of gynecologists in India who provide respectful, judgment-free care.",
   "searchPlaceholder": "Search doctors, cities, languages...",
   "trustedDoctorsIn": "{count} trusted doctor{plural} in {city}",
   "trustedDoctors": "{count} trusted doctor{plural}",

@@ -201,6 +201,9 @@ export function Directory({ doctors }: DirectoryProps) {
             </div>
           </div>
           <HeroTitle />
+          <p className="mt-2 text-[15px] leading-relaxed text-text-secondary">
+            {t('heroStrapline')}
+          </p>
         </div>
       )}
       <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-3 pt-3">
