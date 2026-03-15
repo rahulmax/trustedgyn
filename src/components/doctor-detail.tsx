@@ -6,7 +6,7 @@ import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
   Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
-  CheckCircle2, Briefcase, Stethoscope,
+  BadgeCheck, Briefcase, Stethoscope,
 } from 'lucide-react'
 import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
@@ -72,9 +72,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
             <div className="min-w-0">
               <h2 className="flex items-center gap-1.5 font-serif text-[24px] font-bold text-text-heading">
                 <span>{doctor.name}</span>
-                {doctor.verified && (
-                  <CheckCircle2 size={18} className="shrink-0 text-green-600 dark:text-green-400" />
-                )}
+                {/* TODO: add verified badge once logic is defined */}
               </h2>
               {doctor.qualifications && (
                 <p className="mt-0.5 text-[13px] text-text-muted">{doctor.qualifications}</p>
