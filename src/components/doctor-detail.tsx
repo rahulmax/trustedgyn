@@ -7,8 +7,9 @@ import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
   Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
-  Briefcase, Stethoscope,
+  Briefcase, Stethoscope, Share2,
 } from 'lucide-react'
+import { doctorSlug } from '@/lib/utils'
 import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
@@ -77,6 +78,19 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
     ? doctor.testimonial.filter(Boolean)
     : doctor.testimonial ? [doctor.testimonial] : []
   const [testimonialIndex, setTestimonialIndex] = useState(0)
+  const permalink = `/doctor/${doctorSlug(doctor)}`
+  const fullUrl = `https://trustedgyn.com${permalink}`
+  const [copied, setCopied] = useState(false)
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      await navigator.share({ title: doctor.name, url: fullUrl })
+    } else {
+      await navigator.clipboard.writeText(fullUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
+  }
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-bg pb-24">
@@ -197,18 +211,18 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
         )}
 
         <div className="border-t border-border px-5 py-4">
-          <div className={`grid gap-3 overflow-hidden ${doctor.practoUrl ? 'grid-cols-3' : 'grid-cols-2'}`}>
+          <div className="flex flex-wrap gap-3">
             {doctor.phone ? (
               <a
                 href={`tel:${doctor.phone}`}
-                className="flex items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call transition-colors hover:opacity-80"
+                className="flex flex-1 min-w-[calc(50%-6px)] items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call transition-colors hover:opacity-80"
               >
                 <Phone size={16} />
                 <span>{t('call')}</span>
               </a>
             ) : (
               <div
-                className="flex items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call opacity-40"
+                className="flex flex-1 min-w-[calc(50%-6px)] items-center justify-center gap-2 rounded-[12px] bg-call-bg py-3 text-[15px] font-semibold text-call opacity-40"
               >
                 <Phone size={16} />
                 <span>{t('call')}</span>
@@ -218,7 +232,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
               href={doctor.googleMapsUrl || mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-[12px] bg-map-bg py-3 text-[15px] font-semibold text-map transition-colors hover:opacity-80"
+              className="flex flex-1 min-w-[calc(50%-6px)] items-center justify-center gap-2 rounded-[12px] bg-map-bg py-3 text-[15px] font-semibold text-map transition-colors hover:opacity-80"
             >
               <Map size={16} />
               <span>{t('directions')}</span>
@@ -228,14 +242,32 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                 href={doctor.practoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-[12px] bg-card-inset py-3 text-[15px] font-semibold text-text-secondary transition-colors hover:opacity-80"
+                className="flex flex-1 min-w-[calc(50%-6px)] items-center justify-center gap-2 rounded-[12px] bg-card-inset py-3 text-[15px] font-semibold text-text-secondary transition-colors hover:opacity-80"
               >
                 <ExternalLink size={16} />
                 <span>Practo</span>
               </a>
             )}
+            <button
+              onClick={handleShare}
+              className="flex flex-1 min-w-[calc(50%-6px)] items-center justify-center gap-2 rounded-[12px] bg-card-inset py-3 text-[15px] font-semibold text-text-secondary transition-colors hover:opacity-80"
+            >
+              <Share2 size={16} />
+              <span>{copied ? 'Copied!' : 'Share'}</span>
+            </button>
           </div>
         </div>
+
+        {typeof onBack === 'function' && (
+          <div className="px-5 pb-2">
+            <Link
+              href={permalink}
+              className="mt-2 block text-center text-sm text-text-muted underline underline-offset-2 hover:text-text-secondary"
+            >
+              View full page →
+            </Link>
+          </div>
+        )}
 
         {testimonials.length > 0 && (
           <div className="border-t border-border px-5 py-4">
