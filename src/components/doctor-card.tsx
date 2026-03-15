@@ -1,9 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { MapPin, Clock, Languages, Phone, Map, BadgeCheck, Briefcase, ExternalLink } from 'lucide-react'
 import { type Doctor } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
+import { citySlug } from '@/lib/utils'
 import { Badge } from './badge'
 
 type DoctorCardProps = {
@@ -49,11 +51,20 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         </div>
 
         <div className="mt-3 flex flex-col gap-2">
-          {(doctor.locality || doctor.fee) && (
+          {(doctor.locality || doctor.city || doctor.fee) && (
             <div className="flex items-center gap-2 text-[15px] text-text-secondary">
               <MapPin size={15} color="#999" className="shrink-0" />
               <span>
-                {[doctor.locality, doctor.fee].filter(Boolean).join(' \u00B7 ')}
+                {doctor.locality && <>{doctor.locality} · </>}
+                <Link
+                  href={`/city/${citySlug(doctor.city)}`}
+                  onClick={(e) => e.stopPropagation()}
+                  onKeyDown={(e) => e.stopPropagation()}
+                  className="underline underline-offset-2 hover:text-text-primary"
+                >
+                  {doctor.city}
+                </Link>
+                {doctor.fee && <> · {doctor.fee}</>}
               </span>
             </div>
           )}
