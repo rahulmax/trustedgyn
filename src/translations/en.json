@@ -44,5 +44,10 @@
   "groupFinancial": "Financial Accessibility",
   "groupConfidentiality": "Confidentiality & Autonomy",
   "groupSexual": "Sexual Health & Expression",
-  "groupFamily": "Family & Parenting"
+  "groupFamily": "Family & Parenting",
+  "noResults": "No doctors match your current filters",
+  "noResultsHint": "Try removing a filter or searching a different city",
+  "noSearchResults": "No doctors found for your search",
+  "noSearchResultsHint": "Try different terms or browse by city instead",
+  "suggestDoctor": "Know a doctor who should be listed?"
 }

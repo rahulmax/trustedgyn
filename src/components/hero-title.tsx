@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useCallback, useSyncExternalStore } from 'react'
 import { useTranslation } from '@/lib/translation-context'
 import type { BadgeKey } from '@/lib/types'
 
@@ -36,10 +36,11 @@ export function HeroTitle() {
   const [prevIndex, setPrevIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
 
-  const isDark = useMemo(() => {
-    if (typeof window === 'undefined') return false
-    return document.documentElement.classList.contains('dark')
-  }, [])
+  const isDark = useSyncExternalStore(
+    useCallback(() => () => {}, []),
+    () => document.documentElement.classList.contains('dark'),
+    () => false,
+  )
 
   const getColor = (badgeKey: BadgeKey) => {
     const colors = HERO_COLORS[badgeKey]

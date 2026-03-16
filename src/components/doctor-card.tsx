@@ -60,7 +60,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
                   href={`/city/${citySlug(doctor.city)}`}
                   onClick={(e) => e.stopPropagation()}
                   onKeyDown={(e) => e.stopPropagation()}
-                  className="hover:text-text-primary"
+                  className="underline decoration-border underline-offset-2 hover:decoration-text-muted hover:text-text-primary"
                 >
                   {doctor.city}
                 </Link>
@@ -89,10 +89,15 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         </div>
 
         {doctor.badges.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {doctor.badges.map((badge) => (
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            {doctor.badges.slice(0, 4).map((badge) => (
               <Badge key={badge} badgeKey={badge} />
             ))}
+            {doctor.badges.length > 4 && (
+              <span className="text-[13px] text-text-muted">
+                +{doctor.badges.length - 4}
+              </span>
+            )}
           </div>
         )}
 
@@ -121,8 +126,8 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         ) : null
       })()}
 
-      <div className="grid grid-cols-2 border-t border-border">
-        {doctor.phone ? (
+      <div className={`border-t border-border ${doctor.phone ? 'grid grid-cols-2' : ''}`}>
+        {doctor.phone && (
           <a
             href={`tel:${doctor.phone}`}
             onClick={(e) => e.stopPropagation()}
@@ -131,11 +136,6 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
             <Phone size={16} />
             <span>{t('call')}</span>
           </a>
-        ) : (
-          <div className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-text-muted opacity-40">
-            <Phone size={16} />
-            <span>{t('call')}</span>
-          </div>
         )}
         <a
           href={mapsUrl}

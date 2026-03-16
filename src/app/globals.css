@@ -28,7 +28,7 @@
   --color-bg: #121212;
   --color-card: #1e1e1e;
   --color-card-inset: #171717;
-  --color-text-heading: #e8e0d8;
+  --color-text-heading: #f5ece4;
   --color-text-primary: #e8e8e8;
   --color-text-secondary: #a0a0a0;
   --color-text-muted: #707070;
@@ -84,6 +84,18 @@ html.noto-active .font-serif {
 @keyframes hero-slide-up-out {
   from { transform: translateY(0); opacity: 1; }
   to { transform: translateY(-100%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes hero-slide-up-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes hero-slide-up-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
 }
 
 @utility scrollbar-hide {

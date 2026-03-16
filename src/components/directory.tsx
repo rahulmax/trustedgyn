@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useRef } from 'react'
 import { PhoneCall, SlidersHorizontal } from 'lucide-react'
 import { type Doctor, type BadgeKey } from '@/lib/types'
+import { EXTERNAL_URLS } from '@/lib/constants'
 import { useTranslation } from '@/lib/translation-context'
 import { CityPicker } from './city-picker'
 import { SearchBar, SearchStatus as SearchStatusDisplay } from './search-bar'
@@ -260,19 +261,51 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
         </div>
       ) : (
         <>
-          <p className="mt-4 text-[14px] text-text-muted">
+          <p className="mt-4 text-[15px] font-medium text-text-secondary">
             {countText}
           </p>
 
-          <div className="mt-3 flex flex-col gap-4">
-            {filteredDoctors.map((doctor) => (
-              <DoctorCard
-                key={doctor.id}
-                doctor={doctor}
-                onViewDetails={handleViewDetails}
-              />
-            ))}
-          </div>
+          {filteredDoctors.length === 0 ? (
+            <div className="mt-8 flex flex-col items-center px-4 py-12 text-center">
+              {searchStatus.type === 'result' || searchStatus.type === 'error' || fallbackQuery.trim() ? (
+                <>
+                  <p className="text-[17px] font-serif font-semibold text-text-primary">
+                    {t('noSearchResults')}
+                  </p>
+                  <p className="mt-2 text-[15px] text-text-muted">
+                    {t('noSearchResultsHint')}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="text-[17px] font-serif font-semibold text-text-primary">
+                    {t('noResults')}
+                  </p>
+                  <p className="mt-2 text-[15px] text-text-muted">
+                    {t('noResultsHint')}
+                  </p>
+                </>
+              )}
+              <a
+                href={EXTERNAL_URLS.submissionForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 rounded-full bg-card px-5 py-2.5 text-[14px] font-medium text-text-secondary shadow-sm transition-colors hover:text-text-primary"
+              >
+                {t('suggestDoctor')}
+              </a>
+            </div>
+          ) : (
+            <div className="mt-3 flex flex-col gap-4">
+              {filteredDoctors.map((doctor) => (
+                <DoctorCard
+                  key={doctor.id}
+                  doctor={doctor}
+                  onViewDetails={handleViewDetails}
+                />
+              ))}
+            </div>
+          )}
 
           <div className="mt-8">
             <AboutSection />

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {
   ArrowLeft, MapPin, Building2, Clock, IndianRupee,
   Languages, Wallet, Phone, Map, ExternalLink, ShieldCheck,
-  Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight,
+  Users, Check, Minus, HelpCircle, ChevronLeft, ChevronRight, ChevronDown,
   Briefcase, Stethoscope, Share2,
 } from 'lucide-react'
 import { doctorSlug, getValidTestimonials } from '@/lib/utils'
@@ -66,6 +66,46 @@ function BackLink({ onBack, label, className, iconSize = 18 }: BackLinkProps) {
       <ArrowLeft size={iconSize} />
       <span>{label}</span>
     </button>
+  )
+}
+
+function InclusivityGroup({ label, dotColor, questions }: {
+  label: string
+  dotColor: string
+  questions: [string, string][]
+}) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center gap-2 rounded-lg px-1 py-2 text-left transition-colors hover:bg-card-inset"
+      >
+        <span
+          className="inline-block h-2 w-2 shrink-0 rounded-full"
+          style={{ backgroundColor: dotColor }}
+        />
+        <span className="flex-1 text-[15px] font-semibold text-text-primary">
+          {label}
+        </span>
+        <ChevronDown
+          size={16}
+          className={`shrink-0 text-text-muted transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+        />
+      </button>
+      {open && (
+        <div className="flex flex-col gap-1.5 pb-2 pl-5">
+          {questions.map(([qKey, answer]) => (
+            <div key={qKey} className="flex items-start gap-2 text-[14px] text-text-secondary">
+              <AnswerIcon answer={answer} />
+              <span>{INCLUSIVITY_QUESTION_LABELS[qKey] ?? qKey}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -316,7 +356,7 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
               )}
             </div>
 
-            <div className="mt-4 flex flex-col gap-5">
+            <div className="mt-4 flex flex-col gap-1">
               {inclusivityEntries.map(([key, group]) => {
                 const score = getGroupScore(group)
                 const dotColor = score >= 0.8 ? '#6aaa6a' : score >= 0.6 ? '#d4aa5a' : '#ccc'
@@ -328,25 +368,12 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
                 const groupLabel = language !== 'en' && labelKey ? t(labelKey) : (INCLUSIVITY_GROUP_LABELS[key] ?? key)
 
                 return (
-                  <div key={key}>
-                    <div className="mb-2 flex items-center gap-2">
-                      <span
-                        className="inline-block h-2 w-2 rounded-full"
-                        style={{ backgroundColor: dotColor }}
-                      />
-                      <span className="text-[15px] font-semibold text-text-primary">
-                        {groupLabel}
-                      </span>
-                    </div>
-                    <div className="flex flex-col gap-1.5 pl-4">
-                      {filteredQuestions.map(([qKey, answer]) => (
-                        <div key={qKey} className="flex items-start gap-2 text-[14px] text-text-secondary">
-                          <AnswerIcon answer={answer} />
-                          <span>{INCLUSIVITY_QUESTION_LABELS[qKey] ?? qKey}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <InclusivityGroup
+                    key={key}
+                    label={groupLabel}
+                    dotColor={dotColor}
+                    questions={filteredQuestions}
+                  />
                 )
               })}
             </div>
