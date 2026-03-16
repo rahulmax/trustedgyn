@@ -45,7 +45,7 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [drawerHelplines, setDrawerHelplines] = useState(false)
-  const [filtersOpen, setFiltersOpen] = useState(false)
+  const [filtersOpen, setFiltersOpen] = useState(true)
   const [searchStatus, setSearchStatus] = useState<{ type: 'idle' | 'loading' | 'result' | 'error'; message: string }>({ type: 'idle', message: '' })
   const detailRef = useRef<HTMLDivElement>(null)
 
@@ -302,6 +302,7 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
                   key={doctor.id}
                   doctor={doctor}
                   onViewDetails={handleViewDetails}
+                  onBadgeClick={handleToggleFilter}
                 />
               ))}
             </div>

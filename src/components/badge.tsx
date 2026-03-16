@@ -16,12 +16,22 @@ const BADGE_LABEL_KEYS: Record<BadgeKey, keyof UIStrings> = {
   'non-traditional-family': 'badgeNonTradFamily',
 }
 
-export function Badge({ badgeKey }: { badgeKey: BadgeKey }) {
+export function Badge({ badgeKey, onClick }: { badgeKey: BadgeKey; onClick?: (badge: BadgeKey) => void }) {
   const { t } = useTranslation()
   const config = BADGE_CONFIG[badgeKey]
+
+  const handleClick = onClick ? (e: React.MouseEvent) => {
+    e.stopPropagation()
+    onClick(badgeKey)
+  } : undefined
+
   return (
     <span
-      className="badge-pill rounded-full px-2.5 py-0.5 text-[13px] font-medium"
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onClick={handleClick}
+      onKeyDown={onClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.stopPropagation(); onClick(badgeKey) } } : undefined}
+      className={`badge-pill rounded-full px-2.5 py-0.5 text-[13px] font-medium${onClick ? ' cursor-pointer transition-opacity hover:opacity-75' : ''}`}
       style={{
         '--badge-bg': config.bg,
         '--badge-text': config.text,

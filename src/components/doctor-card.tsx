@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Clock, Languages, Phone, Map, BadgeCheck, Briefcase, ExternalLink } from 'lucide-react'
-import { type Doctor } from '@/lib/types'
+import { MapPin, Clock, Languages, Phone, Map, BadgeCheck, Briefcase, ExternalLink, ChevronRight } from 'lucide-react'
+import { type Doctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { citySlug, getValidTestimonials } from '@/lib/utils'
 import { Badge } from './badge'
@@ -11,28 +11,30 @@ import { Badge } from './badge'
 type DoctorCardProps = {
   doctor: Doctor
   onViewDetails: (doctor: Doctor) => void
+  onBadgeClick?: (badge: BadgeKey) => void
 }
 
-export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
+export function DoctorCard({ doctor, onViewDetails, onBadgeClick }: DoctorCardProps) {
   const { t } = useTranslation()
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
 
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={() => onViewDetails(doctor)}
-      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onViewDetails(doctor) }}
-      className="cursor-pointer overflow-hidden rounded-[18px] bg-card shadow-sm transition-all duration-200 ease-out hover:scale-[1.02] hover:bg-card-inset hover:shadow-md"
-    >
+    <div className="overflow-hidden rounded-[18px] bg-card shadow-sm">
       <div className="px-5 py-[18px]">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="flex items-center gap-1.5 font-serif text-[22px] font-semibold text-text-heading">
-              <span>{doctor.name}</span>
-              {doctor.verified && (
-                <BadgeCheck size={16} className="shrink-0 text-green-600 dark:text-green-400" />
-              )}
+            <h3 className="font-serif text-[22px] font-semibold text-text-heading">
+              <button
+                type="button"
+                onClick={() => onViewDetails(doctor)}
+                className="flex items-center gap-1.5 text-left transition-colors hover:text-text-primary"
+              >
+                <span>{doctor.name}</span>
+                {doctor.verified && (
+                  <BadgeCheck size={16} className="shrink-0 text-green-600 dark:text-green-400" />
+                )}
+                <ChevronRight size={16} className="shrink-0 text-text-muted" />
+              </button>
             </h3>
             {doctor.qualifications && (
               <p className="mt-0.5 text-[13px] text-text-muted">{doctor.qualifications}</p>
@@ -58,8 +60,6 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
                 {doctor.locality && <>{doctor.locality} · </>}
                 <Link
                   href={`/city/${citySlug(doctor.city)}`}
-                  onClick={(e) => e.stopPropagation()}
-                  onKeyDown={(e) => e.stopPropagation()}
                   className="underline decoration-border underline-offset-2 hover:decoration-text-muted hover:text-text-primary"
                 >
                   {doctor.city}
@@ -89,13 +89,18 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         </div>
 
         {doctor.badges.length > 0 && (
-          <div className="mt-3 flex flex-wrap items-center gap-1.5">
-            {doctor.badges.slice(0, 4).map((badge) => (
-              <Badge key={badge} badgeKey={badge} />
+          <div className="mt-3 flex flex-wrap items-baseline gap-1.5">
+            {doctor.badges.slice(0, 3).map((badge) => (
+              <Badge key={badge} badgeKey={badge} onClick={onBadgeClick} />
             ))}
-            {doctor.badges.length > 4 && (
-              <span className="text-[13px] text-text-muted">
-                +{doctor.badges.length - 4}
+            {doctor.badges.length > 3 && (
+              <span className="inline-flex items-baseline gap-1.5">
+                <Badge badgeKey={doctor.badges[3]} onClick={onBadgeClick} />
+                {doctor.badges.length > 4 && (
+                  <span className="text-[13px] text-text-muted">
+                    +{doctor.badges.length - 4}
+                  </span>
+                )}
               </span>
             )}
           </div>
@@ -106,7 +111,6 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
             href={doctor.practoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
             className="mt-3 inline-flex items-center gap-1 text-[13px] text-text-muted transition-colors hover:text-text-primary"
           >
             <ExternalLink size={12} className="shrink-0" />
@@ -126,11 +130,10 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
         ) : null
       })()}
 
-      <div className={`border-t border-border ${doctor.phone ? 'grid grid-cols-2' : ''}`}>
+      <div className={`grid border-t border-border ${doctor.phone ? 'grid-cols-3' : 'grid-cols-2'}`}>
         {doctor.phone && (
           <a
             href={`tel:${doctor.phone}`}
-            onClick={(e) => e.stopPropagation()}
             className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-call transition-colors hover:bg-card-inset"
           >
             <Phone size={16} />
@@ -141,12 +144,19 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold text-map transition-colors hover:bg-card-inset"
+          className="flex items-center justify-center gap-1.5 border-r border-border py-3 text-[15px] font-semibold text-map transition-colors hover:bg-card-inset"
         >
           <Map size={16} />
           <span>{t('map')}</span>
         </a>
+        <button
+          type="button"
+          onClick={() => onViewDetails(doctor)}
+          className="flex items-center justify-center gap-1.5 py-3 text-[15px] font-semibold text-details transition-colors hover:bg-card-inset"
+        >
+          <span>{t('details')}</span>
+          <ChevronRight size={16} />
+        </button>
       </div>
     </div>
   )
