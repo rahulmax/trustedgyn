@@ -23,7 +23,7 @@ export function DoctorCard({ doctor, onViewDetails }: DoctorCardProps) {
       tabIndex={0}
       onClick={() => onViewDetails(doctor)}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onViewDetails(doctor) }}
-      className="cursor-pointer overflow-hidden rounded-[18px] bg-card shadow-sm transition-colors hover:bg-card-inset"
+      className="cursor-pointer overflow-hidden rounded-[18px] bg-card shadow-sm transition-all duration-200 ease-out hover:scale-[1.02] hover:bg-card-inset hover:shadow-md"
     >
       <div className="px-5 py-[18px]">
         <div className="flex items-start justify-between gap-3">
