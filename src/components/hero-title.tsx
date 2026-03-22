@@ -17,9 +17,9 @@ const HERO_COLORS: Record<string, { light: string; dark: string }> = {
 }
 
 const HERO_WORDS: { word: string; article: 'a' | 'an'; badgeKey: BadgeKey }[] = [
-  { word: 'queer-friendly', article: 'a', badgeKey: 'queer-friendly' },
   { word: 'trauma-informed', article: 'a', badgeKey: 'trauma-informed' },
   { word: 'pro-choice', article: 'a', badgeKey: 'reproductive-autonomy' },
+  { word: 'queer-friendly', article: 'a', badgeKey: 'queer-friendly' },
   { word: 'accessible', article: 'an', badgeKey: 'accessible' },
   { word: 'affordable', article: 'an', badgeKey: 'financially-considerate' },
   { word: 'confidential', article: 'a', badgeKey: 'confidential-autonomous' },
