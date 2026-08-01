@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import { type Metadata } from 'next'
 import { DoctorDetail } from '@/components/doctor-detail'
-import { BADGE_CONFIG } from '@/lib/badges'
+import { BADGE_LABEL_KEYS } from '@/lib/badges'
+import { getEnglishStrings, t } from '@/lib/i18n'
 import { findDoctorBySlug, doctorSlug, getActiveDoctors } from '@/lib/utils'
 
 type Props = {
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const badgeText = doctor.badges
     .slice(0, 3)
-    .map((b) => BADGE_CONFIG[b]?.label || b)
+    .map((b) => (BADGE_LABEL_KEYS[b] ? t(getEnglishStrings(), BADGE_LABEL_KEYS[b]) : b))
     .join(', ')
 
   const description = badgeText

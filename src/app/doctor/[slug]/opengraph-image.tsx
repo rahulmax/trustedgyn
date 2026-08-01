@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
-import { BADGE_CONFIG } from '@/lib/badges'
+import { BADGE_LABEL_KEYS } from '@/lib/badges'
+import { getEnglishStrings, t } from '@/lib/i18n'
 import { findDoctorBySlug } from '@/lib/utils'
 
 export const runtime = 'edge'
@@ -24,7 +25,7 @@ export default async function Image({ params }: Props) {
     )
   }
 
-  const badges = doctor.badges.slice(0, 4).map((b) => BADGE_CONFIG[b]?.label || b)
+  const badges = doctor.badges.slice(0, 4).map((b) => (BADGE_LABEL_KEYS[b] ? t(getEnglishStrings(), BADGE_LABEL_KEYS[b]) : b))
 
   return new ImageResponse(
     <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', background: '#f2f2f2', padding: 60, fontFamily: 'serif' }}>

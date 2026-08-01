@@ -10,7 +10,7 @@ import {
   Briefcase, Stethoscope, Share2,
 } from 'lucide-react'
 import { doctorSlug, getValidTestimonials } from '@/lib/utils'
-import { INCLUSIVITY_GROUP_LABELS, INCLUSIVITY_QUESTION_LABELS } from '@/lib/badges'
+import { INCLUSIVITY_GROUP_LABEL_KEYS, INCLUSIVITY_QUESTION_LABEL_KEYS } from '@/lib/badges'
 import { type Doctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
@@ -35,17 +35,6 @@ function AnswerIcon({ answer }: { answer: string }) {
     return <Minus size={14} color="#bba050" className="shrink-0" />
   }
   return <HelpCircle size={14} className="shrink-0 text-text-muted" />
-}
-
-const GROUP_LABEL_KEYS: Record<BadgeKey, keyof ReturnType<typeof useTranslation>['strings']> = {
-  'queer-friendly': 'groupLgbtq',
-  'reproductive-autonomy': 'groupRepro',
-  'trauma-informed': 'groupTrauma',
-  'accessible': 'groupAccessibility',
-  'financially-considerate': 'groupFinancial',
-  'confidential-autonomous': 'groupConfidentiality',
-  'sex-positive': 'groupSexual',
-  'non-traditional-family': 'groupFamily',
 }
 
 type BackLinkProps = {
@@ -74,6 +63,7 @@ function InclusivityGroup({ label, dotColor, questions }: {
   dotColor: string
   questions: [string, string][]
 }) {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
 
   return (
@@ -100,7 +90,7 @@ function InclusivityGroup({ label, dotColor, questions }: {
           {questions.map(([qKey, answer]) => (
             <div key={qKey} className="flex items-start gap-2 text-[14px] text-text-secondary">
               <AnswerIcon answer={answer} />
-              <span>{INCLUSIVITY_QUESTION_LABELS[qKey] ?? qKey}</span>
+              <span>{INCLUSIVITY_QUESTION_LABEL_KEYS[qKey] ? t(INCLUSIVITY_QUESTION_LABEL_KEYS[qKey]) : qKey}</span>
             </div>
           ))}
         </div>
@@ -110,7 +100,7 @@ function InclusivityGroup({ label, dotColor, questions }: {
 }
 
 export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
-  const { t, language } = useTranslation()
+  const { t } = useTranslation()
 
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
   const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
@@ -364,13 +354,12 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
 
                 if (filteredQuestions.length === 0) return null
 
-                const labelKey = GROUP_LABEL_KEYS[key]
-                const groupLabel = language !== 'en' && labelKey ? t(labelKey) : (INCLUSIVITY_GROUP_LABELS[key] ?? key)
+                const labelKey = INCLUSIVITY_GROUP_LABEL_KEYS[key]
 
                 return (
                   <InclusivityGroup
                     key={key}
-                    label={groupLabel}
+                    label={labelKey ? t(labelKey) : key}
                     dotColor={dotColor}
                     questions={filteredQuestions}
                   />
