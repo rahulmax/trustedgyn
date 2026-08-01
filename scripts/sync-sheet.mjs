@@ -794,6 +794,7 @@ function deduplicateDoctors(doctors) {
 const ENRICHED_FIELDS = [
   'phones', 'phonesDisplay', 'phoneDisplay', 'googleMapsUrl', 'researchNotes',
   'verified', 'qualifications', 'experience', 'photoUrl', 'practoUrl', 'geo', 'clinic',
+  'dataFlag', 'dataFlagReason',
 ]
 
 /**
@@ -853,6 +854,49 @@ function mergeEnrichment(doctors) {
   console.log(`Enrichment merged: ${restored} field values across ${previous.size} prior records`)
   console.log(`Addresses preserved from research: ${addressesKept}`)
   return doctors
+}
+
+/**
+ * Doctor URLs are `{id}-{name-slug}` (see doctorSlug in lib/utils), so
+ * renumbering on every sync would repoint every published link at a
+ * different doctor. Keep the id a doctor already has; new arrivals get
+ * fresh ids above the current high-water mark.
+ */
+function assignStableIds(doctors) {
+  let existing = []
+  if (existsSync(OUTPUT_PATH)) {
+    try {
+      existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
+    } catch {
+      existing = []
+    }
+  }
+
+  const priorIds = new Map(existing.map((doc) => [identityKey(doc), doc.id]))
+  const taken = new Set()
+  let nextId = existing.reduce((max, doc) => Math.max(max, doc.id || 0), 0)
+
+  for (const doc of doctors) {
+    const prior = priorIds.get(identityKey(doc))
+    if (prior && !taken.has(prior)) {
+      doc.id = prior
+      taken.add(prior)
+    } else {
+      doc.id = null
+    }
+  }
+
+  let assigned = 0
+  for (const doc of doctors) {
+    if (doc.id === null) {
+      doc.id = ++nextId
+      assigned++
+    }
+  }
+
+  if (existing.length > 0) {
+    console.log(`Stable ids kept: ${taken.size}, newly assigned: ${assigned}`)
+  }
 }
 
 function dropSuppressed(doctors) {
@@ -923,10 +967,7 @@ async function main() {
   allDoctors = mergeEnrichment(allDoctors)
   allDoctors = dropSuppressed(allDoctors)
 
-  // Assign sequential IDs
-  allDoctors.forEach((doc, i) => {
-    doc.id = i + 1
-  })
+  assignStableIds(allDoctors)
 
   // Collect unique cities
   const cities = [...new Set(allDoctors.map((d) => d.city))].sort()
