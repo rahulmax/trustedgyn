@@ -8,7 +8,7 @@
  * Usage: node scripts/sync-sheet.mjs
  */
 
-import { writeFileSync, mkdirSync } from 'node:fs'
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -658,6 +658,13 @@ const AGE_RANGE_REGEX = /\b(\d{2}-\d{2})\b/
 // Match "Female" or "Male" as whole words (word boundary prevents "male" inside "Female")
 const GENDER_REGEX = /\b(Female|Male)\b/gi
 
+// Hedges respondents typed into the name field ("Latha Venkatraman I'm not sure")
+const NAME_NOISE_REGEX = /\b(i'?m not sure|i guess|no idea|not sure|dunno|unknown)\b/gi
+
+function stripNameNoise(name) {
+  return name.replace(NAME_NOISE_REGEX, ' ').replace(/\s+/g, ' ').trim().replace(/^[/,\s]+|[/,\s]+$/g, '')
+}
+
 function parseNameField(raw) {
   let name = ''
   let gender = ''
@@ -690,27 +697,169 @@ function parseNameField(raw) {
     name = remaining.replace(/[,\s]+$/, '')
   }
 
-  return { name, gender, ageRange }
+  return { name: stripNameNoise(name), gender, ageRange }
 }
 
 // ─── Deduplication ───────────────────────────────────────────────────
 
-function deduplicationKey(doctor) {
-  const name = doctor.name.toLowerCase().replace(/dr\.?\s*/g, '').replace(/[^a-z]/g, '')
-  const addr = doctor.address.toLowerCase().replace(/[^a-z]/g, '')
-  return `${name}::${addr}`
+/**
+ * Spelling variants of the same doctor, confirmed against address and phone.
+ * Keyed variant → canonical, so name-based dedup collapses them.
+ */
+const NAME_ALIASES = {
+  akhilabhatt: 'akhilasangeethabhatu',
+  shakuntlakumar: 'shakuntalakumar',
+  kalpanaalexendar: 'kalpanaalexander',
+  lfahmidabhanu: 'fahmidabhanu',
+  sheetalsabharwal: 'sheetalsabarwal',
+  kunjalbhatija: 'kunjalbathija',
 }
 
+function normalizeName(name) {
+  const slug = name.toLowerCase().replace(/dr\.?\s*/g, '').replace(/[^a-z]/g, '')
+  return NAME_ALIASES[slug] || slug
+}
+
+/**
+ * Doctors confirmed to practise at more than one clinic. They keep one entry
+ * per location, so dedup falls back to including the address in their key.
+ */
+const MULTI_LOCATION = new Set([
+  'bandanasodhi::delhi',
+  'shilpaghosh::delhi',
+  'dhruptidedhia::mumbai',
+])
+
+function deduplicationKey(doctor) {
+  const city = doctor.city.toLowerCase().replace(/[^a-z]/g, '')
+  const base = `${normalizeName(doctor.name)}::${city}`
+  if (!MULTI_LOCATION.has(base)) return base
+
+  const clinic = (doctor.address || '').toLowerCase().replace(/[^a-z]/g, '').slice(0, 20)
+  return `${base}::${clinic}`
+}
+
+function asTestimonialList(value) {
+  if (!value) return []
+  return Array.isArray(value) ? value : [value]
+}
+
+/**
+ * Collapses repeat entries for one doctor, keeping the fullest record and
+ * carrying over testimonials and phone numbers from the others. Dropping
+ * later entries outright would discard real survey responses.
+ */
 function deduplicateDoctors(doctors) {
-  const seen = new Set()
-  const unique = []
+  const byKey = new Map()
+
   for (const doc of doctors) {
     const key = deduplicationKey(doc)
-    if (seen.has(key)) continue
-    seen.add(key)
-    unique.push(doc)
+    const existing = byKey.get(key)
+    if (!existing) {
+      byKey.set(key, doc)
+      continue
+    }
+
+    const filled = (d) => Object.values(d).filter((v) => v !== '' && v !== null && v !== undefined).length
+    const [keep, drop] = filled(doc) > filled(existing) ? [doc, existing] : [existing, doc]
+
+    const testimonials = asTestimonialList(keep.testimonial)
+    for (const t of asTestimonialList(drop.testimonial)) {
+      if (t && !testimonials.includes(t)) testimonials.push(t)
+    }
+    keep.testimonial = testimonials.length === 1 ? testimonials[0] : testimonials
+
+    const phones = [...(keep.phones || (keep.phone ? [keep.phone] : []))]
+    for (const p of drop.phones || (drop.phone ? [drop.phone] : [])) {
+      if (p && !phones.includes(p)) phones.push(p)
+    }
+    if (phones.length > 0) {
+      keep.phones = phones
+      if (!keep.phone) keep.phone = phones[0]
+    }
+
+    byKey.set(key, keep)
   }
-  return unique
+
+  return [...byKey.values()]
+}
+
+// ─── Enrichment preservation ─────────────────────────────────────────
+
+/**
+ * Fields produced by web research, never present in the sheet. A plain
+ * overwrite of doctors.json drops them — that is how the enrichment pass
+ * from 2077b74 was lost at 51ee905.
+ */
+const ENRICHED_FIELDS = [
+  'phones', 'phonesDisplay', 'phoneDisplay', 'googleMapsUrl', 'researchNotes',
+  'verified', 'qualifications', 'experience', 'photoUrl', 'practoUrl', 'geo', 'clinic',
+]
+
+/**
+ * Doctors deliberately removed from the directory. Keyed on name + city
+ * because ids are positional and shift whenever the sheet changes.
+ */
+const SUPPRESSED = new Set([
+  'renujhamb::abohar',        // clinic closed
+  'shyamanarang::bengaluru',  // deceased
+  'gitaarjun::chennai',       // retired
+  'charulata::delhi',         // clinic closed
+  'sanjoysen::kolkata',       // deceased
+  'jyotimehta::mumbai',       // clinic closed
+  'rahul::mumbai',            // placeholder entry
+  'noidea::mumbai',           // placeholder entry
+  'unknown::mumbai',          // placeholder entry
+  'sheetalmistry::mumbai',    // not a gynaecologist
+])
+
+const identityKey = deduplicationKey
+
+function mergeEnrichment(doctors) {
+  if (!existsSync(OUTPUT_PATH)) return doctors
+
+  let existing
+  try {
+    existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
+  } catch {
+    console.warn('  [!] Could not parse existing doctors.json — skipping enrichment merge')
+    return doctors
+  }
+
+  const previous = new Map(existing.map((doc) => [identityKey(doc), doc]))
+  let restored = 0
+  let addressesKept = 0
+
+  for (const doc of doctors) {
+    const prior = previous.get(identityKey(doc))
+    if (!prior) continue
+
+    for (const field of ENRICHED_FIELDS) {
+      const value = prior[field]
+      if (value !== undefined && value !== '' && value !== null) {
+        doc[field] = value
+        restored++
+      }
+    }
+
+    // Research produced fuller addresses than the sheet's free-text answers
+    if ((prior.address || '').length > (doc.address || '').length) {
+      doc.address = prior.address
+      addressesKept++
+    }
+    if (!doc.phone && prior.phone) doc.phone = prior.phone
+  }
+
+  console.log(`Enrichment merged: ${restored} field values across ${previous.size} prior records`)
+  console.log(`Addresses preserved from research: ${addressesKept}`)
+  return doctors
+}
+
+function dropSuppressed(doctors) {
+  const kept = doctors.filter((doc) => !SUPPRESSED.has(identityKey(doc)))
+  const dropped = doctors.length - kept.length
+  if (dropped > 0) console.log(`Suppressed entries dropped: ${dropped}`)
+  return kept
 }
 
 // ─── Main ────────────────────────────────────────────────────────────
@@ -767,8 +916,12 @@ async function main() {
 
   console.log(`\nTotal before dedup: ${allDoctors.length}`)
 
+
   allDoctors = deduplicateDoctors(allDoctors)
   console.log(`Total after dedup: ${allDoctors.length}`)
+
+  allDoctors = mergeEnrichment(allDoctors)
+  allDoctors = dropSuppressed(allDoctors)
 
   // Assign sequential IDs
   allDoctors.forEach((doc, i) => {
