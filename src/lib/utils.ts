@@ -36,6 +36,20 @@ export function getActiveDoctors(): Doctor[] {
   return (doctors as Doctor[]).filter((d) => isActiveDoctorFlag(d.dataFlag))
 }
 
+// For the client-side Directory. Everything passed to it is serialised into
+// every list page's HTML, so drop fields no client component reads.
+// researchNotes are internal and must not ship publicly.
+export function getDirectoryDoctors(): Doctor[] {
+  return getActiveDoctors().map((d) => {
+    const doctor = { ...d }
+    delete doctor.researchNotes
+    delete doctor.geo
+    delete doctor.dataFlag
+    delete doctor.dataFlagReason
+    return doctor
+  })
+}
+
 const JUNK_TESTIMONIALS = new Set([
   'maybe', 'probably yes', 'probably not', 'yes', 'no', 'not sure',
 ])

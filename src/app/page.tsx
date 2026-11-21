@@ -1,7 +1,6 @@
-import doctors from '@/data/doctors.json'
 import { Directory } from '@/components/directory'
-import { type Doctor } from '@/lib/types'
+import { getDirectoryDoctors } from '@/lib/utils'
 
 export default function Home() {
-  return <Directory doctors={doctors as Doctor[]} />
+  return <Directory doctors={getDirectoryDoctors()} />
 }

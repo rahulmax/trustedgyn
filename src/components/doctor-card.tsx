@@ -60,6 +60,10 @@ export function DoctorCard({ doctor, onViewDetails, onBadgeClick }: DoctorCardPr
                 {doctor.locality && <>{doctor.locality} · </>}
                 <Link
                   href={`/city/${citySlug(doctor.city)}`}
+                  // Every card links a city, so the list holds ~40 distinct city
+                  // links; prefetching them pulled ~1 MB of RSC each and was the
+                  // bulk of the project's ISR read units.
+                  prefetch={false}
                   className="underline decoration-border underline-offset-2 hover:decoration-text-muted hover:text-text-primary"
                 >
                   {doctor.city}

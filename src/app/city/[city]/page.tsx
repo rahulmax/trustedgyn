@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation'
 import { type Metadata } from 'next'
-import doctors from '@/data/doctors.json'
 import { Directory } from '@/components/directory'
-import { type Doctor } from '@/lib/types'
-import { citySlug, getActiveDoctors, getUniqueCities } from '@/lib/utils'
+import { citySlug, getActiveDoctors, getDirectoryDoctors, getUniqueCities } from '@/lib/utils'
 
 type Props = {
   params: Promise<{ city: string }>
@@ -45,5 +43,5 @@ export default async function CityPage({ params }: Props) {
   const cityName = cities.find((c) => citySlug(c) === slug)
   if (!cityName) notFound()
 
-  return <Directory doctors={doctors as Doctor[]} defaultCity={cityName} />
+  return <Directory doctors={getDirectoryDoctors()} defaultCity={cityName} />
 }
