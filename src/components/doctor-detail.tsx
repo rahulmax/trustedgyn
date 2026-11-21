@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -11,12 +11,13 @@ import {
 } from 'lucide-react'
 import { doctorSlug, getValidTestimonials } from '@/lib/utils'
 import { INCLUSIVITY_GROUP_LABEL_KEYS, INCLUSIVITY_QUESTION_LABEL_KEYS } from '@/lib/badges'
-import { type Doctor, type BadgeKey } from '@/lib/types'
+import { type Doctor, type DirectoryDoctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { Badge } from './badge'
 
 type DoctorDetailProps = {
-  doctor: Doctor
+  // List pages pass a DirectoryDoctor without inclusivity; it is fetched here.
+  doctor: DirectoryDoctor & { inclusivity?: Doctor['inclusivity'] }
   onBack: (() => void) | string
 }
 
@@ -103,10 +104,26 @@ export function DoctorDetail({ doctor, onBack }: DoctorDetailProps) {
   const { t } = useTranslation()
 
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.address + ', ' + doctor.city)}`
-  const inclusivityEntries = Object.entries(doctor.inclusivity) as [BadgeKey, Record<string, string>][]
   const testimonials = getValidTestimonials(doctor.testimonial)
   const [testimonialIndex, setTestimonialIndex] = useState(0)
   const permalink = `/doctor/${doctorSlug(doctor)}`
+
+  const [fetched, setFetched] = useState<{ for: string; data: Doctor['inclusivity'] } | null>(null)
+  useEffect(() => {
+    if (doctor.inclusivity) return
+    let cancelled = false
+    fetch(`${permalink}/inclusivity`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data) setFetched({ for: permalink, data })
+      })
+      .catch(() => {})
+    return () => {
+      cancelled = true
+    }
+  }, [doctor.inclusivity, permalink])
+  const inclusivity = doctor.inclusivity ?? (fetched?.for === permalink ? fetched.data : undefined)
+  const inclusivityEntries = (inclusivity ? Object.entries(inclusivity) : []) as [BadgeKey, Record<string, string>][]
   const fullUrl = `https://trustedgyn.com${permalink}`
   const [copied, setCopied] = useState(false)
 

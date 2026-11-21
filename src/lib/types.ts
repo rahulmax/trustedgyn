@@ -47,3 +47,10 @@ export type Doctor = {
   dataFlag?: 'deceased' | 'retired' | 'wrong-specialty' | 'unverified-specialty' | 'placeholder'
   dataFlagReason?: string
 }
+
+// What list pages ship to the client. inclusivity (~600 KB across all
+// doctors) is loaded on demand from /doctor/[slug]/inclusivity instead.
+export type DirectoryDoctor = Omit<
+  Doctor,
+  'inclusivity' | 'researchNotes' | 'geo' | 'dataFlag' | 'dataFlagReason'
+>

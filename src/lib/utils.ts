@@ -1,5 +1,5 @@
 import doctors from '@/data/doctors.json'
-import { type Doctor } from '@/lib/types'
+import { type Doctor, type DirectoryDoctor } from '@/lib/types'
 
 export function slugify(text: string): string {
   return text
@@ -37,16 +37,17 @@ export function getActiveDoctors(): Doctor[] {
 }
 
 // For the client-side Directory. Everything passed to it is serialised into
-// every list page's HTML, so drop fields no client component reads.
+// every list page's HTML, so drop fields the list doesn't need.
 // researchNotes are internal and must not ship publicly.
-export function getDirectoryDoctors(): Doctor[] {
+export function getDirectoryDoctors(): DirectoryDoctor[] {
   return getActiveDoctors().map((d) => {
-    const doctor = { ...d }
+    const doctor: Partial<Doctor> = { ...d }
+    delete doctor.inclusivity
     delete doctor.researchNotes
     delete doctor.geo
     delete doctor.dataFlag
     delete doctor.dataFlagReason
-    return doctor
+    return doctor as DirectoryDoctor
   })
 }
 

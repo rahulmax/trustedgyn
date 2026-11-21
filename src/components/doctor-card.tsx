@@ -3,14 +3,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Clock, Languages, Phone, Map, BadgeCheck, Briefcase, ExternalLink, ChevronRight } from 'lucide-react'
-import { type Doctor, type BadgeKey } from '@/lib/types'
+import { type DirectoryDoctor, type BadgeKey } from '@/lib/types'
 import { useTranslation } from '@/lib/translation-context'
 import { citySlug, getValidTestimonials } from '@/lib/utils'
 import { Badge } from './badge'
 
 type DoctorCardProps = {
-  doctor: Doctor
-  onViewDetails: (doctor: Doctor) => void
+  doctor: DirectoryDoctor
+  onViewDetails: (doctor: DirectoryDoctor) => void
   onBadgeClick?: (badge: BadgeKey) => void
 }
 

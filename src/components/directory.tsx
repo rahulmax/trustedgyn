@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useMemo, useCallback, useRef } from 'react'
+import { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import { PhoneCall, SlidersHorizontal } from 'lucide-react'
-import { type Doctor, type BadgeKey } from '@/lib/types'
+import { type DirectoryDoctor, type BadgeKey } from '@/lib/types'
 import { EXTERNAL_URLS } from '@/lib/constants'
 import { useTranslation } from '@/lib/translation-context'
 import { CityPicker } from './city-picker'
@@ -16,8 +16,12 @@ import { LanguagePicker } from './language-picker'
 import { HeroTitle } from './hero-title'
 import { ThemeToggle } from './theme-toggle'
 
+// Cards render in pages as the visitor scrolls. Rendering all ~320 up front
+// put ~1.8 MB of card markup and inline icons into every list page.
+const PAGE_SIZE = 20
+
 type DirectoryProps = {
-  doctors: Doctor[]
+  doctors: DirectoryDoctor[]
   defaultCity?: string
 }
 
@@ -40,7 +44,7 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
   const [fallbackQuery, setFallbackQuery] = useState('')
   const [languageFilter, setLanguageFilter] = useState<string[]>([])
   const [activeFilters, setActiveFilters] = useState<BadgeKey[]>([])
-  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null)
+  const [selectedDoctor, setSelectedDoctor] = useState<DirectoryDoctor | null>(null)
   const [detailVisible, setDetailVisible] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -101,6 +105,29 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
     return result
   }, [doctors, selectedCity, searchQuery, fallbackQuery, activeFilters, languageFilter])
 
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const [countedFor, setCountedFor] = useState(filteredDoctors)
+  if (countedFor !== filteredDoctors) {
+    setCountedFor(filteredDoctors)
+    setVisibleCount(PAGE_SIZE)
+  }
+  const hasMore = visibleCount < filteredDoctors.length
+  const sentinelRef = useRef<HTMLDivElement>(null)
+
+  // Re-observing after each page means a sentinel still in range loads the next.
+  useEffect(() => {
+    const el = sentinelRef.current
+    if (!el || !hasMore) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisibleCount((n) => n + PAGE_SIZE)
+      },
+      { rootMargin: '800px 0px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [hasMore, visibleCount, selectedDoctor])
+
   const cityDoctorCount = useMemo(() => {
     if (!selectedCity) return doctors.length
     return doctors.filter((d) => d.city === selectedCity).length
@@ -119,7 +146,7 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
     )
   }, [clearSearchStatus])
 
-  const handleViewDetails = useCallback((doctor: Doctor) => {
+  const handleViewDetails = useCallback((doctor: DirectoryDoctor) => {
     clearSearchStatus()
     setScrollPosition(window.scrollY)
     setSelectedDoctor(doctor)
@@ -297,7 +324,7 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
             </div>
           ) : (
             <div className="mt-3 flex flex-col gap-4">
-              {filteredDoctors.map((doctor) => (
+              {filteredDoctors.slice(0, visibleCount).map((doctor) => (
                 <DoctorCard
                   key={doctor.id}
                   doctor={doctor}
@@ -305,6 +332,7 @@ export function Directory({ doctors, defaultCity }: DirectoryProps) {
                   onBadgeClick={handleToggleFilter}
                 />
               ))}
+              {hasMore && <div ref={sentinelRef} aria-hidden className="h-px" />}
             </div>
           )}
 
